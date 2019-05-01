@@ -20,6 +20,6 @@ class AjaxFoodController extends Controller
 
         $userFood->save();
 
-        return response()->json();e
+        return response()->json();
     }
 }
