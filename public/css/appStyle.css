@@ -1,0 +1,22 @@
+#menu{
+    background-color: #1d68a7;
+}
+
+.sidenav{
+    width: 250px;
+}
+
+.sidenav a:hover{
+    cursor: pointer;
+}
+
+#app_content{
+    position: fixed;
+    height: 100%;
+    padding: 20px;
+    border:1px solid green;
+}
+
+.app-box{
+    padding: 20px;
+}

@@ -1,0 +1,42 @@
+nav{
+    background-color: #1d68a7;
+}
+
+.navbar{
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+header {
+    background-image: url('https://via.placeholder.com/1600x900');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 600px;
+    width: 100%;
+}
+
+.log-buttons{
+    background-color: aqua;
+}
+
+.logPopupBackground{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+#popupWindow{
+    position: relative;
+    z-index: 101;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+    margin-top: -200px;
+    margin-left: -200px;
+    background-color: white;
+    border: #1d68a7 1px solid;
+}
