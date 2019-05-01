@@ -24,6 +24,15 @@ var app = new Vue({
         confirmPass: document.getElementById('confirm_pass_input').value,
         passChangeBtn: 1,
         passMsg: '',
+        //Erreur formulaire ajout de nourriture
+        foodFormError: {
+            foodNameError: '',
+            foodCalError: '',
+            foodQuantError: '',
+            foodProError: '',
+            foodLipError: '',
+            foodGluError: '',
+        },
         /*aliments: JSON.parse({!!$aliments!!}),*/
     },
     methods:{
@@ -143,6 +152,7 @@ var app = new Vue({
         },
         createFood(e){
             e.preventDefault();
+            var self = this;
             var formElt = document.getElementById('add-food-form');
             var formData = new FormData(formElt);
             axios.post('/create-food',
@@ -157,8 +167,22 @@ var app = new Vue({
                     console.log(response.data);
                 })
                 .catch(function(error){
-                    console.log(error);
+                    self.cleanseErrorMsg('food');
+                    console.log(error.response.data.errors)
+                    for(key in error.response.data.errors){
+                        console.log(error.response.data.errors[key][0])
+                        self.showResponseError(key, error.response.data.errors[key][0]);
+                    }
                 })
+        },
+        showResponseError(key, msg){
+            var error = key + 'Error';
+            eval('this.foodFormError.' + error + ' = "' + msg + '"');
+        },
+        cleanseErrorMsg(form){
+            for(key in this.foodFormError){
+                eval('this.' + form + 'FormError.' + key + ' = ""');
+            }
         },
         testAjax(){
           axios.get('/testAjax')
