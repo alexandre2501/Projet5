@@ -20,3 +20,14 @@
 .app-box{
     padding: 20px;
 }
+
+.food-block{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.food-content{
+    border: 1px solid blue;
+    margin: 10px;
+}
