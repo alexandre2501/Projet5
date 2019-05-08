@@ -11,7 +11,17 @@
 
     </div>
     <div v-else-if="myFood === 'myDish'">
-
+        <div class="row">
+            <div class="food-block col s3" v-for="(value,name) in userDish">
+                <div class="food-content col s12">
+                    @{{ value.name }} </br>
+                    @{{ value.cal }} </br>
+                    @{{ value.pro }} </br>
+                    @{{ value.lip }} </br>
+                    @{{ value.glu }} </br>
+                </div>
+            </div>
+        </div>
     </div>
     <div v-else-if="myFood === 'myFood'">
         <div class="row">

@@ -9,6 +9,13 @@ use App\Http\Requests\CreateDishRequest;
 
 class AjaxDishController extends Controller
 {
+
+    public function getUserDish(Request $request){
+        $userDish = UserDish::where('usr_cre', Auth::user()->id)->get();
+
+        return response()->json($userDish);
+    }
+    
     public function createDish(CreateDishRequest $request){
         $userDish = new UserDish;
         $userDish->name = $request->dishName;

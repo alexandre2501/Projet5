@@ -32,6 +32,7 @@ var app = new Vue({
         //User Data
         userAvatar: '',
         userAvatarLink: '',
+        userDish: '',
         userFood: '',
         content: '',
         contentHtml: '<p>coucou</p>',
@@ -172,14 +173,25 @@ var app = new Vue({
           if(option === 'myFood'){
               this.getUserFood();
           }
+          else if(option === 'myDish'){
+              this.getUserDish();
+          }
+        },
+        getUserDish(){
+            var self = this;
+            axios.get('/get-user-dish')
+                .then(function(response){
+                    self.userDish = response.data;
+                })
+                .catch(function(error){
+                    console.log(error)
+                })
         },
         getUserFood(){
             var self = this;
             axios.get('/get-user-food')
                 .then(function(response){
-                    console.log(response.data);
                     self.userFood = response.data;
-                    console.log(self.userFood);
                 })
                 .catch(function(error){
                     console.log(error)

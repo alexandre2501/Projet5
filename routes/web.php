@@ -48,7 +48,8 @@ Route::get('/testAjax', function(){
 Route::get('/auth/avatar', 'AjaxController@getAuthAvatar');
 Route::post('/upload/avatar', 'AjaxController@uploadAuthAvatar');
 
-Route::post('/create-dish', 'AjaxDishController@createDish');
+Route::get('/get-user-dish', 'AjaxDishController@getUserDish');
+Route::post('/create-food', 'AjaxDishController@createFood');
 
 Route::get('/get-user-food', 'AjaxFoodController@getUserFood');
 Route::post('/create-food', 'AjaxFoodController@createFood');
