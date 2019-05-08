@@ -9,6 +9,15 @@ var modelFoodError = {
     foodGluError: '',
 }
 
+var modelDishError = {
+    dishNameError: '',
+    dishCalError: '',
+    dishQuantError: '',
+    dishProError: '',
+    dishLipError: '',
+    dishGluError: '',
+}
+
 var app = new Vue({
     el: '#app',
     mounted(){
@@ -39,6 +48,8 @@ var app = new Vue({
         myFood: 'myMeal',
             //Erreur formulaire ajout de nourriture
             foodFormError: Object.assign({}, modelFoodError),
+            //Erreur formulaire ajout de plat
+            dishFormError: Object.assign({}, modelDishError),
         /*aliments: JSON.parse({!!$aliments!!}),*/
     },
     methods:{
@@ -174,6 +185,31 @@ var app = new Vue({
                     console.log(error)
                 })
         },
+        createDish(e){
+            e.preventDefault();
+            var self = this;
+            var formElt = document.getElementById('add-dish-form');
+            var formData = new FormData(formElt);
+            axios.post('/create-dish',
+                //avatar: document.getElementById('upload_avatar_input').files[0].name
+                formData
+                ,{
+                    headers: {
+                        //'content-type': 'multipart/form-data',
+                    }
+                })
+                .then(function(response){
+                    console.log(response.data);
+                    self.loadMyFood('myDish');
+                })
+                .catch(function(error){
+                    self.cleanseErrorMsg('dish');
+                    console.log(error.response.data.errors)
+                    for(key in error.response.data.errors){
+                        self.showResponseError('dish', key, error.response.data.errors[key][0]);
+                    }
+                })
+        },
         createFood(e){
             e.preventDefault();
             var self = this;
@@ -195,17 +231,25 @@ var app = new Vue({
                     self.cleanseErrorMsg('food');
                     console.log(error.response.data.errors)
                     for(key in error.response.data.errors){
-                        self.showResponseError(key, error.response.data.errors[key][0]);
+                        self.showResponseError('food', key, error.response.data.errors[key][0]);
                     }
                 })
         },
-        showResponseError(key, msg){
+        showResponseError(form, key, msg){
             var error = key + 'Error';
-            this.foodFormError[error] = msg;
+            if(form === 'food'){
+                this.foodFormError[error] = msg;
+            }
+            else if(form === 'dish'){
+                this.dishFormError[error] = msg;
+            }
         },
         cleanseErrorMsg(form){
             if(form === 'food'){
                 this.foodFormError = Object.assign({}, modelFoodError);
+            }
+            else if(form === 'dish'){
+                this.dishFormError = Object.assign({}, modelDishError);
             }
         },
         testAjax(){
