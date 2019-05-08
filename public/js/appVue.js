@@ -189,6 +189,7 @@ var app = new Vue({
                 })
                 .then(function(response){
                     console.log(response.data);
+                    self.loadMyFood('myFood');
                 })
                 .catch(function(error){
                     self.cleanseErrorMsg('food');
