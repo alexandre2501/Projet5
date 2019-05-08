@@ -167,7 +167,8 @@ var app = new Vue({
             axios.get('/get-user-food')
                 .then(function(response){
                     console.log(response.data);
-                    self.userFood = JSON.parse(response.data);
+                    self.userFood = response.data;
+                    console.log(self.userFood);
                 })
                 .catch(function(error){
                     console.log(error)

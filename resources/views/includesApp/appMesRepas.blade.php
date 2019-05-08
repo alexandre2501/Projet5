@@ -9,7 +9,13 @@
 
     </div>
     <div v-else-if="myFood === 'myFood'">
-
+        <div class="food-block" v-for="(value,name) in userFood">
+            @{{ value.name }}
+            @{{ value.cal }}
+            @{{ value.pro }}
+            @{{ value.lip }}
+            @{{ value.glu }}
+        </div>
     </div>
     <div v-else-if="myFood === 'addMeal'">
 
