@@ -48,6 +48,7 @@ Route::get('/testAjax', function(){
 Route::get('/auth/avatar', 'AjaxController@getAuthAvatar');
 Route::post('/upload/avatar', 'AjaxController@uploadAuthAvatar');
 
+Route::get('/get-user-food', 'AjaxFoodController@getUserFood');
 Route::post('/create-food', 'AjaxFoodController@createFood');
 
 //Route::get('', 'HomeController@index')->name('home');

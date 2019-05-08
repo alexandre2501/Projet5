@@ -9,6 +9,13 @@ use App\Http\Requests\CreateFoodRequest;
 
 class AjaxFoodController extends Controller
 {
+
+    public function getUserFood(Request $request){
+        $userFood = UserFood::where('usr_cre', Auth::user()->id)->get();
+
+        return response()->json($userFood);
+    }
+
     public function createFood(CreateFoodRequest $request){
         $userFood = new UserFood;
         $userFood->name = $request->foodName;

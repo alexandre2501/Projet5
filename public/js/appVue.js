@@ -20,8 +20,10 @@ var app = new Vue({
     data: {
         //avatar: null,
         env: '',
+        //User Data
         userAvatar: '',
         userAvatarLink: '',
+        userFood: '',
         content: '',
         contentHtml: '<p>coucou</p>',
         appContent: 'accueil',
@@ -35,8 +37,8 @@ var app = new Vue({
         passMsg: '',
         //Page Ma Nourriture
         myFood: 'myMeal',
-        //Erreur formulaire ajout de nourriture
-        foodFormError: Object.assign({}, modelFoodError),
+            //Erreur formulaire ajout de nourriture
+            foodFormError: Object.assign({}, modelFoodError),
         /*aliments: JSON.parse({!!$aliments!!}),*/
     },
     methods:{
@@ -156,6 +158,20 @@ var app = new Vue({
         },
         loadMyFood(option){
           this.myFood = option;
+          if(option === 'myFood'){
+              this.getUserFood();
+          }
+        },
+        getUserFood(){
+            var self = this;
+            axios.get('/get-user-food')
+                .then(function(response){
+                    console.log(response.data);
+                    self.userFood = response.data;
+                })
+                .catch(function(error){
+                    console.log(error)
+                })
         },
         createFood(e){
             e.preventDefault();
