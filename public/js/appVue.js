@@ -1,5 +1,14 @@
 //const axios = require('axios');
 
+var modelFoodError = {
+    foodNameError: '',
+    foodCalError: '',
+    foodQuantError: '',
+    foodProError: '',
+    foodLipError: '',
+    foodGluError: '',
+}
+
 var app = new Vue({
     el: '#app',
     mounted(){
@@ -24,15 +33,10 @@ var app = new Vue({
         confirmPass: document.getElementById('confirm_pass_input').value,
         passChangeBtn: 1,
         passMsg: '',
+        //Page Ma Nourriture
+        myFood: 'myMeal',
         //Erreur formulaire ajout de nourriture
-        foodFormError: {
-            foodNameError: '',
-            foodCalError: '',
-            foodQuantError: '',
-            foodProError: '',
-            foodLipError: '',
-            foodGluError: '',
-        },
+        foodFormError: Object.assign({}, modelFoodError),
         /*aliments: JSON.parse({!!$aliments!!}),*/
     },
     methods:{
@@ -150,6 +154,9 @@ var app = new Vue({
                     console.log(error);
                 })
         },
+        loadMyFood(option){
+          this.myFood = option;
+        },
         createFood(e){
             e.preventDefault();
             var self = this;
@@ -170,18 +177,17 @@ var app = new Vue({
                     self.cleanseErrorMsg('food');
                     console.log(error.response.data.errors)
                     for(key in error.response.data.errors){
-                        console.log(error.response.data.errors[key][0])
                         self.showResponseError(key, error.response.data.errors[key][0]);
                     }
                 })
         },
         showResponseError(key, msg){
             var error = key + 'Error';
-            eval('this.foodFormError.' + error + ' = "' + msg + '"');
+            this.foodFormError[error] = msg;
         },
         cleanseErrorMsg(form){
-            for(key in this.foodFormError){
-                eval('this.' + form + 'FormError.' + key + ' = ""');
+            if(form === 'food'){
+                this.foodFormError = Object.assign({}, modelFoodError);
             }
         },
         testAjax(){

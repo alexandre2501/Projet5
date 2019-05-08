@@ -1,11 +1,20 @@
 <div v-else-if="appContent === 'maNourriture'">
     <h2>Ma nourriture</h2>
     COUCOU
-    <button class="waves-effect waves-light btn-large">Mes repas</button>
-    <button class="waves-effect waves-light btn-large">Mes aliments</button>
-    <button class="waves-effect waves-light btn-large">Ajouter un repas</button>
-    <button class="waves-effect waves-light btn-large">Ajouter un aliment</button>
-    <div>
+    <button v-on:click="loadMyFood('myMeal')" class="waves-effect waves-light btn-large">Mes repas</button>
+    <button v-on:click="loadMyFood('myFood')" class="waves-effect waves-light btn-large">Mes aliments</button>
+    <button v-on:click="loadMyFood('addMeal')" class="waves-effect waves-light btn-large">Ajouter un repas</button>
+    <button v-on:click="loadMyFood('addFood')" class="waves-effect waves-light btn-large">Ajouter un aliment</button>
+    <div v-if="myFood === 'myMeal'">
+
+    </div>
+    <div v-else-if="myFood === 'myFood'">
+
+    </div>
+    <div v-else-if="myFood === 'addMeal'">
+
+    </div>
+    <div v-else-if="myFood === 'addFood'">
         <form id="add-food-form">
             <label for="food-name">Nom de l'aliment<input id="food-name" type="text" name="foodName"></label>
             <span id="foodNameError">@{{ foodFormError.foodNameError }}</span>
