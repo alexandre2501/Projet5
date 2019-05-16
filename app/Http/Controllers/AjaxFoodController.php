@@ -23,6 +23,7 @@ class AjaxFoodController extends Controller
         $userFood->pro = $request->foodPro;
         $userFood->lip = $request->foodLip;
         $userFood->glu = $request->foodGlu;
+        $userFood->quant = $request->foodQuant;
         $userFood->usr_cre = Auth::user()->id;
 
         $userFood->save();

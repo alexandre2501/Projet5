@@ -23,6 +23,7 @@ class AjaxDishController extends Controller
         $userDish->pro = $request->dishPro;
         $userDish->lip = $request->dishLip;
         $userDish->glu = $request->dishGlu;
+        $userDish->quant = $request->dishQuant;
         $userDish->usr_cre = Auth::user()->id;
 
         $userDish->save();
