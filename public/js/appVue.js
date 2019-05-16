@@ -22,7 +22,7 @@ var app = new Vue({
     el: '#app',
     mounted(){
         window.axios.defaults.headers.common['X-CSRF-TOKEN'] = this.csrfToken;
-        console.log(axios);
+        M.AutoInit();
         this.setEnv();
         this.setUserAvatar();
     },
@@ -82,12 +82,15 @@ var app = new Vue({
         },
         loadAccueilHtml(){
             this.appContent = 'accueil';
+            M.AutoInit();
         },
         loadProfilHtml(){
             this.appContent = 'profil';
+            M.AutoInit();
         },
         loadMaNourritureHtml(){
             this.appContent = 'maNourriture';
+            M.AutoInit();
         },
         //Vérifie que le mot de passe est conforme
         //return true si le mdp est conforme
