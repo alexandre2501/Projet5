@@ -14,11 +14,12 @@
         <div class="row">
             <div class="food-block col s3" v-for="(value,name) in userDish">
                 <div class="food-content col s12">
-                    @{{ value.name }} </br>
-                    @{{ value.cal }} </br>
-                    @{{ value.pro }} </br>
-                    @{{ value.lip }} </br>
-                    @{{ value.glu }} </br>
+                    <div class="col s12 center-align">@{{ value.name }}</div>
+                    <div class="col s6">Calories : @{{ value.cal }} </div>
+                    <div class="col s6">Calories : @{{ value.quant }} </div>
+                    <div class="col s6">Protéines : @{{ value.pro }} g</div>
+                    <div class="col s6">Lipides : @{{ value.lip }} g</div>
+                    <div class="col s6">Glucides : @{{ value.glu }} g</div>
                 </div>
             </div>
         </div>
@@ -27,11 +28,11 @@
         <div class="row">
             <div class="food-block col s3" v-for="(value,name) in userFood">
                 <div class="food-content col s12">
-                    @{{ value.name }} </br>
-                    @{{ value.cal }} </br>
-                    @{{ value.pro }} </br>
-                    @{{ value.lip }} </br>
-                    @{{ value.glu }} </br>
+                    <div class="col s12 center-align">@{{ value.name }}</div>
+                    <div class="col s6">Calories : @{{ value.cal }} </div>
+                    <div class="col s6">Protéines : @{{ value.pro }} g</div>
+                    <div class="col s6">Lipides : @{{ value.lip }} g</div>
+                    <div class="col s6">Glucides : @{{ value.glu }} g</div>
                 </div>
             </div>
         </div>

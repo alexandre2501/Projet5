@@ -11,9 +11,18 @@
     <div id="change_password_div">
         <h3>Changer de mot de passe</h3>
         <form id="change_password_form">
-            <label for="old_pass_input">Ancien mot de passe : <input id="old_pass_input" type="password" name="oldPass"></label>
-            <label for="new_pass_input">Nouveau mot de passe : <input v-on:keyup="comparePassword" id="new_pass_input" type="password" name="newPass" ></label>
-            <label for="confirm_pass_input">Confirme le mot de passe : <input v-on:keyup="comparePassword" id="confirm_pass_input" type="password" name="confirmPass"></label>
+            <div class="input-field col s12">
+                <input id="old_pass_input" type="password" name="oldPass">
+                <label for="old_pass_input">Ancien mot de passe :</label>
+            </div>
+            <div class="input-field col s12">
+                <input v-on:keyup="comparePassword" id="new_pass_input" type="password" name="newPass" >
+                <label for="new_pass_input">Nouveau mot de passe :</label>
+            </div>
+            <div class="input-field col s12">
+                <input v-on:keyup="comparePassword" id="confirm_pass_input" type="password" name="confirmPass">
+                <label for="confirm_pass_input">Confirme le mot de passe :</label>
+            </div>
             <button type="submit" id="submit_password_change" v-on:click="submitPasswordChange" :disabled="passChangeBtn === 1 ? true : false">Modifier</button>
         </form>
         <span>@{{passMsg}}</span>
