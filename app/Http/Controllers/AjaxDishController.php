@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\UserDish;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\CreateDishRequest;
+use App\Http\Requests\UpdateDishRequest;
 
 class AjaxDishController extends Controller
 {
@@ -33,6 +34,19 @@ class AjaxDishController extends Controller
 
     public function deleteDish(Request $request){
         UserDish::where(array('usr_cre' => $request->userId, 'id' => $request->dishId))->delete();
+
+        return response()->json();
+    }
+
+    public function updateDish(UpdateDishRequest $request){
+        $userDish = UserDish::find($request->id);
+        $userDish->name = $request->name;
+        $userDish->cal = $request->cal;
+        $userDish->pro= $request->pro;
+        $userDish->lip = $request->lip;
+        $userDish->glu= $request->glu;
+        $userDish->quant = $request->quant;
+        $userDish->save();
 
         return response()->json();
     }

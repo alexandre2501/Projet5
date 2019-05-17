@@ -47,10 +47,18 @@ var app = new Vue({
         passMsg: '',
         //Page Ma Nourriture
         myFood: 'myMeal',
+            //Format du formulaire nourriture (update or create)
+            foodFormState: '',
             //Erreur formulaire ajout de nourriture
             foodFormError: Object.assign({}, modelFoodError),
+            //Objet nourriture à update
+            foodToUpdate: '',
+            //Format du formulaire plat (update or create)
+            dishFormState: '',
             //Erreur formulaire ajout de plat
             dishFormError: Object.assign({}, modelDishError),
+            //Objet plat à update
+            dishToUpdate: '',
         /*aliments: JSON.parse({!!$aliments!!}),*/
     },
     methods:{
@@ -174,6 +182,10 @@ var app = new Vue({
         },
         loadMyFood(option){
           this.myFood = option;
+          this.dishFormState = '';
+          this.dishToUpdate = '';
+          this.foodFormState = '';
+          this.foodToUpdate = '';
           if(option === 'myFood'){
               this.getUserFood();
           }
@@ -249,6 +261,72 @@ var app = new Vue({
                     console.log(error.response.data.errors)
                     for(key in error.response.data.errors){
                         self.showResponseError('food', key, error.response.data.errors[key][0]);
+                    }
+                })
+        },
+        fillUpdateFood(index){
+            this.myFood = 'addFood';
+            this.foodFormState ='update';
+            this.foodToUpdate = this.userFood[index];
+        },
+        fillUpdateDish(index){
+            this.myFood = 'addDish';
+            this.dishFormState ='update';
+            this.dishToUpdate = this.userDish[index];
+        },
+        updateFood(e){
+            e.preventDefault();
+            var self = this;
+            console.log(this.foodToUpdate);
+            axios.post('/update-food',
+                //avatar: document.getElementById('upload_avatar_input').files[0].name
+                self.foodToUpdate
+                ,{
+                    headers: {
+                        //'content-type': 'multipart/form-data',
+                    }
+                })
+                .then(function(response){
+                    console.log(response.data);
+                    self.loadMyFood('myFood');
+                    self.foodToUpdate = '';
+                    self.foodFormState = '';
+                })
+                .catch(function(error){
+                    self.cleanseErrorMsg('food');
+                    console.log(error.response.data.errors)
+                    for(key in error.response.data.errors){
+                        var keyUpper = key.charAt(0).toUpperCase() + key.slice(1)
+                        var adjustedKey = 'food' + keyUpper;
+                        self.showResponseError('food', adjustedKey, error.response.data.errors[key][0]);
+                    }
+                })
+        },
+        updateDish(e){
+            e.preventDefault();
+            var self = this;
+            console.log(this.dishToUpdate);
+            axios.post('/update-dish',
+                //avatar: document.getElementById('upload_avatar_input').files[0].name
+                self.dishToUpdate
+                ,{
+                    headers: {
+                        //'content-type': 'multipart/form-data',
+                    }
+                })
+                .then(function(response){
+                    console.log(response.data);
+                    self.loadMyFood('myDish');
+                    self.dishToUpdate = '';
+                    self.dishFormState = '';
+                })
+                .catch(function(error){
+                    self.cleanseErrorMsg('dish');
+                    console.log(error.response.data.errors)
+                    for(key in error.response.data.errors){
+                        var keyUpper = key.charAt(0).toUpperCase() + key.slice(1)
+                        var adjustedKey = 'dish' + keyUpper;
+                        self.showResponseError('dish', adjustedKey, error.response.data.errors[key][0]);
                     }
                 })
         },

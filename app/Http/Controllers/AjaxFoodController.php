@@ -6,6 +6,7 @@ use App\UserFood;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\CreateFoodRequest;
+use App\Http\Requests\UpdateFoodRequest;
 
 class AjaxFoodController extends Controller
 {
@@ -36,4 +37,18 @@ class AjaxFoodController extends Controller
 
         return response()->json();
     }
+
+    public function updateFood(UpdateFoodRequest $request){
+        $userFood = UserFood::find($request->id);
+        $userFood->name = $request->name;
+        $userFood->cal = $request->cal;
+        $userFood->pro= $request->pro;
+        $userFood->lip = $request->lip;
+        $userFood->glu= $request->glu;
+        $userFood->quant = $request->quant;
+        $userFood->save();
+
+        return response()->json();
+    }
+
 }

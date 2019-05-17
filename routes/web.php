@@ -51,9 +51,11 @@ Route::post('/upload/avatar', 'AjaxController@uploadAuthAvatar');
 Route::get('/get-user-dish', 'AjaxDishController@getUserDish');
 Route::post('/create-dish', 'AjaxDishController@createDish');
 Route::post('/delete-dish', 'AjaxDishController@deleteDish');
+Route::post('/update-dish', 'AjaxDishController@updateDish');
 
 Route::get('/get-user-food', 'AjaxFoodController@getUserFood');
 Route::post('/create-food', 'AjaxFoodController@createFood');
 Route::post('/delete-food', 'AjaxFoodController@deleteFood');
+Route::post('/update-food', 'AjaxFoodController@updateFood');
 
 //Route::get('', 'HomeController@index')->name('home');
