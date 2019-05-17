@@ -24,13 +24,13 @@ var app = new Vue({
         window.axios.defaults.headers.common['X-CSRF-TOKEN'] = this.csrfToken;
         M.AutoInit();
         this.setEnv();
-        this.setUserAvatar();
+        this.setUserData();
     },
     data: {
         //avatar: null,
         env: '',
         //User Data
-        userAvatar: '',
+        userData: '',
         userAvatarLink: '',
         userDish: '',
         userFood: '',
@@ -64,17 +64,18 @@ var app = new Vue({
           env = env.substr(0,id);
           this.env = env;
         },
-        setUserAvatar(){
-            axios.get('/auth/avatar',{
+        setUserData(){
+            var self = this;
+            axios.get('/auth/data',{
                 headers: {
                     'Content-Type' : 'application/json; charset=UTF-8',
                 }
             })
                 .then(function(response){
                     console.log(response.data);
-                    app.userAvatar = response.data;
-                    app.userAvatarLink = 'http://' + app.env + '/avatars/' + app.userAvatar;
-                    console.log(app.userAvatarLink)
+                    self.userData = response.data;
+                    self.userAvatarLink = 'http://' + self.env + '/avatars/' + self.userData.avatar;
+                    console.log(self.userAvatarLink)
                 })
                 .catch(function(error){
                     console.log(error);
@@ -185,6 +186,7 @@ var app = new Vue({
             axios.get('/get-user-dish')
                 .then(function(response){
                     self.userDish = response.data;
+                    console.log(self.userDish)
                 })
                 .catch(function(error){
                     console.log(error)
@@ -249,6 +251,16 @@ var app = new Vue({
                         self.showResponseError('food', key, error.response.data.errors[key][0]);
                     }
                 })
+        },
+        deleteDish(index){
+            var self = this;
+            var id = this.userDish[index].id;
+            console.log(index);
+            axios.post('/delete-dish',
+
+                )
+            this.$delete(this.userDish, index);
+            console.log(this.userDish)
         },
         showResponseError(form, key, msg){
             var error = key + 'Error';

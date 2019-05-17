@@ -44,10 +44,12 @@ class AjaxController extends Controller
         }
     }
 
-    public function getAuthAvatar(){
+    public function getAuthData(){
         $avatar = Auth::user()->avatar;
+        $id = Auth::user()->id;
+        $data = array('avatar' => $avatar, 'id' => $id);
 
-        return response()->json($avatar);
+        return response()->json($data);
     }
 
     public function uploadAuthAvatar(Request $request){

@@ -45,7 +45,7 @@ Route::get('/testAjax', function(){
     echo 'test AJAX';
 });
 
-Route::get('/auth/avatar', 'AjaxController@getAuthAvatar');
+Route::get('/auth/data', 'AjaxController@getAuthData');
 Route::post('/upload/avatar', 'AjaxController@uploadAuthAvatar');
 
 Route::get('/get-user-dish', 'AjaxDishController@getUserDish');
