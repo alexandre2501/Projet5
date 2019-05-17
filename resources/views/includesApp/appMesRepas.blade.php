@@ -12,27 +12,30 @@
     </div>
     <div v-else-if="myFood === 'myDish'">
         <div class="row">
-            <div class="food-block col s3" v-for="(value,name) in userDish">
+            <div class="food-block col s3" v-for="(value,index) in userDish">
                 <div class="food-content col s12">
                     <div class="col s12 center-align">@{{ value.name }}</div>
                     <div class="col s6">Calories : @{{ value.cal }} </div>
-                    <div class="col s6">Calories : @{{ value.quant }} </div>
+                    <div class="col s6">Quantité : @{{ value.quant }} g</div>
                     <div class="col s6">Protéines : @{{ value.pro }} g</div>
                     <div class="col s6">Lipides : @{{ value.lip }} g</div>
                     <div class="col s6">Glucides : @{{ value.glu }} g</div>
+                    <div class="col s12"><button class="col s6" v-on:click="deleteDish(index)">Supprimer</button><button class="col s6">Modifier</button></div>
                 </div>
             </div>
         </div>
     </div>
     <div v-else-if="myFood === 'myFood'">
         <div class="row">
-            <div class="food-block col s3" v-for="(value,name) in userFood">
+            <div class="food-block col s3" v-for="(value,index) in userFood">
                 <div class="food-content col s12">
                     <div class="col s12 center-align">@{{ value.name }}</div>
                     <div class="col s6">Calories : @{{ value.cal }} </div>
+                    <div class="col s6">Quantité : @{{ value.cal }} g</div>
                     <div class="col s6">Protéines : @{{ value.pro }} g</div>
                     <div class="col s6">Lipides : @{{ value.lip }} g</div>
                     <div class="col s6">Glucides : @{{ value.glu }} g</div>
+                    <div class="col s12"><button class="col s6" v-on:click="deleteFood(index)">Supprimer</button><button class="col s6">Modifier</button></div>
                 </div>
             </div>
         </div>

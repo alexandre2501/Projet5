@@ -30,4 +30,11 @@ class AjaxDishController extends Controller
 
         return response()->json();
     }
+
+    public function deleteDish(Request $request){
+        UserDish::where(array('usr_cre' => $request->userId, 'id' => $request->dishId))->delete();
+
+        return response()->json();
+    }
+
 }

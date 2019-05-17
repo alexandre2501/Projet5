@@ -252,14 +252,38 @@ var app = new Vue({
                     }
                 })
         },
+        deleteFood(index){
+            var self = this;
+            var id = this.userFood[index].id;
+            console.log(index);
+            axios.post('/delete-food',{
+                foodId: id,
+                userId: self.userData.id,
+            })
+                .then(function(response){
+                    console.log(response.data);
+                    self.$delete(self.userFood, index);
+                })
+                .catch(function(error){
+                    console.log(error);
+                })
+            console.log(this.userFood)
+        },
         deleteDish(index){
             var self = this;
             var id = this.userDish[index].id;
             console.log(index);
-            axios.post('/delete-dish',
-
-                )
-            this.$delete(this.userDish, index);
+            axios.post('/delete-dish',{
+                dishId: id,
+                userId: self.userData.id,
+                })
+                .then(function(response){
+                    console.log(response.data);
+                    self.$delete(self.userDish, index);
+                })
+                .catch(function(error){
+                    console.log(error);
+                })
             console.log(this.userDish)
         },
         showResponseError(form, key, msg){

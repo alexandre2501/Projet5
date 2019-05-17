@@ -30,4 +30,10 @@ class AjaxFoodController extends Controller
 
         return response()->json();
     }
+
+    public function deleteFood(Request $request){
+        UserFood::where(array('id' => $request->foodId, 'usr_cre' => $request->userId))->delete();
+
+        return response()->json();
+    }
 }
