@@ -101,6 +101,10 @@ var app = new Vue({
             this.appContent = 'maNourriture';
             M.AutoInit();
         },
+        loadMesRepasHtml(){
+            this.appContent = 'mesRepas';
+            M.AutoInit();
+        },
         //Vérifie que le mot de passe est conforme
         //return true si le mdp est conforme
         checkPassword(){

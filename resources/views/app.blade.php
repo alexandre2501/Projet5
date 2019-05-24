@@ -14,7 +14,8 @@
                 </div>
                 <li v-on:click="loadAccueilHtml"><a>Accueil</a></li>
                 <li v-on:click="loadProfilHtml"><a>Mon Profil</a></li>
-                <li v-on:click="loadMaNourritureHtml"><a>Mes repas</a></li>
+                <li v-on:click="loadMaNourritureHtml"><a>Ma Nourriture</a></li>
+                <li v-on:click="loadMesRepasHtml"><a>Mes Repas</a></li>
                 <li><a>Calculer un repas</a></li>
             </ul>
         </div>
@@ -22,6 +23,7 @@
             <div class="app-box z-depth-2 #fafafa grey lighten-5">
                 @include('includesApp.appAccueil')
                 @include('includesApp.appProfil')
+                @include('includesApp.appMaNourriture')
                 @include('includesApp.appMesRepas')
             </div>
         </div>
