@@ -25,6 +25,7 @@ var app = new Vue({
         M.AutoInit();
         this.setEnv();
         this.setUserData();
+        this.setMealsDate();
     },
     data: {
         //avatar: null,
@@ -59,6 +60,10 @@ var app = new Vue({
             dishFormError: Object.assign({}, modelDishError),
             //Objet plat à update
             dishToUpdate: '',
+        //Page Mes Repas
+        //On stock la date du jour pour construire le calendrier des repas
+        actualDate: new Date(),
+        mealsData: [],
         /*aliments: JSON.parse({!!$aliments!!}),*/
     },
     methods:{
@@ -88,6 +93,17 @@ var app = new Vue({
                 .catch(function(error){
                     console.log(error);
                 })
+        },
+        setMealsDate(){
+            var self = this;
+            for(var i = -7; i != 2; i++){
+                var obj = {date: this.returnMealsDate(this.actualDate.getDate() + i)};
+                this.mealsData.push(obj);
+            }
+        },
+        //Renvoie un objet Date par a la date passée en paramètre
+        returnMealsDate(date){
+          return new Date(this.actualDate.getFullYear(), this.actualDate.getMonth(), date);
         },
         loadAccueilHtml(){
             this.appContent = 'accueil';
@@ -384,6 +400,11 @@ var app = new Vue({
             else if(form === 'dish'){
                 this.dishFormError = Object.assign({}, modelDishError);
             }
+        },
+        //Mes Repas
+        loadPreviousDate(){
+            console.log(this.actualDate);
+            console.log(this.mealsData);
         },
         testAjax(){
           axios.get('/testAjax')
