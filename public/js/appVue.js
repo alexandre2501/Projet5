@@ -62,7 +62,9 @@ var app = new Vue({
             dishToUpdate: '',
         //Page Mes Repas
         //On stock la date du jour pour construire le calendrier des repas
+        frenchDayName: ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'],
         actualDate: new Date(),
+        dateIndex: 7,
         mealsData: [],
         /*aliments: JSON.parse({!!$aliments!!}),*/
     },
@@ -97,13 +99,21 @@ var app = new Vue({
         setMealsDate(){
             var self = this;
             for(var i = -7; i != 2; i++){
-                var obj = {date: this.returnMealsDate(this.actualDate.getDate() + i)};
+                var obj = {
+                    date: this.returnMealsDate(this.actualDate.getDate() + i),
+                };
+                obj.dayName = this.returnDayName(obj.date.getDay(), 'french');
                 this.mealsData.push(obj);
             }
         },
         //Renvoie un objet Date par a la date passée en paramètre
         returnMealsDate(date){
           return new Date(this.actualDate.getFullYear(), this.actualDate.getMonth(), date);
+        },
+        returnDayName(day, lang){
+          if(lang === 'french'){
+            return this.frenchDayName[day];
+          }
         },
         loadAccueilHtml(){
             this.appContent = 'accueil';
