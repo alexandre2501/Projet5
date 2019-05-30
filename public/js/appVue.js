@@ -62,10 +62,10 @@ var app = new Vue({
             dishToUpdate: '',
         //Page Mes Repas
         //On stock la date du jour pour construire le calendrier des repas
-        frenchDayName: ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'],
+        frenchDayName: ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'],
         frenchMonthName: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
         actualDate: new Date(),
-        dateIndex: 7,
+        dateIndex: 6,
         mealsData: [],
         /*aliments: JSON.parse({!!$aliments!!}),*/
     },
@@ -112,7 +112,12 @@ var app = new Vue({
         },
         //Renvoie un objet Date par a la date passée en paramètre
         returnMealsDate(date){
-          return new Date(this.actualDate.getFullYear(), this.actualDate.getMonth(), date);
+            var test = new Date(this.actualDate.getFullYear(), this.actualDate.getMonth(), date + 1);
+            console.log(test);
+            console.log(date)
+            console.log(test.getDay());
+            console.log(test.toDateString());
+          return new Date(this.actualDate.getFullYear(), this.actualDate.getMonth(), date + 1);
         },
         returnDayName(day, lang){
           if(lang === 'french'){
@@ -450,13 +455,14 @@ var app = new Vue({
         },
         updateMeals(){
             var self = this;
+            console.log(self.dateIndex)
+            console.log(self.mealsData[self.dateIndex])
             axios.post('/update-meals',{
                 mealsData: self.mealsData[self.dateIndex],
                 userId: self.userData.id,
             })
                 .then(function(response){
                     console.log(response.data);
-                    self.$delete(self.userDish, index);
                 })
                 .catch(function(error){
                     console.log(error);
