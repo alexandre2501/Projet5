@@ -58,4 +58,6 @@ Route::post('/create-food', 'AjaxFoodController@createFood');
 Route::post('/delete-food', 'AjaxFoodController@deleteFood');
 Route::post('/update-food', 'AjaxFoodController@updateFood');
 
+Route::post('/update-meals', 'AjaxMealController@updateFood');
+
 //Route::get('', 'HomeController@index')->name('home');
