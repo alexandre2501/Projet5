@@ -31,3 +31,20 @@
     border: 1px solid blue;
     margin: 10px;
 }
+
+/* REPAS */
+
+#date-block div,
+#meal-block div{
+    box-sizing: border-box;
+    border: 1px solid black;
+}
+
+.fa-chevron-circle-left,
+.fa-chevron-circle-right{
+    cursor: pointer;
+}
+
+#nameDate{
+    font-size: 25px;
+}
