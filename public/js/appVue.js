@@ -63,6 +63,7 @@ var app = new Vue({
         //Page Mes Repas
         //On stock la date du jour pour construire le calendrier des repas
         frenchDayName: ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'],
+        frenchMonthName: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
         actualDate: new Date(),
         dateIndex: 7,
         mealsData: [],
@@ -103,6 +104,8 @@ var app = new Vue({
                     date: this.returnMealsDate(this.actualDate.getDate() + i),
                 };
                 obj.dayName = this.returnDayName(obj.date.getDay(), 'french');
+                obj.monthName = this.returnMonthName(obj.date.getMonth(), 'french');
+                obj.lisibleDate = obj.dayName + ' ' + obj.date.getDate() + ' ' + obj.monthName;
                 this.mealsData.push(obj);
             }
         },
@@ -115,6 +118,12 @@ var app = new Vue({
             return this.frenchDayName[day];
           }
         },
+        returnMonthName(month, lang){
+            if(lang === 'french'){
+                return this.frenchMonthName[month];
+            }
+        }
+        ,
         loadAccueilHtml(){
             this.appContent = 'accueil';
             M.AutoInit();
@@ -412,9 +421,22 @@ var app = new Vue({
             }
         },
         //Mes Repas
+        controlDateIndex(index){
+            if(index < 0){
+                return 0;
+            }
+            else if(index > 8){
+                return 8;
+            }
+            else{
+                return index;
+            }
+        },
         loadPreviousDate(){
-            console.log(this.actualDate);
-            console.log(this.mealsData);
+            this.dateIndex = this.controlDateIndex(this.dateIndex - 1);
+        },
+        loadNextDate(){
+            this.dateIndex = this.controlDateIndex(this.dateIndex + 1);
         },
         testAjax(){
           axios.get('/testAjax')
