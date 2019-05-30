@@ -106,6 +106,7 @@ var app = new Vue({
                 obj.dayName = this.returnDayName(obj.date.getDay(), 'french');
                 obj.monthName = this.returnMonthName(obj.date.getMonth(), 'french');
                 obj.lisibleDate = obj.dayName + ' ' + obj.date.getDate() + ' ' + obj.monthName;
+                obj.meals = [];
                 this.mealsData.push(obj);
             }
         },
@@ -440,6 +441,26 @@ var app = new Vue({
         loadNextDate(){
             this.dateIndex = this.controlDateIndex(this.dateIndex + 1);
             console.log(this.userDish);
+        },
+        addFoodToMeal(index){
+            this.mealsData[this.dateIndex].meals.push(this.userFood[index]);
+        },
+        addDishToMeal(index){
+            this.mealsData[this.dateIndex].meals.push(this.userDish[index]);
+        },
+        updateMeals(){
+            var self = this;
+            axios.post('/update-meals',{
+                mealsData: self.mealsData[self.dateIndex],
+                userId: self.userData.id,
+            })
+                .then(function(response){
+                    console.log(response.data);
+                    self.$delete(self.userDish, index);
+                })
+                .catch(function(error){
+                    console.log(error);
+                })
         },
         testAjax(){
           axios.get('/testAjax')
