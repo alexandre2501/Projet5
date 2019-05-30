@@ -138,6 +138,8 @@ var app = new Vue({
         },
         loadMesRepasHtml(){
             this.appContent = 'mesRepas';
+            this.getUserFood();
+            this.getUserDish();
             M.AutoInit();
         },
         //Vérifie que le mot de passe est conforme
@@ -437,6 +439,7 @@ var app = new Vue({
         },
         loadNextDate(){
             this.dateIndex = this.controlDateIndex(this.dateIndex + 1);
+            console.log(this.userDish);
         },
         testAjax(){
           axios.get('/testAjax')
