@@ -16,6 +16,9 @@
                     <div class="col s4">@{{ value.lip }} g</div>
                     <div class="col s4">@{{ value.glu }} g</div>
                 </div>
+                <div class="col s12 center-align">
+                    <button v-on:click="updateMeals">Confirmer</button>
+                </div>
             </div>
             <div id="foods-content" class="col s3">
                 <h6>Food</h6>
