@@ -15,12 +15,8 @@ class CreateMealTable extends Migration
     {
         Schema::create('meal', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->integer('cal');
-            $table->integer('pro');
-            $table->integer('lip');
-            $table->integer('glu');
-            $table->char('comp');
+            $table->date('date');
+            $table->binary('content');
             $table->string('usr_cre');
             $table->timestamps();
         });

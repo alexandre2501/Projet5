@@ -113,10 +113,10 @@ var app = new Vue({
         //Renvoie un objet Date par a la date passée en paramètre
         returnMealsDate(date){
             var test = new Date(this.actualDate.getFullYear(), this.actualDate.getMonth(), date + 1);
-            console.log(test);
+            /*console.log(test);
             console.log(date)
             console.log(test.getDay());
-            console.log(test.toDateString());
+            console.log(test.toDateString());*/
           return new Date(this.actualDate.getFullYear(), this.actualDate.getMonth(), date + 1);
         },
         returnDayName(day, lang){
@@ -455,11 +455,12 @@ var app = new Vue({
         },
         updateMeals(){
             var self = this;
-            console.log(self.dateIndex)
-            console.log(self.mealsData[self.dateIndex])
             axios.post('/update-meals',{
                 mealsData: self.mealsData[self.dateIndex],
                 userId: self.userData.id,
+                year: self.mealsData[self.dateIndex].date.getFullYear(),
+                month: self.mealsData[self.dateIndex].date.getMonth() + 1,
+                day: self.mealsData[self.dateIndex].date.getDate(),
             })
                 .then(function(response){
                     console.log(response.data);
