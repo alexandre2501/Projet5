@@ -59,5 +59,6 @@ Route::post('/delete-food', 'AjaxFoodController@deleteFood');
 Route::post('/update-food', 'AjaxFoodController@updateFood');
 
 Route::post('/update-meals', 'AjaxMealController@updateMeal');
+Route::get('/get-user-meal', 'AjaxMealController@getUserMeal');
 
 //Route::get('', 'HomeController@index')->name('home');

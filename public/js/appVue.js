@@ -25,7 +25,7 @@ var app = new Vue({
         M.AutoInit();
         this.setEnv();
         this.setUserData();
-        this.setMealsDate();
+        //this.setMealsDate();
     },
     data: {
         //avatar: null,
@@ -70,6 +70,14 @@ var app = new Vue({
         /*aliments: JSON.parse({!!$aliments!!}),*/
     },
     methods:{
+        findWithAttr(array, attr, value){
+            for(var i = 0; i < array.length; i += 1) {
+                if(array[i][attr] === value) {
+                    return i;
+                }
+            }
+            return -1;
+        },
         avatar(e){
             console.log(this,e);
         },
@@ -97,7 +105,7 @@ var app = new Vue({
                     console.log(error);
                 })
         },
-        setMealsDate(){
+        setMealsDate(data){
             var self = this;
             for(var i = -7; i != 2; i++){
                 var obj = {
@@ -106,7 +114,13 @@ var app = new Vue({
                 obj.dayName = this.returnDayName(obj.date.getDay(), 'french');
                 obj.monthName = this.returnMonthName(obj.date.getMonth(), 'french');
                 obj.lisibleDate = obj.dayName + ' ' + obj.date.getDate() + ' ' + obj.monthName;
-                obj.meals = [];
+                var index = self.findWithAttr(data, 'lisibleDate', obj.lisibleDate);
+                if(index != -1){
+                    obj.meals = data[index].meals;
+                }
+                else{
+                    obj.meals = [];
+                }
                 this.mealsData.push(obj);
             }
         },
@@ -139,13 +153,15 @@ var app = new Vue({
             M.AutoInit();
         },
         loadMaNourritureHtml(){
-            this.appContent = 'maNourriture';
+            this.appContent = 'maNourriture',
             M.AutoInit();
         },
         loadMesRepasHtml(){
             this.appContent = 'mesRepas';
             this.getUserFood();
             this.getUserDish();
+            this.getUserMeal();
+            console.log(this.mealsData);
             M.AutoInit();
         },
         //Vérifie que le mot de passe est conforme
@@ -260,6 +276,18 @@ var app = new Vue({
                 .catch(function(error){
                     console.log(error)
                 })
+        },
+        getUserMeal(){
+            var self = this;
+            axios.get('/get-user-meal')
+                .then(function(response){
+                    //self.mealsData = response.data;
+                    self.setMealsDate(response.data);
+                })
+                .catch(function(error){
+                    console.log(error);
+                })
+
         },
         createDish(e){
             e.preventDefault();
@@ -445,7 +473,6 @@ var app = new Vue({
         },
         loadNextDate(){
             this.dateIndex = this.controlDateIndex(this.dateIndex + 1);
-            console.log(this.userDish);
         },
         addFoodToMeal(index){
             this.mealsData[this.dateIndex].meals.push(this.userFood[index]);

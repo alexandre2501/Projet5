@@ -11,8 +11,7 @@ class AjaxMealController extends Controller
     public function updateMeal(Request $request){
 
         $date = $request->year . '-' . $request->month . '-' . $request->day;
-        //$userMeal = UserMeal::where(array('id' => $request->userId, 'date' => $date))->exists();
-        if(!UserMeal::where(array('id' => $request->userId, 'date' => $date))->exists()){
+        if(!UserMeal::where(array('usr_cre' => $request->userId, 'date' => $date))->exists()){
             //INSERT
             $userMeal = new UserMeal;
             $userMeal->date = $date;
@@ -22,9 +21,20 @@ class AjaxMealController extends Controller
             $userMeal->save();
         }
         else{
-            //UPDATE
+            $userMeal = UserMeal::where(array('usr_cre' => $request->userId, 'date' => $date))->first();
+            $userMeal->content = serialize($request->mealsData);
+            $userMeal->save();
         }
-        var_dump($userMeal);
         return response()->json($request);
+    }
+
+    public function getUserMeal(Request $request){
+        $userMeals = UserMeal::where('usr_cre', Auth::user()->id)->get();
+        //unserialize($userMeals->content);
+        $mealsData = [];
+        foreach($userMeals as $userMeal) {
+            array_push($mealsData, unserialize($userMeal->content));
+        }
+        return response()->json($mealsData);
     }
 }
