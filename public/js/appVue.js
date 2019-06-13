@@ -33,8 +33,8 @@ var app = new Vue({
         //User Data
         userData: '',
         userAvatarLink: '',
-        userDish: '',
-        userFood: '',
+        userDish: [],
+        userFood: [],
         content: '',
         contentHtml: '<p>coucou</p>',
         appContent: 'accueil',
@@ -361,11 +361,11 @@ var app = new Vue({
                         //'content-type': 'multipart/form-data',
                     }
                 })
-                .then(function(response){
+                .then((response)=>{
                     console.log(response.data);
-                    self.loadMyFood('myFood');
-                    self.foodToUpdate = '';
-                    self.foodFormState = '';
+                    this.loadMyFood('myFood');
+                    this.foodToUpdate = '';
+                    this.foodFormState = '';
                 })
                 .catch(function(error){
                     self.cleanseErrorMsg('food');
@@ -495,6 +495,11 @@ var app = new Vue({
                 .catch(function(error){
                     console.log(error);
                 })
+        },
+        deleteFoodFromMeal(index){
+            console.log(this.mealsData[this.dateIndex].meals[index]);
+            this.$delete(this.mealsData[this.dateIndex].meals, index);
+            this.updateMeals();
         },
         testAjax(){
           axios.get('/testAjax')

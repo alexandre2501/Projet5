@@ -31,7 +31,7 @@
                 <div class="food-content col s12">
                     <div class="col s12 center-align">@{{ value.name }}</div>
                     <div class="col s6">Calories : @{{ value.cal }} </div>
-                    <div class="col s6">Quantité : @{{ value.cal }} g</div>
+                    <div class="col s6">Quantité : @{{ value.quant }} g</div>
                     <div class="col s6">Protéines : @{{ value.pro }} g</div>
                     <div class="col s6">Lipides : @{{ value.lip }} g</div>
                     <div class="col s6">Glucides : @{{ value.glu }} g</div>

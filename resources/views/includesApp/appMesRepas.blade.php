@@ -10,6 +10,7 @@
             <div id="meals-content" class="col s9">
                 <div class="col s3" v-for="(value, index) in mealsData[dateIndex].meals">
                     <div class="col s12">@{{ value.name }}</div>
+                    <div class="col s1 meal-delete-icon" v-on:click="deleteFoodFromMeal(index)">@{{ index }}<i class="far fa-times-circle"></i></div>
                     <div class="col s6">@{{ value.cal }} cal</div>
                     <div class="col s6">@{{ value.quant }} g</div>
                     <div class="col s4">@{{ value.pro }} g</div>
