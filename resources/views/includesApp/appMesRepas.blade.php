@@ -9,10 +9,9 @@
         <div id="meal-block" class="col s12">
             <div id="meals-content" class="col s9">
                 <div class="col s3" v-for="(value, index) in mealsData[dateIndex].meals">
-                    <div class="col s12">@{{ value.name }}</div>
-                    <div class="col s1 meal-delete-icon" v-on:click="deleteFoodFromMeal(index)">@{{ index }}<i class="far fa-times-circle"></i></div>
+                    <div class="col s12">@{{ value.name }}<i class="far fa-times-circle valign-wrapper" v-on:click="deleteFoodFromMeal(index)"></i></div>
                     <div class="col s6">@{{ value.cal }} cal</div>
-                    <div class="col s6">@{{ value.quant }} g</div>
+                    <div class="col s6"><input type="number" class="col s6" v-model="value.quant" @keyup="checkNumeric(index)"><span>g</span></div>
                     <div class="col s4">@{{ value.pro }} g</div>
                     <div class="col s4">@{{ value.lip }} g</div>
                     <div class="col s4">@{{ value.glu }} g</div>

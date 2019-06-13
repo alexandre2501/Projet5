@@ -497,9 +497,14 @@ var app = new Vue({
                 })
         },
         deleteFoodFromMeal(index){
-            console.log(this.mealsData[this.dateIndex].meals[index]);
             this.$delete(this.mealsData[this.dateIndex].meals, index);
             this.updateMeals();
+        },
+        checkNumeric(index){
+            if(this.mealsData[this.dateIndex].meals[index].quant === '' || this.mealsData[this.dateIndex].meals[index].quant === null){
+                this.mealsData[this.dateIndex].meals[index].quant = 0;
+            }
+            console.log(this.mealsData[this.dateIndex].meals[index].quant);
         },
         testAjax(){
           axios.get('/testAjax')
