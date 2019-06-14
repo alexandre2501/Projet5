@@ -10,11 +10,11 @@
             <div id="meals-content" class="col s9">
                 <div class="col s3" v-for="(value, index) in mealsData[dateIndex].meals">
                     <div class="col s12">@{{ value.name }}<i class="far fa-times-circle valign-wrapper" v-on:click="deleteFoodFromMeal(index)"></i></div>
-                    <div class="col s6 valign-wrapper"><input type="number" class="col s8" v-model="value.cal" @keyup="checkNumeric(index)"><span>cal</span></div>
-                    <div class="col s6 valign-wrapper"><input type="number" class="col s8" v-model="value.quant" @keyup="checkNumeric(index)"><span>g</span></div>
-                    <div class="col s4 valign-wrapper"><input type="number" class="col s8" v-model="value.pro" @keyup="checkNumeric(index)"><span>g</span></div>
-                    <div class="col s4 valign-wrapper"><input type="number" class="col s8" v-model="value.lip" @keyup="checkNumeric(index)"><span>g</span></div>
-                    <div class="col s4 valign-wrapper"><input type="number" class="col s8" v-model="value.glu" @keyup="checkNumeric(index)"><span>g</span></div>
+                    <div class="col s6 valign-wrapper"><input type="number" class="col s8" v-model="value.cal" @keyup="checkNumeric(index, 'cal')"><span>cal</span></div>
+                    <div class="col s6 valign-wrapper"><input type="number" class="col s8" v-model="value.quant" @keyup="checkNumeric(index, 'quant')"><span>g</span></div>
+                    <div class="col s4 valign-wrapper"><input type="number" class="col s8" v-model="value.pro" @keyup="checkNumeric(index, 'pro')"><span>g</span></div>
+                    <div class="col s4 valign-wrapper"><input type="number" class="col s8" v-model="value.lip" @keyup="checkNumeric(index, 'lip')"><span>g</span></div>
+                    <div class="col s4 valign-wrapper"><input type="number" class="col s8" v-model="value.glu" @keyup="checkNumeric(index), 'glu'"><span>g</span></div>
                 </div>
                 <div class="col s12 center-align">
                     <button v-on:click="updateMeals">Confirmer</button>
