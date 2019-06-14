@@ -25,7 +25,7 @@ var app = new Vue({
         M.AutoInit();
         this.setEnv();
         this.setUserData();
-        //this.setMealsDate();
+        this.setMealsDate();
     },
     data: {
         //avatar: null,
@@ -67,6 +67,10 @@ var app = new Vue({
         actualDate: new Date(),
         dateIndex: 6,
         mealsData: [],
+        totalCal: 0,
+        totalPro: 0,
+        totalLip: 0,
+        totalGlu: 0,
         /*aliments: JSON.parse({!!$aliments!!}),*/
     },
     methods:{
@@ -270,6 +274,7 @@ var app = new Vue({
             axios.get('/get-user-meal')
                 .then(function(response){
                     this.setMealsDate(response.data);
+                    this.calculateTotalMeal();
                 }.bind(this))
                 .catch(function(error){
                     console.log(error);
@@ -455,9 +460,11 @@ var app = new Vue({
         },
         loadPreviousDate(){
             this.dateIndex = this.controlDateIndex(this.dateIndex - 1);
+            this.calculateTotalMeal();
         },
         loadNextDate(){
             this.dateIndex = this.controlDateIndex(this.dateIndex + 1);
+            this.calculateTotalMeal();
         },
         addFoodToMeal(index){
             this.mealsData[this.dateIndex].meals.push(this.userFood[index]);
@@ -478,6 +485,7 @@ var app = new Vue({
             })
                 .then(function(response){
                     console.log(response.data);
+                    self.calculateTotalMeal();
                 })
                 .catch(function(error){
                     console.log(error);
@@ -494,6 +502,22 @@ var app = new Vue({
             }
             this.updateMeals();
             console.log(this.mealsData[this.dateIndex].meals[index][key]);
+        },
+        resetTotalMeal(){
+            this.totalCal = 0;
+            this.totalPro = 0;
+            this.totalLip = 0;
+            this.totalGlu = 0;
+        },
+        calculateTotalMeal(){
+            this.resetTotalMeal();
+            for(index in this.mealsData[this.dateIndex].meals){
+                var meal = this.mealsData[this.dateIndex].meals[index];
+                this.totalCal += parseInt(meal.cal);
+                this.totalPro += parseInt(meal.pro);
+                this.totalLip += parseInt(meal.lip);
+                this.totalGlu += parseInt(meal.glu);
+            }
         },
         testAjax(){
           axios.get('/testAjax')

@@ -8,6 +8,13 @@
         </div>
         <div id="meal-block" class="col s12">
             <div id="meals-content" class="col s9">
+                <div class="col s12">
+                    <h3 class="col s12">CONSO DU JOUR</h3>
+                    <div class="col s3">Calories : @{{ totalCal }} cal</div>
+                    <div class="col s3">Proteines : @{{ totalPro }} g</div>
+                    <div class="col s3">Lipides : @{{ totalLip }} g</div>
+                    <div class="col s3">Glucides : @{{ totalGlu }} g</div>
+                </div>
                 <div class="col s3" v-for="(value, index) in mealsData[dateIndex].meals">
                     <div class="col s12">@{{ value.name }}<i class="far fa-times-circle valign-wrapper" v-on:click="deleteFoodFromMeal(index)"></i></div>
                     <div class="col s6 valign-wrapper"><input type="number" class="col s8" v-model="value.cal" @keyup="checkNumeric(index, 'cal')"><span>cal</span></div>
