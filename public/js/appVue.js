@@ -89,7 +89,6 @@ var app = new Vue({
           this.env = env;
         },
         setUserData(){
-            var self = this;
             axios.get('/auth/data',{
                 headers: {
                     'Content-Type' : 'application/json; charset=UTF-8',
@@ -97,16 +96,15 @@ var app = new Vue({
             })
                 .then(function(response){
                     console.log(response.data);
-                    self.userData = response.data;
-                    self.userAvatarLink = 'http://' + self.env + '/avatars/' + self.userData.avatar;
-                    console.log(self.userAvatarLink)
-                })
+                    this.userData = response.data;
+                    this.userAvatarLink = 'http://' + this.env + '/avatars/' + this.userData.avatar;
+                    console.log(this.userAvatarLink)
+                }.bind(this))
                 .catch(function(error){
                     console.log(error);
                 })
         },
         setMealsDate(data){
-            var self = this;
             for(var i = -7; i != 2; i++){
                 var obj = {
                     date: this.returnMealsDate(this.actualDate.getDate() + i),
@@ -114,7 +112,7 @@ var app = new Vue({
                 obj.dayName = this.returnDayName(obj.date.getDay(), 'french');
                 obj.monthName = this.returnMonthName(obj.date.getMonth(), 'french');
                 obj.lisibleDate = obj.dayName + ' ' + obj.date.getDate() + ' ' + obj.monthName;
-                var index = self.findWithAttr(data, 'lisibleDate', obj.lisibleDate);
+                var index = this.findWithAttr(data, 'lisibleDate', obj.lisibleDate);
                 if(index != -1){
                     obj.meals = data[index].meals;
                 }
@@ -127,10 +125,6 @@ var app = new Vue({
         //Renvoie un objet Date par a la date passée en paramètre
         returnMealsDate(date){
             var test = new Date(this.actualDate.getFullYear(), this.actualDate.getMonth(), date + 1);
-            /*console.log(test);
-            console.log(date)
-            console.log(test.getDay());
-            console.log(test.toDateString());*/
           return new Date(this.actualDate.getFullYear(), this.actualDate.getMonth(), date + 1);
         },
         returnDayName(day, lang){
@@ -161,7 +155,6 @@ var app = new Vue({
             this.getUserFood();
             this.getUserDish();
             this.getUserMeal();
-            console.log(this.mealsData);
             M.AutoInit();
         },
         //Vérifie que le mot de passe est conforme
@@ -197,7 +190,6 @@ var app = new Vue({
             }
         },
         submitPasswordChange(e){
-            var self = this;
             this.refreshPassValues();
             e.preventDefault();
             axios.post('/password/change',{
@@ -210,12 +202,12 @@ var app = new Vue({
             })
                 .then(function(response){
                     if(response.data.success != null){
-                        self.passMsg = response.data.success;
+                        this.passMsg = response.data.success;
                     }
                     else {
-                        self.passMsg = response.data.error;
+                        this.passMsg = response.data.error;
                     }
-                })
+                }.bind(this))
                 .catch(function(error){
                     console.log(error);
                 })
@@ -257,33 +249,28 @@ var app = new Vue({
           }
         },
         getUserDish(){
-            var self = this;
             axios.get('/get-user-dish')
                 .then(function(response){
-                    self.userDish = response.data;
-                    console.log(self.userDish)
-                })
+                    this.userDish = response.data;
+                }.bind(this))
                 .catch(function(error){
                     console.log(error)
                 })
         },
         getUserFood(){
-            var self = this;
             axios.get('/get-user-food')
                 .then(function(response){
-                    self.userFood = response.data;
-                })
+                    this.userFood = response.data;
+                }.bind(this))
                 .catch(function(error){
                     console.log(error)
                 })
         },
         getUserMeal(){
-            var self = this;
             axios.get('/get-user-meal')
                 .then(function(response){
-                    //self.mealsData = response.data;
-                    self.setMealsDate(response.data);
-                })
+                    this.setMealsDate(response.data);
+                }.bind(this))
                 .catch(function(error){
                     console.log(error);
                 })
@@ -291,7 +278,6 @@ var app = new Vue({
         },
         createDish(e){
             e.preventDefault();
-            var self = this;
             var formElt = document.getElementById('add-dish-form');
             var formData = new FormData(formElt);
             axios.post('/create-dish',
@@ -304,19 +290,18 @@ var app = new Vue({
                 })
                 .then(function(response){
                     console.log(response.data);
-                    self.loadMyFood('myDish');
-                })
+                    this.loadMyFood('myDish');
+                }.bind(this))
                 .catch(function(error){
-                    self.cleanseErrorMsg('dish');
+                    this.cleanseErrorMsg('dish');
                     console.log(error.response.data.errors)
                     for(key in error.response.data.errors){
-                        self.showResponseError('dish', key, error.response.data.errors[key][0]);
+                        this.showResponseError('dish', key, error.response.data.errors[key][0]);
                     }
-                })
+                }.bind(this))
         },
         createFood(e){
             e.preventDefault();
-            var self = this;
             var formElt = document.getElementById('add-food-form');
             var formData = new FormData(formElt);
             axios.post('/create-food',
@@ -329,15 +314,15 @@ var app = new Vue({
                 })
                 .then(function(response){
                     console.log(response.data);
-                    self.loadMyFood('myFood');
-                })
+                    this.loadMyFood('myFood');
+                }.bind(this))
                 .catch(function(error){
-                    self.cleanseErrorMsg('food');
+                    this.cleanseErrorMsg('food');
                     console.log(error.response.data.errors)
                     for(key in error.response.data.errors){
-                        self.showResponseError('food', key, error.response.data.errors[key][0]);
+                        this.showResponseError('food', key, error.response.data.errors[key][0]);
                     }
-                })
+                }.bind(this))
         },
         fillUpdateFood(index){
             this.myFood = 'addFood';
@@ -476,9 +461,11 @@ var app = new Vue({
         },
         addFoodToMeal(index){
             this.mealsData[this.dateIndex].meals.push(this.userFood[index]);
+            this.updateMeals();
         },
         addDishToMeal(index){
             this.mealsData[this.dateIndex].meals.push(this.userDish[index]);
+            this.updateMeals();
         },
         updateMeals(){
             var self = this;
@@ -500,11 +487,13 @@ var app = new Vue({
             this.$delete(this.mealsData[this.dateIndex].meals, index);
             this.updateMeals();
         },
-        checkNumeric(index){
-            if(this.mealsData[this.dateIndex].meals[index].quant === '' || this.mealsData[this.dateIndex].meals[index].quant === null){
-                this.mealsData[this.dateIndex].meals[index].quant = 0;
+        checkNumeric(index, key){
+            console.log(key)
+            if(this.mealsData[this.dateIndex].meals[index][key] === '' || this.mealsData[this.dateIndex].meals[index][key] === null){
+                this.mealsData[this.dateIndex].meals[index][key] = 0;
             }
-            console.log(this.mealsData[this.dateIndex].meals[index].quant);
+            this.updateMeals();
+            console.log(this.mealsData[this.dateIndex].meals[index][key]);
         },
         testAjax(){
           axios.get('/testAjax')
