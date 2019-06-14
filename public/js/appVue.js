@@ -25,7 +25,7 @@ var app = new Vue({
         M.AutoInit();
         this.setEnv();
         this.setUserData();
-        this.setMealsDate();
+        this.getUserMeal();
     },
     data: {
         //avatar: null,

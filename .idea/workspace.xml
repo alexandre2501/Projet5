@@ -47,8 +47,8 @@
       <file leaf-file-name="appVue.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/js/appVue.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="27" column="8" lean-forward="true" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="8" />
+            <state relative-caret-position="288">
+              <caret line="27" column="27" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -1511,12 +1511,12 @@
       <workItem from="1559824263419" duration="12085000" />
       <workItem from="1559893154462" duration="2755000" />
       <workItem from="1560429584495" duration="8845000" />
-      <workItem from="1560497837825" duration="8914000" />
+      <workItem from="1560497837825" duration="8996000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="304453000" />
+    <option name="totallyTimeSpent" value="304535000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1869,8 +1869,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/appVue.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="27" column="8" lean-forward="true" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="8" />
+        <state relative-caret-position="288">
+          <caret line="27" column="27" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
         </state>
       </provider>
     </entry>
