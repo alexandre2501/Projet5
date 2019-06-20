@@ -467,11 +467,11 @@ var app = new Vue({
             this.calculateTotalMeal();
         },
         addFoodToMeal(index){
-            this.mealsData[this.dateIndex].meals.push(this.userFood[index]);
+            this.mealsData[this.dateIndex].meals.push(Object.assign({}, this.userFood[index]));
             this.updateMeals();
         },
         addDishToMeal(index){
-            this.mealsData[this.dateIndex].meals.push(this.userDish[index]);
+            this.mealsData[this.dateIndex].meals.push(Object.assign({}, this.userDish[index]));
             this.updateMeals();
         },
         updateMeals(){
