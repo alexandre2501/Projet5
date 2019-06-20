@@ -1,16 +1,10 @@
 <div v-else-if="appContent === 'maNourriture'">
     <h2>Ma nourriture</h2>
-    COUCOU
-    <button v-on:click="loadMyFood('myMeal')" class="waves-effect waves-light btn-large">Mes repas</button>
     <button v-on:click="loadMyFood('myDish')" class="waves-effect waves-light btn-large">Mes plats</button>
     <button v-on:click="loadMyFood('myFood')" class="waves-effect waves-light btn-large">Mes aliments</button>
-    <button v-on:click="loadMyFood('addMeal')" class="waves-effect waves-light btn-large">Ajouter un repas</button>
     <button v-on:click="loadMyFood('addDish')" class="waves-effect waves-light btn-large">Ajouter un plat</button>
     <button v-on:click="loadMyFood('addFood')" class="waves-effect waves-light btn-large">Ajouter un aliment</button>
-    <div v-if="myFood === 'myMeal'">
-
-    </div>
-    <div v-else-if="myFood === 'myDish'">
+    <div v-if="myFood === 'myDish'">
         <div class="row">
             <div class="food-block col s3" v-for="(value,index) in userDish">
                 <div class="food-content col s12">
@@ -39,9 +33,6 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div v-else-if="myFood === 'addMeal'">
-
     </div>
     <div v-else-if="myFood === 'addDish'">
         <form id="add-dish-form">
