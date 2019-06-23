@@ -1,3 +1,22 @@
+/* AJUSTEMENT MATERIALIZE */
+
+.row{
+    margin-bottom: 0;
+}
+
+h3{
+    margin-top: 0;
+    background-color: #1d68a7;
+    color: white;
+}
+
+.flex{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* SIDEBAR */
+
 #menu{
     background-color: #1d68a7;
 }
@@ -11,14 +30,32 @@
 }
 
 #app_content{
-    position: fixed;
-    height: 100%;
+    min-height: 100vh;
     padding: 20px;
-    border:1px solid green;
 }
 
 .app-box{
-    padding: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* PROFIL */
+
+#profil_block > div{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    /*border-right: 20px solid #1d68a7;*/
+    /*padding-left: 0 !important;
+    padding-right: 0 !important;*/
+    padding: 5px;
+}
+
+.content_blocks{
+    min-height: 100%;
+}
+
+#profil_block > div  .col{
+
 }
 
 .food-block{

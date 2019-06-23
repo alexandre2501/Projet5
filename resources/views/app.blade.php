@@ -19,7 +19,7 @@
             </ul>
         </div>
         <div id="app_content" class="col s10 offset-s2 #eeeeee grey lighten-3">
-            <div class="app-box z-depth-2 #fafafa grey lighten-5">
+            <div class="app-box z-depth-2 #e3f2fd blue lighten-5">
                 @include('includesApp.appAccueil')
                 @include('includesApp.appProfil')
                 @include('includesApp.appMaNourriture')

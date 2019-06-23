@@ -1,15 +1,18 @@
-<div v-else-if="appContent === 'profil'">
-    <h2>Profil</h2>
-    <div id="change_avatar_div">
-        <h3>Photo de profil</h3>
+<div class="row flex" id="profil_block" v-else-if="appContent === 'profil'">
+    <div id="change_avatar_div" class="col s6">
+        <div class="#fafafa grey lighten-5 content_blocks">
+        <h3 class="center-align">Photo de profil</h3>
         <img id="avatar_min" alt="Miniature du profil" :src="userAvatarLink">
         <form id="upload_new_avatar">
             <label for="upload_avatar_input">Modifier votre avatar<input v-on:change="avatar($event)" type="file" id="upload_avatar_input" name="avatar"></label>
             <button v-on:click="uploadNewAvatar" type="submit" id="submit_new_avatar">Modifier</button>
         </form>
+        </div>
     </div>
-    <div id="change_password_div">
-        <h3>Changer de mot de passe</h3>
+    <div id="change_password_div" class="col s6">
+        <div class="#fafafa grey lighten-5 content_blocks">
+        <h3 class="center-align">Changer de mot de passe</h3>
+        <div class="">
         <form id="change_password_form">
             <div class="input-field col s12">
                 <input id="old_pass_input" type="password" name="oldPass">
@@ -27,5 +30,7 @@
         </form>
         <span>@{{passMsg}}</span>
         <div><p><strong>Tips :</strong> Votre mot de passe ne doit pas contenir d'espace et doit faire 8 caractères minimum</p></div>
+        </div>
+        </div>
     </div>
 </div>
