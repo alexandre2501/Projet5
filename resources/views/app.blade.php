@@ -16,7 +16,6 @@
                 <li v-on:click="loadProfilHtml"><a>Mon Profil</a></li>
                 <li v-on:click="loadMaNourritureHtml"><a>Ma Nourriture</a></li>
                 <li v-on:click="loadMesRepasHtml"><a>Mes Repas</a></li>
-                <li><a>Calculer un repas</a></li>
             </ul>
         </div>
         <div id="app_content" class="col s10 offset-s2 #eeeeee grey lighten-3">
