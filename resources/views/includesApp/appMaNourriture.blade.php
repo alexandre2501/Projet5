@@ -1,35 +1,38 @@
-<div v-else-if="appContent === 'maNourriture'">
-    <h2>Ma nourriture</h2>
-    <button v-on:click="loadMyFood('myDish')" class="waves-effect waves-light btn-large">Mes plats</button>
-    <button v-on:click="loadMyFood('myFood')" class="waves-effect waves-light btn-large">Mes aliments</button>
-    <button v-on:click="loadMyFood('addDish')" class="waves-effect waves-light btn-large">Ajouter un plat</button>
-    <button v-on:click="loadMyFood('addFood')" class="waves-effect waves-light btn-large">Ajouter un aliment</button>
+<div class="row flex" id="myFood_block" v-else-if="appContent === 'maNourriture'">
+    <div class="#fafafa grey lighten-5 z-depth-2 col s12">
+    <h3 class="center-align">Ma nourriture</h3>
+        <div class="col s12 space-evenly">
+            <button v-on:click="loadMyFood('myDish')" class="waves-effect waves-light btn-large">Mes plats</button>
+            <button v-on:click="loadMyFood('myFood')" class="waves-effect waves-light btn-large">Mes aliments</button>
+            <button v-on:click="loadMyFood('addDish')" class="waves-effect waves-light btn-large">Ajouter un plat</button>
+            <button v-on:click="loadMyFood('addFood')" class="waves-effect waves-light btn-large">Ajouter un aliment</button>
+        </div>
     <div v-if="myFood === 'myDish'">
-        <div class="row">
+        <div class="">
             <div class="food-block col s3" v-for="(value,index) in userDish">
                 <div class="food-content col s12">
-                    <div class="col s12 center-align">@{{ value.name }}</div>
-                    <div class="col s6">Calories : @{{ value.cal }} </div>
-                    <div class="col s6">Quantité : @{{ value.quant }} g</div>
-                    <div class="col s6">Protéines : @{{ value.pro }} g</div>
-                    <div class="col s6">Lipides : @{{ value.lip }} g</div>
-                    <div class="col s6">Glucides : @{{ value.glu }} g</div>
-                    <div class="col s12"><button class="col s6" v-on:click="deleteDish(index)">Supprimer</button><button class="col s6" v-on:click="fillUpdateDish(index)">Modifier</button></div>
+                    <div class="#26a69a teal lighten-1 col s12 center-align">@{{ value.name }}</div>
+                    <div class="col s12 center-align">Calories : @{{ value.cal }} </div>
+                    <div class="col s6 center-align">Quantité : @{{ value.quant }} g</div>
+                    <div class="col s6 center-align">Protéines : @{{ value.pro }} g</div>
+                    <div class="col s6 center-align">Lipides : @{{ value.lip }} g</div>
+                    <div class="col s6 center-align">Glucides : @{{ value.glu }} g</div>
+                    <div class="col s12 center-align"><button class="col s6 waves-effect waves-light btn-small" v-on:click="deleteDish(index)">Supprimer</button><button class="col s6 waves-effect waves-light btn-small" v-on:click="fillUpdateDish(index)">Modifier</button></div>
                 </div>
             </div>
         </div>
     </div>
     <div v-else-if="myFood === 'myFood'">
-        <div class="row">
+        <div class="">
             <div class="food-block col s3" v-for="(value,index) in userFood">
                 <div class="food-content col s12">
-                    <div class="col s12 center-align">@{{ value.name }}</div>
-                    <div class="col s6">Calories : @{{ value.cal }} </div>
-                    <div class="col s6">Quantité : @{{ value.quant }} g</div>
-                    <div class="col s6">Protéines : @{{ value.pro }} g</div>
-                    <div class="col s6">Lipides : @{{ value.lip }} g</div>
-                    <div class="col s6">Glucides : @{{ value.glu }} g</div>
-                    <div class="col s12"><button class="col s6" v-on:click="deleteFood(index)">Supprimer</button><button class="col s6" v-on:click="fillUpdateFood(index)">Modifier</button></div>
+                    <div class="#26a69a teal lighten-1 col s12 center-align">@{{ value.name }}</div>
+                    <div class="col s12 center-align">Calories : @{{ value.cal }} </div>
+                    <div class="col s6 center-align">Quantité : @{{ value.quant }} g</div>
+                    <div class="col s6 center-align">Protéines : @{{ value.pro }} g</div>
+                    <div class="col s6 center-align">Lipides : @{{ value.lip }} g</div>
+                    <div class="col s6 center-align">Glucides : @{{ value.glu }} g</div>
+                    <div class="col s12 center-align"><button class="col s6 waves-effect waves-light btn-small" v-on:click="deleteFood(index)">Supprimer</button><button class="col s6 waves-effect waves-light btn-small" v-on:click="fillUpdateFood(index)">Modifier</button></div>
                 </div>
             </div>
         </div>
@@ -69,5 +72,6 @@
             <button v-if="foodFormState === 'update'" type="submit" id="update-food-submit" v-on:click="updateFood">Modifier</button>
             <button v-else type="submit" id="add-food-submit" v-on:click="createFood">Ajouter</button>
         </form>
+    </div>
     </div>
 </div>

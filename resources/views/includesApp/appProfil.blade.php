@@ -1,18 +1,20 @@
 <div class="row flex" id="profil_block" v-else-if="appContent === 'profil'">
     <div id="change_avatar_div" class="col s6">
-        <div class="#fafafa grey lighten-5 content_blocks">
+        <div class="#fafafa grey lighten-5 content_blocks z-depth-2">
         <h3 class="center-align">Photo de profil</h3>
+            <div class="pad-block">
         <img id="avatar_min" alt="Miniature du profil" :src="userAvatarLink">
         <form id="upload_new_avatar">
             <label for="upload_avatar_input">Modifier votre avatar<input v-on:change="avatar($event)" type="file" id="upload_avatar_input" name="avatar"></label>
             <button v-on:click="uploadNewAvatar" type="submit" id="submit_new_avatar">Modifier</button>
         </form>
+            </div>
         </div>
     </div>
     <div id="change_password_div" class="col s6">
-        <div class="#fafafa grey lighten-5 content_blocks">
+        <div class="#fafafa grey lighten-5 content_blocks z-depth-2">
         <h3 class="center-align">Changer de mot de passe</h3>
-        <div class="">
+        <div class="pad-block">
         <form id="change_password_form">
             <div class="input-field col s12">
                 <input id="old_pass_input" type="password" name="oldPass">

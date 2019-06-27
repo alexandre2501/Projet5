@@ -15,6 +15,11 @@ h3{
     flex-wrap: wrap;
 }
 
+.space-evenly{
+    display: flex;
+    justify-content: space-evenly;
+}
+
 /* SIDEBAR */
 
 #menu{
@@ -39,9 +44,10 @@ h3{
     padding-right: 20px;
 }
 
-/* PROFIL */
+/* GENERAL */
 
-#profil_block > div{
+#profil_block > div,
+#myFood_block > div{
     margin-top: 10px;
     margin-bottom: 10px;
     /*border-right: 20px solid #1d68a7;*/
@@ -50,12 +56,21 @@ h3{
     padding: 5px;
 }
 
+/* PROFIL */
+
 .content_blocks{
     min-height: 100%;
+    border-radius: 5px;
 }
 
-#profil_block > div  .col{
+.pad-block{
+    padding: 5px;
+}
 
+/* MY FOOD */
+
+#myFood_block > div{
+    padding: 0;
 }
 
 .food-block{
@@ -67,6 +82,14 @@ h3{
 .food-content{
     border: 1px solid blue;
     margin: 10px;
+    padding: 0 !important;
+}
+
+.food-content div{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 1px solid grey;
 }
 
 /* REPAS */
