@@ -99,10 +99,8 @@ var app = new Vue({
                 }
             })
                 .then(function(response){
-                    console.log(response.data);
                     this.userData = response.data;
                     this.userAvatarLink = 'http://' + this.env + '/avatars/' + this.userData.avatar;
-                    console.log(this.userAvatarLink)
                 }.bind(this))
                 .catch(function(error){
                     console.log(error);
@@ -233,8 +231,9 @@ var app = new Vue({
                 }
             })
                 .then(function(response){
+                    this.setUserData();
                     console.log(response.data);
-                })
+                }.bind(this))
                 .catch(function(error){
                     console.log(error);
                 })

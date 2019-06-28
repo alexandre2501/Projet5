@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Intervention\Image\ImageManagerStatic as Image;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\File;
 
 class AjaxController extends Controller
 {
@@ -53,22 +54,15 @@ class AjaxController extends Controller
     }
 
     public function uploadAuthAvatar(Request $request){
-        //var_dump($request->file('avatar')->getPathname());
-        //dd($_FILES);
-        /*Storage::disk('public/avatars')->put($request->avatar, 'Contents');
-        $user = User::where('name', Auth::user()->name);
-        $user->update([
-            'avatar' => $request->avatar,
-        ]);
-        // open an image file
-        $path = '/storage/app/public/avatars/' . $request->avatar;
-        var_dump($path);*/
+        $oldPath = 'avatars/' . Auth::user()->avatar;
         $img = Image::make($request->file('avatar')->getPathname());
-        $img->resize(320, 240);
-        $img->save(public_path('avatars/' . Auth::user()->id . '.png'));
+        $img->resize(200, 200);
+        $path = 'avatars/' . Auth::user()->id . date('YmdHis') . '.png';
+        $img->save(public_path($path));
+        File::delete($oldPath);
         $user = User::where('name', Auth::user()->name);
         $user->update([
-            'avatar' => Auth::user()->id . '.png',
+            'avatar' => Auth::user()->id . date('YmdHis') . '.png',
         ]);
     }
 }
