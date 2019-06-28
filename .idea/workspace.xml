@@ -39,17 +39,17 @@
       <file leaf-file-name="appVue.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/js/appVue.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="25" column="22" lean-forward="true" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
+            <state relative-caret-position="202">
+              <caret line="470" column="28" selection-start-line="470" selection-start-column="17" selection-end-line="470" selection-end-column="28" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="appMesRepas.blade.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="appMesRepas.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/includesApp/appMesRepas.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="32">
-              <caret line="2" column="64" selection-start-line="2" selection-start-column="64" selection-end-line="2" selection-end-column="64" />
+            <state relative-caret-position="192">
+              <caret line="24" column="22" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -58,7 +58,7 @@
         <entry file="file://$PROJECT_DIR$/resources/views/includesApp/appMaNourriture.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="16">
-              <caret line="1" column="48" lean-forward="true" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="48" />
+              <caret line="1" column="48" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="48" />
             </state>
           </provider>
         </entry>
@@ -72,7 +72,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="appStyle.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="appStyle.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/css/appStyle.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="346">
@@ -93,7 +93,7 @@
       <file leaf-file-name="web.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="602">
+            <state relative-caret-position="496">
               <caret line="61" column="63" selection-start-line="61" selection-start-column="63" selection-end-line="61" selection-end-column="63" />
               <folding>
                 <element signature="e#7#389#0#PHP" expanded="true" />
@@ -163,6 +163,7 @@
       <find>dateIndex</find>
       <find>mealsData</find>
       <find>setMealsDate</find>
+      <find>updateMeals</find>
     </findStrings>
     <replaceStrings>
       <replace>login</replace>
@@ -231,8 +232,8 @@
         <option value="$PROJECT_DIR$/resources/views/app.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/includesApp/appProfil.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/includesApp/appMaNourriture.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/includesApp/appMesRepas.blade.php" />
         <option value="$PROJECT_DIR$/public/css/appStyle.css" />
+        <option value="$PROJECT_DIR$/resources/views/includesApp/appMesRepas.blade.php" />
       </list>
     </option>
   </component>
@@ -1506,12 +1507,12 @@
       <workItem from="1561031713731" duration="3609000" />
       <workItem from="1561292526924" duration="7703000" />
       <workItem from="1561638493318" duration="7687000" />
-      <workItem from="1561707174584" duration="10997000" />
+      <workItem from="1561707174584" duration="11288000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="335251000" />
+    <option name="totallyTimeSpent" value="335542000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1817,16 +1818,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="602">
-          <caret line="61" column="63" selection-start-line="61" selection-start-column="63" selection-end-line="61" selection-end-column="63" />
-          <folding>
-            <element signature="e#7#389#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/includesApp/appProfil.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="32">
@@ -1834,24 +1825,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/appVue.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="25" column="22" lean-forward="true" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/includesApp/appMaNourriture.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="16">
-          <caret line="1" column="48" lean-forward="true" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="48" />
+          <caret line="1" column="48" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="48" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/includesApp/appMesRepas.blade.php">
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="2" column="64" selection-start-line="2" selection-start-column="64" selection-end-line="2" selection-end-column="64" />
+        <state relative-caret-position="496">
+          <caret line="61" column="63" selection-start-line="61" selection-start-column="63" selection-end-line="61" selection-end-column="63" />
+          <folding>
+            <element signature="e#7#389#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/appVue.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="470" column="28" selection-start-line="470" selection-start-column="17" selection-end-line="470" selection-end-column="28" />
         </state>
       </provider>
     </entry>
@@ -1859,6 +1853,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="346">
           <caret line="222" column="20" selection-start-line="222" selection-start-column="20" selection-end-line="222" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/includesApp/appMesRepas.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="24" column="22" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
         </state>
       </provider>
     </entry>

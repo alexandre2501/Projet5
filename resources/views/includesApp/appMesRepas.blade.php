@@ -23,9 +23,6 @@
                     <div class="col s4 pad-zero"><div class="col s12 center-align #a1887f brown lighten-2">Lipides</div><div class="col s12 valign-wrapper"><input type="number" v-model="value.lip" @keyup="checkNumeric(index, 'lip')"><span>g</span></div></div>
                     <div class="col s4 pad-zero"><div class="col s12 center-align #f06292 pink lighten-2">Glucides</div><div class="col s12 valign-wrapper"><input type="number" v-model="value.glu" @keyup="checkNumeric(index), 'glu'"><span>g</span></div></div>
                 </div>
-                <div class="col s12 center-align">
-                    <button v-on:click="updateMeals">Confirmer</button>
-                </div>
             </div>
             <div id="foods-content" class="col s3">
                 <h3 class="col s12 center-align">Food</h3>
