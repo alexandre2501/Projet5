@@ -26,6 +26,11 @@ h3{
     background-color: #1d68a7;
 }
 
+#avatar{
+    max-width: 100%;
+    border-radius: 50%;
+}
+
 .sidenav{
     width: 250px;
 }
@@ -55,6 +60,35 @@ h3{
     padding-right: 0 !important;*/
     padding: 5px;
 }
+.pad-zero{
+    padding: 0 !important;
+}
+
+.color-cal{
+ background-color: #9575cd;
+    color: white;
+}
+
+.color-quant{
+ background-color: #dce775;
+    color: white;
+}
+
+.color-pro{
+ background-color: #aed581;
+    color: white;
+}
+
+.color-lip{
+ background-color: #a1887f;
+    color: white;
+}
+
+.color-glu{
+ background-color: #ff4081;
+    color: white;
+}
+
 
 /* PROFIL */
 
@@ -109,15 +143,95 @@ h3{
 
 /* REPAS */
 
-#date-block div,
-#meal-block div{
+.repas-block{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#date-block,
+#meal-block{
     box-sizing: border-box;
-    border: 1px solid black;
+    border: 1px solid grey;
+    padding: 0 !important;
+}
+
+.meal-content{
+    padding: 5px !important;
+}
+
+#meals-content,
+#meals-content div:first-child,
+#foods-content{
+    padding: 0 !important;
+    margin-bottom: 5px;
+}
+
+.meal-content h6{
+    margin: 0;
+    background-color: #26a69a;
+    color: white;
+    padding-top: 2.5px !important;
+    padding-bottom: 2.5px !important;
+}
+
+#meals-content h3,
+#foods-content h3{
+    margin: 0 !important;
+    border: none;
+}
+
+#meals-content > div > *,
+#foods-content > *{
+    box-sizing: border-box;
+    border: 1px solid grey;
+}
+
+#foods-content > div{
+    padding: 0 !important;
+}
+
+#foods-content .food-desc > div{
+    border: 1px solid grey;
+    padding-top: 2.5px;
+    padding-bottom: 2.5px;
+}
+
+.food-desc{
+    padding: 0 !important;
+}
+
+.food-desc div:first-child{
+    padding-top: 2.5px;
+    padding-bottom: 2.5px;
+    background-color: #26a69a;
+    color: white;
+}
+
+#meals-content > div > div{
+    box-sizing: border-box;
+    border: 1px solid grey;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.fa-plus-circle{
+    cursor: pointer;
+    color: #26a69a;
+}
+
+.fa-times-circle{
+    cursor: pointer;
 }
 
 .fa-chevron-circle-left,
 .fa-chevron-circle-right{
     cursor: pointer;
+    color: white;
+}
+
+#previousDate,
+#nextDate{
+    background-color: #26a69a;
 }
 
 #nameDate{
