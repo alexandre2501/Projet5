@@ -6,10 +6,9 @@
         <div id="menu"class="sidenav col s2 sidenav-fixed">
 
             <ul>
-                <div id="profil_window">
+                <div id="profil_window" class="#e1f5fe light-blue lighten-5 center-align">
                     <div>
                         <img id="avatar" :src="userAvatarLink">
-                        <p>{{Auth::user()->name}}</p>
                     </div>
                 </div>
                 <li v-on:click="loadAccueilHtml"><a><i class="fas fa-home"></i>Accueil</a></li>

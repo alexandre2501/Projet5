@@ -1,5 +1,4 @@
 <div v-else-if="appContent === 'mesRepas'">
-    <h2>Mes Repas</h2>
     <div class="row repas-block #fafafa grey lighten-5 z-depth-2">
         <div id="date-block" class="col s12 valign-wrapper">
             <div id="previousDate" class="col s2 center-align" v-on:click="loadPreviousDate"><i class="fas fa-3x fa-chevron-circle-left"></i></div>
@@ -17,11 +16,11 @@
                 </div>
                 <div class="col s3 meal-content" v-for="(value, index) in mealsData[dateIndex].meals">
                     <h6 class="col s12 center-align">@{{ value.name }}<i class="far fa-times-circle valign-wrapper" v-on:click="deleteFoodFromMeal(index)"></i></h6>
-                    <div class="col s6 pad-zero"><div class="col s12 center-align #d1c4e9 deep-purple lighten-4">Calorie</div><div class="col s8 valign-wrapper"><input type="number" v-model="value.cal" @keyup="checkNumeric(index, 'cal')"><span>cal</span></div></div>
-                    <div class="col s6 pad-zero"><div class="col s12 center-align #dce775 lime lighten-2">Quantité</div><div class="col s8 valign-wrapper"><input type="number" v-model="value.quant" @keyup="checkNumeric(index, 'quant')"><span>g</span></div></div>
-                    <div class="col s4 pad-zero"><div class="col s12 center-align #aed581 light-green lighten-2">Protéines</div><div class="col s12 valign-wrapper"><input type="number" v-model="value.pro" @keyup="checkNumeric(index, 'pro')"><span>g</span></div></div>
-                    <div class="col s4 pad-zero"><div class="col s12 center-align #a1887f brown lighten-2">Lipides</div><div class="col s12 valign-wrapper"><input type="number" v-model="value.lip" @keyup="checkNumeric(index, 'lip')"><span>g</span></div></div>
-                    <div class="col s4 pad-zero"><div class="col s12 center-align #f06292 pink lighten-2">Glucides</div><div class="col s12 valign-wrapper"><input type="number" v-model="value.glu" @keyup="checkNumeric(index), 'glu'"><span>g</span></div></div>
+                    <div class="col s6 pad-zero"><div class="col s12 center-align #d1c4e9 deep-purple lighten-4">Calorie</div><div class="col s8 valign-wrapper"><input class="center-align" type="number" v-model="value.cal" @keyup="checkNumeric(index, 'cal')"><span>cal</span></div></div>
+                    <div class="col s6 pad-zero"><div class="col s12 center-align #dce775 lime lighten-2">Quantité</div><div class="col s8 valign-wrapper"><input class="center-align" type="number" v-model="value.quant" @keyup="checkNumeric(index, 'quant')"><span>g</span></div></div>
+                    <div class="col s4 pad-zero"><div class="col s12 center-align #aed581 light-green lighten-2">Protéines</div><div class="col s12 valign-wrapper"><input class="center-align" type="number" v-model="value.pro" @keyup="checkNumeric(index, 'pro')"><span>g</span></div></div>
+                    <div class="col s4 pad-zero"><div class="col s12 center-align #a1887f brown lighten-2">Lipides</div><div class="col s12 valign-wrapper"><input class="center-align" type="number" v-model="value.lip" @keyup="checkNumeric(index, 'lip')"><span>g</span></div></div>
+                    <div class="col s4 pad-zero"><div class="col s12 center-align #f06292 pink lighten-2">Glucides</div><div class="col s12 valign-wrapper"><input class="center-align" type="number" v-model="value.glu" @keyup="checkNumeric(index), 'glu'"><span>g</span></div></div>
                 </div>
             </div>
             <div id="foods-content" class="col s3">

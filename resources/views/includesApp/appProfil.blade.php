@@ -5,8 +5,16 @@
             <div class="pad-block">
         <img id="avatar_min" alt="Miniature du profil" :src="userAvatarLink">
         <form id="upload_new_avatar">
-            <label for="upload_avatar_input">Modifier votre avatar<input v-on:change="avatar($event)" type="file" id="upload_avatar_input" name="avatar"></label>
-            <button v-on:click="uploadNewAvatar" type="submit" id="submit_new_avatar">Modifier</button>
+            <div class="file-field input-field">
+                <div class="btn">
+                    <span>File</span>
+                    <input v-on:change="avatar($event)" id="upload_avatar_input" type="file" name="avatar">
+                </div>
+                <div class="file-path-wrapper">
+                    <input class="file-path validate" type="text">
+                </div>
+            </div>
+            <button class="btn" v-on:click="uploadNewAvatar" type="submit" id="submit_new_avatar">Modifier</button>
         </form>
             </div>
         </div>

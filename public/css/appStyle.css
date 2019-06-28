@@ -6,7 +6,7 @@
 
 h3{
     margin-top: 0;
-    background-color: #1d68a7;
+    background-color: #26a69a;
     color: white;
 }
 
@@ -22,13 +22,27 @@ h3{
 
 /* SIDEBAR */
 
+.sidenav ul{
+    margin-top: 0;
+}
+
+#profil_window{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
 #menu{
     background-color: #1d68a7;
+    padding: 0;
 }
 
 #avatar{
-    max-width: 100%;
+    max-width: 100px;
+    max-height: 100px;
+    min-width: 100px;
+    min-height: 100px;
     border-radius: 50%;
+    border: 2px solid white;
 }
 
 .sidenav{
@@ -47,6 +61,8 @@ h3{
 .app-box{
     padding-left: 20px;
     padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 /* GENERAL */
@@ -114,7 +130,7 @@ h3{
 }
 
 .food-content{
-    border: 1px solid grey;
+    border: 1px solid #bdbdbd;
     margin: 10px;
     padding: 0 !important;
 }
@@ -123,7 +139,7 @@ h3{
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    border: 1px solid grey;
+    border: 1px solid #bdbdbd;
 }
 .food-content h5{
     padding-top: 5px !important;
@@ -145,13 +161,19 @@ h3{
 
 .repas-block{
     margin-top: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
     margin-bottom: 5px;
+}
+
+#nameDate{
+    color: #26a69a;
 }
 
 #date-block,
 #meal-block{
     box-sizing: border-box;
-    border: 1px solid grey;
+    border: 1px solid #bdbdbd;
     padding: 0 !important;
 }
 
@@ -170,20 +192,20 @@ h3{
     margin: 0;
     background-color: #26a69a;
     color: white;
-    padding-top: 2.5px !important;
-    padding-bottom: 2.5px !important;
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
 }
 
 #meals-content h3,
 #foods-content h3{
     margin: 0 !important;
-    border: none;
+    border: 1px solid #bdbdbd;
 }
 
 #meals-content > div > *,
 #foods-content > *{
     box-sizing: border-box;
-    border: 1px solid grey;
+    border: 1px solid #bdbdbd;
 }
 
 #foods-content > div{
@@ -191,7 +213,7 @@ h3{
 }
 
 #foods-content .food-desc > div{
-    border: 1px solid grey;
+    border: 1px solid #bdbdbd;
     padding-top: 2.5px;
     padding-bottom: 2.5px;
 }
@@ -209,7 +231,7 @@ h3{
 
 #meals-content > div > div{
     box-sizing: border-box;
-    border: 1px solid grey;
+    border: 1px solid #bdbdbd;
     padding-top: 5px;
     padding-bottom: 5px;
 }
@@ -232,6 +254,8 @@ h3{
 #previousDate,
 #nextDate{
     background-color: #26a69a;
+    padding: 5px;
+    cursor: pointer;
 }
 
 #nameDate{
