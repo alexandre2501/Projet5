@@ -142,10 +142,10 @@ var logPopup ={
         },
         modifyFormaction(){
             if(this.popupVal === 'login'){
-                this.formaction = 'http://localhost:8000/login';
+                this.formaction = '/login';
             }
             else if(this.popupVal === 'register'){
-                this.formaction = 'http://localhost:8000/register';
+                this.formaction = '/register';
             }
         }
     },
