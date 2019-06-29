@@ -1,5 +1,48 @@
+/* AJUSTEMENT MATERIALIZE */
+
+.row{
+    margin-bottom: 0;
+}
+
+h3{
+    margin-top: 0;
+    background-color: #26a69a;
+    color: white;
+}
+
+.flex{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.space-evenly{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/* SIDEBAR */
+
+.sidenav ul{
+    margin-top: 0;
+}
+
+#profil_window{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
 #menu{
     background-color: #1d68a7;
+    padding: 0;
+}
+
+#avatar{
+    max-width: 100px;
+    max-height: 100px;
+    min-width: 100px;
+    min-height: 100px;
+    border-radius: 50%;
+    border: 2px solid white;
 }
 
 .sidenav{
@@ -11,12 +54,210 @@
 }
 
 #app_content{
-    position: fixed;
-    height: 100%;
+    min-height: 100vh;
     padding: 20px;
-    border:1px solid green;
 }
 
 .app-box{
-    padding: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+/* GENERAL */
+
+#profil_block > div,
+#myFood_block > div{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    /*border-right: 20px solid #1d68a7;*/
+    /*padding-left: 0 !important;
+    padding-right: 0 !important;*/
+    padding: 5px;
+}
+.pad-zero{
+    padding: 0 !important;
+}
+
+.color-cal{
+ background-color: #9575cd;
+    color: white;
+}
+
+.color-quant{
+ background-color: #dce775;
+    color: white;
+}
+
+.color-pro{
+ background-color: #aed581;
+    color: white;
+}
+
+.color-lip{
+ background-color: #a1887f;
+    color: white;
+}
+
+.color-glu{
+ background-color: #ff4081;
+    color: white;
+}
+
+
+/* PROFIL */
+
+.content_blocks{
+    min-height: 100%;
+    border-radius: 5px;
+}
+
+.pad-block{
+    padding: 5px;
+}
+
+/* MY FOOD */
+
+#myFood_block > div{
+    padding: 0;
+}
+
+.food-block{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.food-content{
+    border: 1px solid #bdbdbd;
+    margin: 10px;
+    padding: 0 !important;
+}
+
+.food-content div{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 1px solid #bdbdbd;
+}
+.food-content h5{
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+    color: white;
+    margin: 0 !important;
+}
+
+.food-content button{
+    margin-top: 2.5px;
+    margin-bottom: 2.5px;
+}
+
+.form-style{
+    padding: 5px;
+}
+
+/* REPAS */
+
+.repas-block{
+    margin-top: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    margin-bottom: 5px;
+}
+
+#nameDate{
+    color: #26a69a;
+}
+
+#date-block,
+#meal-block{
+    box-sizing: border-box;
+    border: 1px solid #bdbdbd;
+    padding: 0 !important;
+}
+
+.meal-content{
+    padding: 5px !important;
+}
+
+#meals-content,
+#meals-content div:first-child,
+#foods-content{
+    padding: 0 !important;
+    margin-bottom: 5px;
+}
+
+.meal-content h6{
+    margin: 0;
+    background-color: #26a69a;
+    color: white;
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+}
+
+#meals-content h3,
+#foods-content h3{
+    margin: 0 !important;
+    border: 1px solid #bdbdbd;
+}
+
+#meals-content > div > *,
+#foods-content > *{
+    box-sizing: border-box;
+    border: 1px solid #bdbdbd;
+}
+
+#foods-content > div{
+    padding: 0 !important;
+}
+
+#foods-content .food-desc > div{
+    border: 1px solid #bdbdbd;
+    padding-top: 2.5px;
+    padding-bottom: 2.5px;
+}
+
+.food-desc{
+    padding: 0 !important;
+}
+
+.food-desc div:first-child{
+    padding-top: 2.5px;
+    padding-bottom: 2.5px;
+    background-color: #26a69a;
+    color: white;
+}
+
+#meals-content > div > div{
+    box-sizing: border-box;
+    border: 1px solid #bdbdbd;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.fa-plus-circle{
+    cursor: pointer;
+    color: #26a69a;
+}
+
+.fa-times-circle{
+    cursor: pointer;
+}
+
+.fa-chevron-circle-left,
+.fa-chevron-circle-right{
+    cursor: pointer;
+    color: white;
+}
+
+#previousDate,
+#nextDate{
+    background-color: #26a69a;
+    padding: 5px;
+    cursor: pointer;
+}
+
+#nameDate{
+    font-size: 25px;
 }

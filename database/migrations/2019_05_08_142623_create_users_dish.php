@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUsersMealTable extends Migration
+class CreateUsersDish extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,13 @@ class CreateUsersMealTable extends Migration
      */
     public function up()
     {
-        Schema::create('users_meal', function (Blueprint $table) {
+        Schema::create('users_dish', function (Blueprint $table) {
             $table->increments('id');
-            $table->date('date');
-            $table->binary('content');
+            $table->string('name');
+            $table->integer('cal');
+            $table->integer('pro');
+            $table->integer('lip');
+            $table->integer('glu');
             $table->string('usr_cre');
             $table->timestamps();
         });
@@ -29,6 +32,6 @@ class CreateUsersMealTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users_meal');
+        Schema::dropIfExists('users_dish');
     }
 }
