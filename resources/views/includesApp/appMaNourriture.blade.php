@@ -41,15 +41,15 @@
         <form class="form-style" id="add-dish-form">
             <label for="dish-name">Nom de l'aliment<input v-model="dishToUpdate.name" id="dish-name" type="text" name="dishName"></label>
             <span id="dishNameError">@{{ dishFormError.dishNameError }}</span>
-            <label for="dish-cal">Calories<input v-model="dishToUpdate.cal" id="dish-cal" type="text" name="dishCal"></label>
+            <label for="dish-cal">Calories (kcal)<input v-model="dishToUpdate.cal" id="dish-cal" type="text" name="dishCal"></label>
             <span id="dishCalError">@{{ dishFormError.dishCalError }}</span>
-            <label for="dish-quantity">Quantité<input v-model="dishToUpdate.quant" id="dish-quantity" type="text" name="dishQuant"></label>
+            <label for="dish-quantity">Quantité (g)<input v-model="dishToUpdate.quant" id="dish-quantity" type="text" name="dishQuant"></label>
             <span id="dishQuantError">@{{ dishFormError.dishQuantError }}</span>
-            <label for="dish-pro">Protéine<input v-model="dishToUpdate.pro" id="dish-pro" type="text" name="dishPro"></label>
+            <label for="dish-pro">Protéine (g)<input v-model="dishToUpdate.pro" id="dish-pro" type="text" name="dishPro"></label>
             <span id="dishProError">@{{ dishFormError.dishProError }}</span>
-            <label for="dish-lip">Lipide<input v-model="dishToUpdate.lip" id="dish-lip" type="text" name="dishLip"></label>
+            <label for="dish-lip">Lipide (g)<input v-model="dishToUpdate.lip" id="dish-lip" type="text" name="dishLip"></label>
             <span id="dishLipError">@{{ dishFormError.dishLipError }}</span>
-            <label for="dish-glu">Glucide<input v-model="dishToUpdate.glu" id="dish-glu" type="text" name="dishGlu"></label>
+            <label for="dish-glu">Glucide (g)<input v-model="dishToUpdate.glu" id="dish-glu" type="text" name="dishGlu"></label>
             <span id="dishGluError">@{{ dishFormError.dishGluError }}</span>
             <button class="waves-effect waves-light btn-small" v-if="dishFormState === 'update'" type="submit" id="update-dish-submit" v-on:click="updateDish">Modifier</button>
             <button class="waves-effect waves-light btn-small" v-else type="submit" id="add-dish-submit" v-on:click="createDish">Ajouter</button>
@@ -59,15 +59,15 @@
         <form class="form-style" id="add-food-form">
             <label for="food-name">Nom de l'aliment<input v-model="foodToUpdate.name" id="food-name" type="text" name="foodName"></label>
             <span id="foodNameError">@{{ foodFormError.foodNameError }}</span>
-            <label for="food-cal">Calories<input v-model="foodToUpdate.cal" id="food-cal" type="text" name="foodCal"></label>
+            <label for="food-cal">Calories (kcal)<input v-model="foodToUpdate.cal" id="food-cal" type="text" name="foodCal"></label>
             <span id="foodCalError">@{{ foodFormError.foodCalError }}</span>
-            <label for="food-quantity">Quantité<input v-model="foodToUpdate.quant" id="food-quantity" type="text" name="foodQuant"></label>
+            <label for="food-quantity">Quantité (g)<input v-model="foodToUpdate.quant" id="food-quantity" type="text" name="foodQuant"></label>
             <span id="foodQuantError">@{{ foodFormError.foodQuantError }}</span>
-            <label for="food-pro">Protéine<input v-model="foodToUpdate.pro" id="food-pro" type="text" name="foodPro"></label>
+            <label for="food-pro">Protéine (g)<input v-model="foodToUpdate.pro" id="food-pro" type="text" name="foodPro"></label>
             <span id="foodProError">@{{ foodFormError.foodProError }}</span>
-            <label for="food-lip">Lipide<input v-model="foodToUpdate.lip" id="food-lip" type="text" name="foodLip"></label>
+            <label for="food-lip">Lipide (g)<input v-model="foodToUpdate.lip" id="food-lip" type="text" name="foodLip"></label>
             <span id="foodLipError">@{{ foodFormError.foodLipError }}</span>
-            <label for="food-glu">Glucide<input v-model="foodToUpdate.glu" id="food-glu" type="text" name="foodGlu"></label>
+            <label for="food-glu">Glucide (g)<input v-model="foodToUpdate.glu" id="food-glu" type="text" name="foodGlu"></label>
             <span id="foodGluError">@{{ foodFormError.foodGluError }}</span>
             <button class="waves-effect waves-light btn-small" v-if="foodFormState === 'update'" type="submit" id="update-food-submit" v-on:click="updateFood">Modifier</button>
             <button class="waves-effect waves-light btn-small" v-else type="submit" id="add-food-submit" v-on:click="createFood">Ajouter</button>
