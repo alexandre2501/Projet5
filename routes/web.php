@@ -30,6 +30,8 @@ Route::get('/login', function(){
     return redirect('/home');
 });
 
+Route::post('/login-ajax', 'Auth\LoginController@tryLogin');
+
 Route::get('/app', function(){
     if(Auth::check()){
         return view('app');
