@@ -8,7 +8,7 @@
             <div class="file-field input-field">
                 <div class="btn">
                     <span>File</span>
-                    <input v-on:change="avatar($event)" id="upload_avatar_input" type="file" name="avatar">
+                    <input v-on:change="avatar($event)" id="upload_avatar_input" type="file" name="avatar" accept="image/*">
                 </div>
                 <div class="file-path-wrapper">
                     <input class="file-path validate" type="text">

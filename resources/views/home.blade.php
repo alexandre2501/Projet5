@@ -3,78 +3,36 @@
 @section('contenu')
 
     <div id="app">
-        @if(Auth::check())
-            <div>Bonjour {{Auth::user()->name}}</div>
-        @endif
-        @if(isset($accesDenied))
-                <div>Accés refusé</div>
-            @endif
-        <nav class="navbar navbar-expand-lg" id="navbar">
-            <div class="collapse navbar-collapse">
-                <ul class="navbar-nav">
-                    <li class="nav-item active">Menu1</li>
-                    <li class="nav-item">Menu2</li>
-                    <li class="nav-item">Menu3</li>
-                    <li class="nav-item">Menu4</li>
-                </ul>
-            </div>
-            <div>
-                <ul class="navbar-nav">
+        <nav>
+            <div class="nav-wrapper">
+                <a href="#" class="brand-logo">coucoud</a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
                     @if(!Auth::check())
-                    <li class="nav-item">
-                        <a class="nav-link log-buttons" v-on:click="openLogin">Se connecter</a>
-                    </li>
-                    <li class="nav-item log-buttons">
-                        <a class="nav-link" v-on:click="openRegister">S'inscrire</a>
-                    </li>
+                        <li><a v-on:click="openLogin">Se connecter</a></li>
+                        <li><a  v-on:click="openRegister">S'inscrire</a></li>
                     @endif
-                    <li class="nav-item log-buttons">
-                        <a class="nav-link" v-on:click="logout">Se déconnecter</a>
-                    </li>
                     @if(Auth::check())
-                            <li class="nav-item log-buttons">
-                                <a class="nav-link" v-on:click="openApp">App</a>
-                            </li>
+                            <li><a v-on:click="logout">Se déconnecter</a></li>
+                            <li><a v-on:click="openApp">Application</a></li>
                         @endif
                 </ul>
             </div>
         </nav>
-        <log-popup :style="display" :popup-text="popupText" :test-text="testText" :log-val="logVal"></log-popup>
+        <div v-if="showPopup === true" class="logPopupBackground">
+            <div id="popupWindow">
+                <form id="authForm">
+                    <input type="hidden" name="_token" v-bind:value="csrfToken">
+                    <div class="form-group">
+                        <h3>@{{ popupTitle }}</h3>
+                        <input class="form-control" name="email" type="email" id="email" placeholder="Email">
+                        <input class="form-control" type="password" name="password" id="password" value="" placeholder="Mot de passe">
+                        <span id="errorSpan">@{{ formError }}</span>
+                        <input v-if="popupState === 'register'" class="form-control"  type="text" name="name" id="name" value="" placeholder="Pseudo">
+                        <button v-if="popupState === 'login'" v-on:click="login" type="submit" class="btn btn-primary">@{{ popupTitle }}</button>
+                        <button v-else-if="popupState === 'register'" v-on:click="register" class="btn btn-primary">@{{ popupTitle }}</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
-    <!--<div id="popup">
-        <div v-bind:id="tabId">
-        <form>
-            <h3>@{{tabTitle}}</h3>
-            <label for="username-input"><input type="text" id="username-input"></label>
-            <label for="password-input"><input type="password" id="password-input"></label>
-            <button type="submit" v-bind:id="tabButtonId">@{{tabButtonText}}</button>
-        </form>
-        </div>
-    </div>-->
-
-    <header>
-
-    </header>
-
-    <section>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">TEST</div>
-                <div class="col-md-6">TEST</div>
-                <div class="col-md-6">TEST</div>
-                <div class="col-md-6">TEST</div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3">
-                    <img class="img-fluid" src="https://via.placeholder.com/150x150" id="brand-footer">
-                </div>
-            </div>
-        </div>
-    </footer>
-
-@endsection
+    @endsection

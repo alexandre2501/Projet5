@@ -96,7 +96,7 @@ var logPopup ={
             logTitle: 'TITLE',
             popupVal: this.logVal,
             submitButtonText: '',
-            formaction: '',
+            formAction: '',
             csrfToken: document.head.querySelector('meta[name="csrf-token"]').getAttribute('content'),
         }
     },
@@ -168,28 +168,63 @@ var logPopup ={
 
 var navbarVue = new Vue({
     el: '#app',
-    components:{ logPopup: logPopup },
+    mounted(){
+        this.csrfToken = document.head.querySelector('meta[name="csrf-token"]').getAttribute('content');
+        M.AutoInit();
+    },
     data:{
-        display: 'display:none',
-        displayPopup: 'none',
-        popupText: 'Je suis le texte',
-        compidpopup: 'login',
-        VueLoginHtml: 'OK',
-        VueRegisterHtml: '',
-        VueFormTest: '',
-        VuePopupTitle: 'LE TITRE',
-        VueButtonValue: 'LE BOUTON',
-        VueButtonText: 'LE TEXTE',
-        testText: 'Coucou',
-        logVal: '',
+        showPopup: false,
+        popupState: 'login',
+        popupTitle: 'Se connecter',
+        formAction: '/login',
+        csrfToken: null,
+        formError: null,
     },
     methods: {
         openLogin(){
-            this.display = 'display:block';
-            this.logVal = 'login';
+            this.showPopup = true;
+            this.popupState = 'login';
+            this.popupTitle = 'Se connecter';
+            this.formAction = '/login';
+            M.AutoInit();
         },
         openRegister(){
-            this.logVal = 'register';
+            this.showPopup = true;
+            this.popupState = 'register';
+            this.popupTitle = 'S\'inscire';
+            this.formAction = '/register';
+            M.AutoInit();
+        },
+        login(e){
+            e.preventDefault();
+            var formElt = document.getElementById('authForm');
+            var formData = new FormData(formElt);
+            axios.post('/login-ajax',
+                //avatar: document.getElementById('upload_avatar_input').files[0].name
+                formData
+                ,{
+                    headers: {
+                        //'content-type': 'multipart/form-data',
+                    }
+                })
+                .then(function(response){
+                    console.log(response.data);
+                    window.location.href = '/home';
+                }.bind(this))
+                .catch(function(error){
+                    console.log(error.response.data.errors)
+                    if(error.response.data.errors.email[0] != null){
+                        this.formError = error.response.data.errors.email[0];
+                    }
+                    else if(error.response.data.errors.password[0] != null){
+                        if(error.response.data.errors.password[0] === 'The password field is required.'){
+                            this.formError = 'Le mot de passe est vide';
+                        }
+                        else{
+                            this.formError = 'Le mot de passe est incorrecte';
+                        }
+                    }
+                }.bind(this))
         },
         logout(){
             window.location.href = '/logout';
