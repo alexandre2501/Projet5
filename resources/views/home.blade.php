@@ -23,8 +23,43 @@
         </div>
         <div class="container">
             <div class="row">
-                <div class="col m12 center-align"><h2>Gérer votre alimentation au quotidien</h2></div>
-
+                <div class="col m12 center-align"><h2>Gérez votre alimentation au quotidien</h2></div>
+                <div class="col m4 valign-wrapper flex-vertical"><i class="icons fas fa-5x fa-carrot"></i><p>Controlez votre alimentation</p></div>
+                <div class="col m4 valign-wrapper flex-vertical"><i class="icons fas fa-5x fa-weight"></i><p>Ajustez votre consommation calorique</p></div>
+                <div class="col m4 valign-wrapper flex-vertical"><i class="icons fas fa-5x fa-running"></i><p>Restez en pleine forme</p></div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col m6">
+                    <div>
+                        <h4>100% Simple</h4>
+                        <p>Notre application est conçu afin que n'importe qui puisse l'utiliser grâce à une ergonomie étudiée pour une prise en maine rapide</p>
+                    </div>
+                    <div>
+                        <h4>100% Gratuit</h4>
+                        <p>Pas besoin d'abonnement pour profiter de toutes les fonctionnalités de l'application. Tout est gratuit !</p>
+                    </div>
+                    <div>
+                        <h4>100% Efficace</h4>
+                        <p>Notre gestion dynamique des repas ainsi que les statistiques présentes dans l'interfaces vous aideront à garder le cap</p>
+                    </div>
+                </div>
+                <div class="col m6">IMAGE DE L'APPLI SOON</div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row center-align">
+                <div class="col m12"><h2>Plus rien ne vous retient maintenant !</h2></div>
+                <div class="col m12 flex-vertical">
+                    <p>L'insciption se fait en moins d'une minute. L'essayer c'est l'adopter</p>
+                    @if(!Auth::check())
+                        <a v-on:click="openRegister" class="waves-effect waves-light btn-large">Je m'inscris !</a>
+                    @endif
+                    @if(Auth::check())
+                        <a class="waves-effect waves-light btn-large disabled">Je m'inscris !</a>
+                    @endif
+                </div>
             </div>
         </div>
         <div v-if="showPopup === true" class="logPopupBackground">
