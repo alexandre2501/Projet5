@@ -5,7 +5,7 @@
     <div id="app">
         <nav>
             <div class="nav-wrapper">
-                <a href="#" class="brand-logo">coucoud</a>
+                <a href="#" class="brand-logo">LOGO</a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                     @if(!Auth::check())
                         <li><a v-on:click="openLogin">Se connecter</a></li>
@@ -18,6 +18,15 @@
                 </ul>
             </div>
         </nav>
+        <div>
+            <img class="responsive-img full-width" src="image/banner1.jpg" alt="Bannière">
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col m12 center-align"><h2>Gérer votre alimentation au quotidien</h2></div>
+
+            </div>
+        </div>
         <div v-if="showPopup === true" class="logPopupBackground">
             <div id="popupWindow">
                 <form id="authForm">

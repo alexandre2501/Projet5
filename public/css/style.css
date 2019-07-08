@@ -40,3 +40,7 @@ header {
     background-color: white;
     border: #1d68a7 1px solid;
 }
+
+.full-width{
+    width: 100%;
+}
