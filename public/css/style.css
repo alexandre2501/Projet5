@@ -44,3 +44,12 @@ header {
 .full-width{
     width: 100%;
 }
+
+.flex-vertical{
+    display: flex;
+    flex-direction: column;
+}
+
+.icons{
+    color: #00acc1;
+}
