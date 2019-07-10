@@ -181,14 +181,16 @@ var navbarVue = new Vue({
         formError: null,
     },
     methods: {
-        openLogin(){
+        openLogin(e){
+            e.preventDefault();
             this.showPopup = true;
             this.popupState = 'login';
             this.popupTitle = 'Se connecter';
             this.formAction = '/login';
             M.AutoInit();
         },
-        openRegister(){
+        openRegister(e){
+            e.preventDefault();
             this.showPopup = true;
             this.popupState = 'register';
             this.popupTitle = 'S\'inscire';
@@ -234,5 +236,4 @@ var navbarVue = new Vue({
         }
     },
 })
-
 var html = '<div class="popup-div"><div class="popup-form"><h3>{{popupTitle}}</h3><label for="popup-username"><input type="text" value="" id="popup-username"></label></div></div>'

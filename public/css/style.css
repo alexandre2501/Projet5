@@ -20,11 +20,19 @@ header {
     background-color: aqua;
 }
 
+#popup-title{
+    margin: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: white;
+}
+
 .logPopupBackground{
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     z-index: 100;
+    top: 0;
     background-color: rgba(0, 0, 0, 0.2);
 }
 
@@ -34,11 +42,23 @@ header {
     top: 50%;
     left: 50%;
     width: 400px;
-    height: 400px;
     margin-top: -200px;
     margin-left: -200px;
     background-color: white;
     border: #1d68a7 1px solid;
+}
+
+#inputs-form{
+    margin: 5px;
+}
+
+#inputs-form *{
+    margin: 2.5px;
+}
+
+#buttons-form{
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .full-width{
@@ -52,4 +72,9 @@ header {
 
 .icons{
     color: #00acc1;
+}
+
+.page-footer{
+    padding: 0;
+    background-color: #1d68a7;
 }
