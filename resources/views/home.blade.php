@@ -67,16 +67,35 @@
                 <form id="authForm">
                     <input type="hidden" name="_token" v-bind:value="csrfToken">
                     <div class="form-group">
-                        <h3>@{{ popupTitle }}</h3>
-                        <input class="form-control" name="email" type="email" id="email" placeholder="Email">
-                        <input class="form-control" type="password" name="password" id="password" value="" placeholder="Mot de passe">
-                        <span id="errorSpan">@{{ formError }}</span>
-                        <input v-if="popupState === 'register'" class="form-control"  type="text" name="name" id="name" value="" placeholder="Pseudo">
-                        <button v-if="popupState === 'login'" v-on:click="login" type="submit" class="btn btn-primary">@{{ popupTitle }}</button>
-                        <button v-else-if="popupState === 'register'" v-on:click="register" class="btn btn-primary">@{{ popupTitle }}</button>
+                        <div class="#1e88e5 blue darken-1 center-align" id="popup-title">
+                            <h3>@{{ popupTitle }}</h3>
+                        </div>
+                        <div id="inputs-form">
+                            <input class="form-control" name="email" type="email" id="email" placeholder="Email">
+                            <input class="form-control" type="password" name="password" id="password" value="" placeholder="Mot de passe">
+                            <span id="errorSpan">@{{ formError }}</span>
+                            <input v-if="popupState === 'register'" class="form-control"  type="text" name="name" id="name" value="" placeholder="Pseudo">
+                        </div>
+                        <div class="center-align" id="buttons-form">
+                            <div v-if="popupState === 'login'">
+                                <button v-on:click="login" type="submit" class="btn btn-primary">@{{ popupTitle }}</button>
+                                <button v-on:click="openRegister" class="btn">Pas encore inscris ?</button>
+                            </div>
+                            <div v-else-if="popupState === 'register'">
+                                <button v-on:click="register" class="btn btn-primary">@{{ popupTitle }}</button>
+                                <button v-on:click="openLogin" class="btn">Déjà inscris ?</button>
+                            </div>
+                        </div>
                     </div>
                 </form>
             </div>
         </div>
+        <footer class="page-footer">
+            <div class="footer-copyright">
+                <div class="container">
+                    © 2019 Alexandre Urbanski Copyright
+                </div>
+            </div>
+        </footer>
     </div>
     @endsection
