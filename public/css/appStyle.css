@@ -6,6 +6,8 @@
 
 h3{
     margin-top: 0;
+    padding-top: 5px;
+    padding-bottom: 5px;
     background-color: #26a69a;
     color: white;
 }
