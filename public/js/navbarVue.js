@@ -197,6 +197,38 @@ var navbarVue = new Vue({
             this.formAction = '/register';
             M.AutoInit();
         },
+        register(e){
+            e.preventDefault();
+            var formElt = document.getElementById('authForm');
+            var formData = new FormData(formElt);
+            axios.post('/register-ajax',
+                //avatar: document.getElementById('upload_avatar_input').files[0].name
+                formData
+                ,{
+                    headers: {
+                        //'content-type': 'multipart/form-data',
+                    }
+                })
+                .then(function(response){
+                    console.log(response.data);
+                    window.location.href = '/home';
+                }.bind(this))
+                .catch(function(error){
+                    console.log(error.response.data)
+                    if(error.response.data.errors.email != null){
+                        this.formError = 'Email incorrecte';
+                    }
+                    else if(error.response.data.errors.name != null){
+                        this.formError = 'Pseudo incorrecte';
+                    }
+                    else if(error.response.data.errors.password != null){
+                        this.formError = 'Mot de passe trop court';
+                    }
+                    else{
+                        this.formError = 'Une erreur est survenue';
+                    }
+                }.bind(this))
+        },
         login(e){
             e.preventDefault();
             var formElt = document.getElementById('authForm');
@@ -214,7 +246,7 @@ var navbarVue = new Vue({
                     window.location.href = '/home';
                 }.bind(this))
                 .catch(function(error){
-                    console.log(error.response.data.errors)
+                    console.log(error.response.data)
                     if(error.response.data.errors.email[0] != null){
                         this.formError = error.response.data.errors.email[0];
                     }

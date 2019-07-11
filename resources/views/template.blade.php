@@ -12,9 +12,9 @@
 @yield('contenu')
 
 <link rel="stylesheet" href="css/style.css">
+<script src="node_modules/materialize-css/dist/js/materialize.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="js/navbarVue.js"></script>
-<script src="node_modules/materialize-css/dist/js/materialize.js"></script>
 <script src="node_modules/axios/dist/axios.js"></script>
 <script>M.AutoInit();</script>
 </body>
