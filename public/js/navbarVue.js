@@ -265,7 +265,12 @@ var navbarVue = new Vue({
         },
         openApp(){
             window.location.href = '/app';
-        }
+        },
+        clickPopup(e){
+            if(e.target.id === 'popupBg'){
+                this.showPopup = false;
+            }
+        },
     },
 })
 var html = '<div class="popup-div"><div class="popup-form"><h3>{{popupTitle}}</h3><label for="popup-username"><input type="text" value="" id="popup-username"></label></div></div>'

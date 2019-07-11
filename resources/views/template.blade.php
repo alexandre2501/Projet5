@@ -16,6 +16,5 @@
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="js/navbarVue.js"></script>
 <script src="node_modules/axios/dist/axios.js"></script>
-<script>M.AutoInit();</script>
 </body>
 </html>

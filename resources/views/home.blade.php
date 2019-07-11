@@ -6,6 +6,7 @@
         <nav>
             <div class="nav-wrapper">
                 <a href="#" class="brand-logo">LOGO</a>
+                <a href="#" data-target="menu-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                     @if(!Auth::check())
                         <li><a v-on:click="openLogin">Se connecter</a></li>
@@ -15,6 +16,16 @@
                             <li><a v-on:click="logout">Se déconnecter</a></li>
                             <li><a v-on:click="openApp">Application</a></li>
                         @endif
+                </ul>
+                <ul id="menu-mobile" class="sidenav">
+                    @if(!Auth::check())
+                        <li><a v-on:click="openLogin">Se connecter</a></li>
+                        <li><a  v-on:click="openRegister">S'inscrire</a></li>
+                    @endif
+                    @if(Auth::check())
+                        <li><a v-on:click="logout">Se déconnecter</a></li>
+                        <li><a v-on:click="openApp">Application</a></li>
+                    @endif
                 </ul>
             </div>
         </nav>
@@ -27,9 +38,9 @@
         <div class="container">
             <div class="row">
                 <div class="col m12 center-align"><h2>Gérez votre alimentation au quotidien</h2></div>
-                <div class="col m4 valign-wrapper flex-vertical"><i class="icons fas fa-5x fa-carrot"></i><p>Controlez votre alimentation</p></div>
-                <div class="col m4 valign-wrapper flex-vertical"><i class="icons fas fa-5x fa-weight"></i><p>Ajustez votre consommation calorique</p></div>
-                <div class="col m4 valign-wrapper flex-vertical"><i class="icons fas fa-5x fa-running"></i><p>Restez en pleine forme</p></div>
+                <div class="col m4 s12 valign-wrapper flex-vertical"><i class="icons fas fa-5x fa-carrot"></i><p>Controlez votre alimentation</p></div>
+                <div class="col m4 s12 valign-wrapper flex-vertical"><i class="icons fas fa-5x fa-weight"></i><p>Ajustez votre consommation calorique</p></div>
+                <div class="col m4 s12 valign-wrapper flex-vertical"><i class="icons fas fa-5x fa-running"></i><p>Restez en pleine forme</p></div>
             </div>
         </div>
         <div class="container">
@@ -60,12 +71,12 @@
                         <a v-on:click="openRegister" class="waves-effect waves-light btn-large">Je m'inscris !</a>
                     @endif
                     @if(Auth::check())
-                        <a class="waves-effect waves-light btn-large disabled">Je m'inscris !</a>
+                        <a v-on:click="openApp" class="waves-effect waves-light btn-large">Accéder à l'application</a>
                     @endif
                 </div>
             </div>
         </div>
-        <div v-if="showPopup === true" class="logPopupBackground">
+        <div v-on:click="clickPopup" v-if="showPopup === true" class="logPopupBackground" id="popupBg">
             <div id="popupWindow">
                 <form id="authForm">
                     <input type="hidden" name="_token" v-bind:value="csrfToken">
