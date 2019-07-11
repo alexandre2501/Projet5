@@ -18,8 +18,11 @@
                 </ul>
             </div>
         </nav>
-        <div>
+        <div class="header valign-wrapper">
             <img class="responsive-img full-width" src="image/banner1.jpg" alt="Bannière">
+            <div id="header-content" class="center-align">
+                <h1 id="main-title">Slimmy</h1>
+            </div>
         </div>
         <div class="container">
             <div class="row">
@@ -72,9 +75,9 @@
                         </div>
                         <div id="inputs-form">
                             <input class="form-control" name="email" type="email" id="email" placeholder="Email">
-                            <input class="form-control" type="password" name="password" id="password" value="" placeholder="Mot de passe">
+                            <input class="form-control" type="password" name="password" id="password" placeholder="Mot de passe">
                             <span id="errorSpan">@{{ formError }}</span>
-                            <input v-if="popupState === 'register'" class="form-control"  type="text" name="name" id="name" value="" placeholder="Pseudo">
+                            <input v-if="popupState === 'register'" class="form-control"  type="text" name="name" id="name" placeholder="Pseudo">
                         </div>
                         <div class="center-align" id="buttons-form">
                             <div v-if="popupState === 'login'">

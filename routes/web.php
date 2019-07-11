@@ -31,6 +31,7 @@ Route::get('/login', function(){
 });
 
 Route::post('/login-ajax', 'Auth\LoginController@tryLogin');
+Route::post('/register-ajax', 'Auth\RegisterController@register');
 
 Route::get('/app', function(){
     if(Auth::check()){
