@@ -31,13 +31,16 @@
         </nav>
         <div class="header valign-wrapper">
             <img class="responsive-img full-width" src="image/banner1.jpg" alt="Bannière">
+            <div id="banner-bg"></div>
             <div id="header-content" class="center-align">
                 <h1 id="main-title">Slimmy</h1>
             </div>
         </div>
+        <div class="container-fluid #1e88e5 blue darken-1">
+            <div class="col m12 center-align "><h2>Gérez votre alimentation au quotidien</h2></div>
+        </div>
         <div class="container">
             <div class="row">
-                <div class="col m12 center-align"><h2>Gérez votre alimentation au quotidien</h2></div>
                 <div class="col m4 s12 valign-wrapper flex-vertical"><i class="icons fas fa-5x fa-carrot"></i><p>Controlez votre alimentation</p></div>
                 <div class="col m4 s12 valign-wrapper flex-vertical"><i class="icons fas fa-5x fa-weight"></i><p>Ajustez votre consommation calorique</p></div>
                 <div class="col m4 s12 valign-wrapper flex-vertical"><i class="icons fas fa-5x fa-running"></i><p>Restez en pleine forme</p></div>
@@ -62,7 +65,7 @@
                 <div class="col m6">IMAGE DE L'APPLI SOON</div>
             </div>
         </div>
-        <div class="container">
+        <div class="container-fluid #bdbdbd grey lighten-1">
             <div class="row center-align">
                 <div class="col m12"><h2>Plus rien ne vous retient maintenant !</h2></div>
                 <div class="col m12 flex-vertical">
@@ -86,9 +89,11 @@
                         </div>
                         <div id="inputs-form">
                             <input class="form-control" name="email" type="email" id="email" placeholder="Email">
+                            <span v-if="errors.email != undefined" id="errorSpan">@{{ errors.email != undefined ? errors.email[0] : '' }}</span>
                             <input class="form-control" type="password" name="password" id="password" placeholder="Mot de passe">
-                            <span id="errorSpan">@{{ formError }}</span>
+                            <span v-if="errors.password != undefined" id="errorPassSpan">@{{ errors.password != undefined ? errors.password[0] : '' }}</span>
                             <input v-if="popupState === 'register'" class="form-control"  type="text" name="name" id="name" placeholder="Pseudo">
+                            <span v-if="errors.name != undefined && popupState === 'register'" id="errorPseudoSpan">@{{ errors.name != undefined ? errors.name[0] : '' }}</span>
                         </div>
                         <div class="center-align" id="buttons-form">
                             <div v-if="popupState === 'login'">
