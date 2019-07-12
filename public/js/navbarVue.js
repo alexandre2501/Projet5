@@ -179,6 +179,7 @@ var navbarVue = new Vue({
         formAction: '/login',
         csrfToken: null,
         formError: null,
+        errors: {},
     },
     methods: {
         openLogin(e){
@@ -215,18 +216,7 @@ var navbarVue = new Vue({
                 }.bind(this))
                 .catch(function(error){
                     console.log(error.response.data)
-                    if(error.response.data.errors.email != null){
-                        this.formError = 'Email incorrecte';
-                    }
-                    else if(error.response.data.errors.name != null){
-                        this.formError = 'Pseudo incorrecte';
-                    }
-                    else if(error.response.data.errors.password != null){
-                        this.formError = 'Mot de passe trop court';
-                    }
-                    else{
-                        this.formError = 'Une erreur est survenue';
-                    }
+                    this.errors = error.response.data.errors;
                 }.bind(this))
         },
         login(e){
@@ -247,17 +237,7 @@ var navbarVue = new Vue({
                 }.bind(this))
                 .catch(function(error){
                     console.log(error.response.data)
-                    if(error.response.data.errors.email[0] != null){
-                        this.formError = error.response.data.errors.email[0];
-                    }
-                    else if(error.response.data.errors.password[0] != null){
-                        if(error.response.data.errors.password[0] === 'The password field is required.'){
-                            this.formError = 'Le mot de passe est vide';
-                        }
-                        else{
-                            this.formError = 'Le mot de passe est incorrecte';
-                        }
-                    }
+                    this.errors = error.response.data.errors;
                 }.bind(this))
         },
         logout(){
