@@ -3,7 +3,7 @@
 @section('contenu')
 
     <div id="app" class="row">
-        <div id="menu"class="sidenav col s2 sidenav-fixed">
+        <div id="menu"class="sidenav col l2 sidenav-fixed">
 
             <ul>
                 <div id="profil_window" class="#e1f5fe light-blue lighten-5 center-align">
@@ -17,7 +17,7 @@
                 <li v-on:click="loadMesRepasHtml"><a><i class="fas fa-utensils"></i>Mes Repas</a></li>
             </ul>
         </div>
-        <div id="app_content" class="col s10 offset-s2 #eeeeee grey lighten-3">
+        <div id="app_content" class="col s12 l10 offset-l2 #eeeeee grey lighten-3">
             <div class="app-box z-depth-2 #e3f2fd blue lighten-5">
                 @include('includesApp.appAccueil')
                 @include('includesApp.appProfil')

@@ -1,5 +1,5 @@
 <div class="row flex" id="profil_block" v-else-if="appContent === 'profil'">
-    <div id="change_avatar_div" class="col s6">
+    <div id="change_avatar_div" class="col s12 m12 l6">
         <div class="#fafafa grey lighten-5 content_blocks z-depth-2">
         <h3 class="center-align">Photo de profil</h3>
             <div class="pad-block">
@@ -19,7 +19,7 @@
             </div>
         </div>
     </div>
-    <div id="change_password_div" class="col s6">
+    <div id="change_password_div" class="col s12 m12 l6">
         <div class="#fafafa grey lighten-5 content_blocks z-depth-2">
         <h3 class="center-align">Changer de mot de passe</h3>
         <div class="pad-block">
