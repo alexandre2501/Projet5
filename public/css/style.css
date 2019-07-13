@@ -30,6 +30,10 @@ header {
     width: 100%;
 }
 
+#header-content *{
+    color: white;
+}
+
 #banner-bg{
     position: absolute;
     width: 100%;
@@ -56,6 +60,9 @@ h2{
     padding-top: 10px;
     padding-bottom: 10px;
     color: white;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
 }
 
 .logPopupBackground{
@@ -77,6 +84,9 @@ h2{
     margin-left: -200px;
     background-color: white;
     border: #1d68a7 1px solid;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
 }
 
 #inputs-form{
@@ -110,6 +120,8 @@ h2{
     background-color: #1d68a7;
 }
 
+
+/* Small screen */
 @media only screen and (max-width: 600px) {
     /* For mobile phones: */
     h1{

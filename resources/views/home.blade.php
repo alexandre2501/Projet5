@@ -34,6 +34,7 @@
             <div id="banner-bg"></div>
             <div id="header-content" class="center-align">
                 <h1 id="main-title">Slimmy</h1>
+                <h5>Gardez le contrôle</h5>
             </div>
         </div>
         <div class="container-fluid #1e88e5 blue darken-1">
@@ -41,9 +42,15 @@
         </div>
         <div class="container">
             <div class="row">
-                <div class="col m4 s12 valign-wrapper flex-vertical"><i class="icons fas fa-5x fa-carrot"></i><p>Controlez votre alimentation</p></div>
-                <div class="col m4 s12 valign-wrapper flex-vertical"><i class="icons fas fa-5x fa-weight"></i><p>Ajustez votre consommation calorique</p></div>
-                <div class="col m4 s12 valign-wrapper flex-vertical"><i class="icons fas fa-5x fa-running"></i><p>Restez en pleine forme</p></div>
+                <div class="col m4 s12 valign-wrapper flex-vertical">
+                    <i class="icons fas fa-5x fa-carrot"></i><p>Controlez votre alimentation</p>
+                </div>
+                <div class="col m4 s12 valign-wrapper flex-vertical">
+                    <i class="icons fas fa-5x fa-weight"></i><p>Ajustez votre consommation calorique</p>
+                </div>
+                <div class="col m4 s12 valign-wrapper flex-vertical">
+                    <i class="icons fas fa-5x fa-running"></i><p>Restez en pleine forme</p>
+                </div>
             </div>
         </div>
         <div class="container">
