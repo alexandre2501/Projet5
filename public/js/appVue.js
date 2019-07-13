@@ -18,7 +18,19 @@ var modelDishError = {
     dishGluError: '',
 }
 
+const routes = [
+    { path: '/accueil'},
+    { path: '/profil'},
+    { path: '/food'},
+    { path: '/meal'},
+]
+
+const router = new VueRouter({
+    routes
+})
+
 var app = new Vue({
+    router,
     el: '#app',
     mounted(){
         window.axios.defaults.headers.common['X-CSRF-TOKEN'] = this.csrfToken;
@@ -26,10 +38,31 @@ var app = new Vue({
         this.setEnv();
         this.setUserData();
         this.getUserMeal();
+        this.checkRoute();
+    },
+    watch: {
+        '$route' (to, from){
+            if(to.path === '/acceuil'){
+                this.loadAccueilHtml();
+            }
+            else if(to.path === '/profil'){
+                this.loadProfilHtml();
+            }
+            else if(to.path === '/food'){
+                this.loadMaNourritureHtml();
+            }
+            else if(to.path === '/meal'){
+                this.loadMesRepasHtml();
+            }
+            else{
+                this.loadAccueilHtml();
+            }
+        }
     },
     data: {
         //avatar: null,
         env: '',
+        currentRoute: '/acceuil',
         //User Data
         userData: '',
         userAvatarLink: '',
@@ -46,6 +79,7 @@ var app = new Vue({
         confirmPass: document.getElementById('confirm_pass_input').value,
         passChangeBtn: 1,
         passMsg: '',
+        test: null,
         //Page Ma Nourriture
         myFood: 'myMeal',
             //Format du formulaire nourriture (update or create)
@@ -81,6 +115,25 @@ var app = new Vue({
                 }
             }
             return -1;
+        },
+        checkRoute(){
+          if(this.$route.path != this.currentRoute){
+              if(this.$route.path === '/acceuil'){
+                  this.loadAccueilHtml();
+              }
+              else if(this.$route.path === '/profil'){
+                  this.loadProfilHtml();
+              }
+              else if(this.$route.path === '/food'){
+                  this.loadMaNourritureHtml();
+              }
+              else if(this.$route.path === '/meal'){
+                  this.loadMesRepasHtml();
+              }
+              else{
+                  this.loadAccueilHtml();
+              }
+          }
         },
         avatar(e){
             console.log(this,e);
