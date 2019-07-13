@@ -23,6 +23,7 @@
         "vue": "^2.6.10"
     },
     "dependencies": {
-        "materialize-css": "^1.0.0-rc.2"
+        "materialize-css": "^1.0.0-rc.2",
+        "vue-router": "^3.0.7"
     }
 }
