@@ -11,10 +11,18 @@
                         <img id="avatar" :src="userAvatarLink">
                     </div>
                 </div>
-                <li v-on:click="loadAccueilHtml"><a><i class="fas fa-home"></i>Accueil</a></li>
-                <li v-on:click="loadProfilHtml"><a><i class="fas fa-user"></i>Mon Profil</a></li>
-                <li v-on:click="loadMaNourritureHtml"><a><i class="fas fa-apple-alt"></i>Ma Nourriture</a></li>
-                <li v-on:click="loadMesRepasHtml"><a><i class="fas fa-utensils"></i>Mes Repas</a></li>
+                <router-link to="/acceuil">
+                    <li><a><i class="fas fa-home"></i>Accueil</a></li>
+                </router-link>
+                <router-link to="/profil">
+                    <li><a><i class="fas fa-user"></i>Mon Profil</a></li>
+                </router-link>
+                <router-link to="/food">
+                    <li><a><i class="fas fa-apple-alt"></i>Ma Nourriture</a></li>
+                </router-link>
+                <router-link to="/meal">
+                    <li><a><i class="fas fa-utensils"></i>Mes Repas</a></li>
+                </router-link>
             </ul>
         </div>
         <div id="app_content" class="col s12 l10 offset-l2 #eeeeee grey lighten-3">

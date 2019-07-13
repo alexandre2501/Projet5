@@ -14,7 +14,7 @@
                     <div class="col s3 center-align">Lipides : @{{ totalLip }} g</div>
                     <div class="col s3 center-align">Glucides : @{{ totalGlu }} g</div>
                 </div>
-                <div class="col s6 m4 l6 meal-content" v-for="(value, index) in mealsData[dateIndex].meals">
+                <div class="col s6 m4 l3 meal-content" v-for="(value, index) in mealsData[dateIndex].meals">
                     <h6 class="col s12 center-align">@{{ value.name }}<i class="far fa-times-circle valign-wrapper" v-on:click="deleteFoodFromMeal(index)"></i></h6>
                     <div class="col s6 pad-zero"><div class="col s12 center-align #d1c4e9 deep-purple lighten-4">Calorie</div><div class="col s10 m8 valign-wrapper"><input class="center-align" type="number" v-model="value.cal" @change="checkNumeric(index, 'cal')"><span>cal</span></div></div>
                     <div class="col s6 pad-zero"><div class="col s12 center-align #dce775 lime lighten-2">Quantité</div><div class="col s10 m8 valign-wrapper"><input class="center-align" type="number" v-model="value.quant" @change="checkNumeric(index, 'quant')"><span>g</span></div></div>
