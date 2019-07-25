@@ -1,14 +1,14 @@
 <div class="row flex" id="profil_block" v-else-if="appContent === 'profil'">
     <div id="change_avatar_div" class="col s12 m12 l6">
         <div class="#fafafa grey lighten-5 content_blocks z-depth-2">
-        <h3 class="center-align">Photo de profil</h3>
+        <h3 class="center-align">Photo de profil2</h3>
             <div class="pad-block">
-        <img id="avatar_min" alt="Miniature du profil" :src="userAvatarLink">
+        <img id="avatar_min" alt="Miniature du profil" :src="$store.state.userAvatarLink">
         <form id="upload_new_avatar">
             <div class="file-field input-field">
                 <div class="btn">
                     <span>File</span>
-                    <input v-on:change="avatar($event)" id="upload_avatar_input" type="file" name="avatar" accept="image/*">
+                    <input id="upload_avatar_input" type="file" name="avatar" accept="image/*">
                 </div>
                 <div class="file-path-wrapper">
                     <input class="file-path validate" type="text">
