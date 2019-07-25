@@ -1,6 +1,6 @@
 <div class="row flex" id="myFood_block" v-else-if="appContent === 'maNourriture'">
     <div class="#fafafa grey lighten-5 z-depth-2 col s12">
-        <div class="col s12">
+        <div class="col s12 pad-zero">
             <button v-on:click="loadMyFood('myDish')" class="waves-effect waves-light btn-large col s6 m6 l3">Mes plats</button>
             <button v-on:click="loadMyFood('myFood')" class="waves-effect waves-light btn-large col s6 m6 l3">Mes aliments</button>
             <button v-on:click="loadMyFood('addDish')" class="waves-effect waves-light btn-large col s12 m6 l3">Ajouter un plat</button>
