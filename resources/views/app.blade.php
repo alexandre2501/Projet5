@@ -8,7 +8,7 @@
             <ul>
                 <div id="profil_window" class="#e1f5fe light-blue lighten-5 center-align">
                     <div>
-                        <img id="avatar" :src="userAvatarLink">
+                        <img id="avatar" :src="$store.state.userAvatarLink">
                     </div>
                 </div>
                 <router-link to="/acceuil">
@@ -27,10 +27,7 @@
         </div>
         <div id="app_content" class="col s12 l10 offset-l2 #eeeeee grey lighten-3">
             <div class="app-box z-depth-2 #e3f2fd blue lighten-5">
-                @include('includesApp.appAccueil')
-                @include('includesApp.appProfil')
-                @include('includesApp.appMaNourriture')
-                @include('includesApp.appMesRepas')
+                <router-view></router-view>
             </div>
         </div>
     </div>
