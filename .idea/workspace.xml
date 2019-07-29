@@ -39,26 +39,25 @@
       <file leaf-file-name="appVue.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/js/appVue.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2559">
-              <caret line="384" column="60" selection-start-line="384" selection-start-column="60" selection-end-line="384" selection-end-column="60" />
+            <state relative-caret-position="7672">
+              <caret line="1024" column="22" selection-start-line="1024" selection-start-column="22" selection-end-line="1024" selection-end-column="22" />
               <folding>
                 <element signature="e#21#159#0" />
                 <element signature="e#182#320#0" />
-                <element signature="e#346#514#0" />
+                <element signature="e#346#430#0" />
                 <element signature="e#457#541#0" />
-                <element signature="e#1848#4722#0" />
-                <element signature="e#4916#5674#0" />
-                <element signature="e#8827#9681#0" />
+                <element signature="e#3277#8912#0" />
+                <element signature="e#8948#23180#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="appMaNourriture.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/includesApp/appMaNourriture.blade.php">
+      <file leaf-file-name="appMesRepas.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/includesApp/appMesRepas.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="57" column="52" lean-forward="true" selection-start-line="57" selection-start-column="52" selection-end-line="57" selection-end-column="52" />
+            <state>
+              <caret selection-end-line="47" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -67,14 +66,18 @@
         <entry file="file://$PROJECT_DIR$/public/js/components/Home.vue">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="96">
-              <caret line="6" column="20" lean-forward="true" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
+              <caret line="6" column="20" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="ExampleComponent.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/js/components/ExampleComponent.vue">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="176">
+              <caret line="11" column="18" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file leaf-file-name="app.blade.php" pinned="false" current-in-tab="false">
@@ -108,18 +111,13 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>passMsg</find>
-      <find>sendFailedLoginResponse</find>
-      <find>attemptLogin</find>
       <find>avatar</find>
-      <find>getUserMeal</find>
       <find>commit</find>
       <find>env</find>
       <find>this.env</find>
       <find>userAvatarLink</find>
       <find>setEnv</find>
       <find>uploadNewAvatar</find>
-      <find>setUserData</find>
       <find>newPass</find>
       <find>comparePassword</find>
       <find>checkPassword</find>
@@ -127,7 +125,6 @@
       <find>checkRoute</find>
       <find>c</find>
       <find>loadMyFood</find>
-      <find>getUserFood</find>
       <find>deleteDish</find>
       <find>dishFormError</find>
       <find>createDish</find>
@@ -138,6 +135,12 @@
       <find>foodToUpdate</find>
       <find>createFood</find>
       <find>updateFood</find>
+      <find>loadPreviousDate</find>
+      <find>userFood</find>
+      <find>getUserFood</find>
+      <find>setUserData</find>
+      <find>setMealsDate</find>
+      <find>getUserMeal</find>
     </findStrings>
     <replaceStrings>
       <replace>login</replace>
@@ -1155,6 +1158,7 @@
       <path value="$PROJECT_DIR$/public/node_modules/vue-style-loader/package.json" />
       <path value="$PROJECT_DIR$/public/node_modules/vue-template-es2015-compiler/package.json" />
       <path value="$PROJECT_DIR$/public/node_modules/vue/package.json" />
+      <path value="$PROJECT_DIR$/public/node_modules/vuex/package.json" />
       <path value="$PROJECT_DIR$/public/node_modules/watchpack/package.json" />
       <path value="$PROJECT_DIR$/public/node_modules/wbuf/package.json" />
       <path value="$PROJECT_DIR$/public/node_modules/webpack-cli/package.json" />
@@ -1317,20 +1321,15 @@
             <path>
               <item name="projet5" type="b2602c69:ProjectViewProjectNode" />
               <item name="projet5" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="projet5" type="b2602c69:ProjectViewProjectNode" />
               <item name="projet5" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="projet5" type="b2602c69:ProjectViewProjectNode" />
-              <item name="projet5" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="projet5" type="b2602c69:ProjectViewProjectNode" />
@@ -1349,6 +1348,11 @@
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="includesApp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="projet5" type="b2602c69:ProjectViewProjectNode" />
+              <item name="projet5" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -1473,12 +1477,14 @@
       <workItem from="1562917156298" duration="8245000" />
       <workItem from="1563025074158" duration="10611000" />
       <workItem from="1563523494208" duration="788000" />
-      <workItem from="1564053343618" duration="11713000" />
+      <workItem from="1564053343618" duration="12313000" />
+      <workItem from="1564128127165" duration="2686000" />
+      <workItem from="1564395578128" duration="7791000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="410699000" />
+    <option name="totallyTimeSpent" value="421776000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1498,11 +1504,11 @@
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.3297062" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3297062" />
-      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.24700762" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.24700762" />
       <window_info anchor="right" id="Remote Host" order="3" weight="0.32995737" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.7096774" visible="true" weight="0.17643923" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.7096774" visible="true" weight="0.17963752" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="right" id="Database" order="4" visible="true" weight="0.19509594" />
+      <window_info anchor="right" id="Database" order="4" visible="true" weight="0.1913646" />
       <window_info id="Structure" order="1" sideWeight="0.29032257" side_tool="true" weight="0.16044776" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
@@ -1525,7 +1531,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="8" />
+      <option name="time" value="10" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -1673,13 +1679,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/lang/fr/auth.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -1751,13 +1750,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/includesApp/appMesRepas.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="16" column="40" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/css/appStyle.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="564">
@@ -1808,16 +1800,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/components/ExampleComponent.vue">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/components/Home.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="6" column="20" lean-forward="true" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/components/Profil.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-332">
@@ -1846,25 +1828,52 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/includesApp/appMaNourriture.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="57" column="52" lean-forward="true" selection-start-line="57" selection-start-column="52" selection-end-line="57" selection-end-column="52" />
+        <state relative-caret-position="630">
+          <caret line="57" column="52" selection-start-line="57" selection-start-column="52" selection-end-line="57" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/components/Home.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="6" column="20" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/components/ExampleComponent.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="11" column="18" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/includesApp/appMesRepas.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="47" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/appVue.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2559">
-          <caret line="384" column="60" selection-start-line="384" selection-start-column="60" selection-end-line="384" selection-end-column="60" />
+        <state relative-caret-position="7672">
+          <caret line="1024" column="22" selection-start-line="1024" selection-start-column="22" selection-end-line="1024" selection-end-column="22" />
           <folding>
             <element signature="e#21#159#0" />
             <element signature="e#182#320#0" />
-            <element signature="e#346#514#0" />
+            <element signature="e#346#430#0" />
             <element signature="e#457#541#0" />
-            <element signature="e#1848#4722#0" />
-            <element signature="e#4916#5674#0" />
-            <element signature="e#8827#9681#0" />
+            <element signature="e#3277#8912#0" />
+            <element signature="e#8948#23180#0" />
           </folding>
         </state>
       </provider>
