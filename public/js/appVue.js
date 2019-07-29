@@ -197,6 +197,9 @@ const Profil = Vue.component('Profil', {
     '        </div>\n' +
     '    </div>\n' +
     '</div>',
+    mounted(){
+        M.AutoInit();
+    },
     data: function(){
         return{
             passRegex: '^((?=\\S*?[a-z]).{7,})\\S$',
@@ -359,6 +362,9 @@ const Food = Vue.component('Food',{
     '    </div>\n' +
     '    </div>\n' +
     '</div>',
+    mounted(){
+        M.AutoInit();
+    },
     data: function(){
         return{
             myFood: null,
@@ -599,6 +605,9 @@ const Meal = Vue.component('Meal',{
     '        </div>\n' +
     '    </div>\n' +
     '</div>',
+    mounted(){
+        M.AutoInit();
+    },
     data: function(){
         return{
             dateIndex: 6,
