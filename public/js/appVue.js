@@ -199,6 +199,7 @@ const Profil = Vue.component('Profil', {
     '</div>',
     data: function(){
         return{
+            passRegex: '^((?=\\S*?[a-z]).{7,})\\S$',
             userAvatarLink: '',
             passChangeBtn: '',
             passMsg: '',
@@ -604,24 +605,6 @@ const Meal = Vue.component('Meal',{
         }
     },
     methods: {
-        /*setMealsDate(data){
-            for(var i = -7; i != 2; i++){
-                var obj = {
-                    date: this.returnMealsDate(this.actualDate.getDate() + i),
-                };
-                obj.dayName = this.returnDayName(obj.date.getDay(), 'french');
-                obj.monthName = this.returnMonthName(obj.date.getMonth(), 'french');
-                obj.lisibleDate = obj.dayName + ' ' + obj.date.getDate() + ' ' + obj.monthName;
-                var index = this.$parent.findWithAttr(data, 'lisibleDate', obj.lisibleDate);
-                if(index != -1){
-                    obj.meals = data[index].meals;
-                }
-                else{
-                    obj.meals = [];
-                }
-                this.$store.commit('setMealsData', obj);//.mealsData.push(obj);
-            }
-        },*/
         //Renvoie un objet Date par a la date passée en paramètre
         returnMealsDate(date){
             var test = new Date(this.actualDate.getFullYear(), this.actualDate.getMonth(), date + 1);
@@ -702,13 +685,6 @@ const Meal = Vue.component('Meal',{
         calculateTotalMeal(){
             this.resetTotalMeal();
             this.$store.commit('calculateTotalMeal');
-            /*for(index in this.$store.state.mealsData[this.$store.state.dateIndex].meals){
-                var meal = this.$store.state.mealsData[this.$store.state.dateIndex].meals[index];
-                this.totalCal += parseInt(meal.cal);
-                this.totalPro += parseInt(meal.pro);
-                this.totalLip += parseInt(meal.lip);
-                this.totalGlu += parseInt(meal.glu);
-            }*/
         },
     },
 })
@@ -737,71 +713,14 @@ var app = new Vue({
         this.getUserFood();
         this.getUserDish();
         this.getUserMeal();
-        //this.checkRoute();
-    },
-    watch: {
-        /*'$route' (to, from){
-            if(to.path === '/acceuil'){
-                this.loadAccueilHtml();
-            }
-            else if(to.path === '/profil'){
-                this.loadProfilHtml();
-            }
-            else if(to.path === '/food'){
-                this.loadMaNourritureHtml();
-            }
-            else if(to.path === '/meal'){
-                this.loadMesRepasHtml();
-            }
-            else{
-                this.loadAccueilHtml();
-            }
-        }*/
     },
     data: {
-        //avatar: null,
-        env: '',
-        currentRoute: '/acceuil',
-        //User Data
-        userData: '',
-        userAvatarLink: '',
-        userDish: [],
-        userFood: [],
-        content: '',
-        contentHtml: '<p>coucou</p>',
-        appContent: 'accueil',
         csrfToken: document.head.querySelector('meta[name="csrf-token"]').getAttribute('content'),
-        //Changement de mot de passe
-        passRegex: '^((?=\\S*?[a-z]).{7,})\\S$',
-        passChangeBtn: 1,
-        passMsg: '',
-        test: null,
-        //Page Ma Nourriture
-        myFood: 'myMeal',
-            //Format du formulaire nourriture (update or create)
-            foodFormState: '',
-            //Erreur formulaire ajout de nourriture
-            foodFormError: Object.assign({}, modelFoodError),
-            //Objet nourriture à update
-            foodToUpdate: '',
-            //Format du formulaire plat (update or create)
-            dishFormState: '',
-            //Erreur formulaire ajout de plat
-            dishFormError: Object.assign({}, modelDishError),
-            //Objet plat à update
-            dishToUpdate: '',
         //Page Mes Repas
         //On stock la date du jour pour construire le calendrier des repas
         frenchDayName: ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'],
         frenchMonthName: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
         actualDate: new Date(),
-        dateIndex: 6,
-        mealsData: [],
-        totalCal: 0,
-        totalPro: 0,
-        totalLip: 0,
-        totalGlu: 0,
-        /*aliments: JSON.parse({!!$aliments!!}),*/
     },
     methods:{
         findWithAttr(array, attr, value){
@@ -811,25 +730,6 @@ var app = new Vue({
                 }
             }
             return -1;
-        },
-        checkRoute(){
-          if(this.$route.path != this.currentRoute){
-              if(this.$route.path === '/acceuil'){
-                  this.loadAccueilHtml();
-              }
-              else if(this.$route.path === '/profil'){
-                  this.loadProfilHtml();
-              }
-              else if(this.$route.path === '/food'){
-                  this.loadMaNourritureHtml();
-              }
-              else if(this.$route.path === '/meal'){
-                  this.loadMesRepasHtml();
-              }
-              else{
-                  this.loadAccueilHtml();
-              }
-          }
         },
         setEnv(){
           var env = window.location.href;

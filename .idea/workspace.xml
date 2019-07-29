@@ -39,15 +39,15 @@
       <file leaf-file-name="appVue.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/js/appVue.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7672">
-              <caret line="1024" column="22" selection-start-line="1024" selection-start-column="22" selection-end-line="1024" selection-end-column="22" />
+            <state relative-caret-position="-397">
+              <caret line="732" column="10" selection-start-line="732" selection-start-column="10" selection-end-line="732" selection-end-column="10" />
               <folding>
                 <element signature="e#21#159#0" />
                 <element signature="e#182#320#0" />
                 <element signature="e#346#430#0" />
                 <element signature="e#457#541#0" />
-                <element signature="e#3277#8912#0" />
                 <element signature="e#8948#23180#0" />
+                <element signature="e#23764#33261#0" />
               </folding>
             </state>
           </provider>
@@ -139,8 +139,8 @@
       <find>userFood</find>
       <find>getUserFood</find>
       <find>setUserData</find>
-      <find>setMealsDate</find>
       <find>getUserMeal</find>
+      <find>setMealsDate</find>
     </findStrings>
     <replaceStrings>
       <replace>login</replace>
@@ -1479,12 +1479,12 @@
       <workItem from="1563523494208" duration="788000" />
       <workItem from="1564053343618" duration="12313000" />
       <workItem from="1564128127165" duration="2686000" />
-      <workItem from="1564395578128" duration="7791000" />
+      <workItem from="1564395578128" duration="8575000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="421776000" />
+    <option name="totallyTimeSpent" value="422560000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1865,15 +1865,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/appVue.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7672">
-          <caret line="1024" column="22" selection-start-line="1024" selection-start-column="22" selection-end-line="1024" selection-end-column="22" />
+        <state relative-caret-position="-397">
+          <caret line="732" column="10" selection-start-line="732" selection-start-column="10" selection-end-line="732" selection-end-column="10" />
           <folding>
             <element signature="e#21#159#0" />
             <element signature="e#182#320#0" />
             <element signature="e#346#430#0" />
             <element signature="e#457#541#0" />
-            <element signature="e#3277#8912#0" />
             <element signature="e#8948#23180#0" />
+            <element signature="e#23764#33261#0" />
           </folding>
         </state>
       </provider>
