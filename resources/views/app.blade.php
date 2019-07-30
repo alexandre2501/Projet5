@@ -3,10 +3,10 @@
 @section('contenu')
 
     <div id="app" class="row">
-        <div id="menu"class="sidenav col l2 sidenav-fixed">
+        <div id="menu"class="sidenav col l2 sidenav-fixed #e1f5fe light-blue lighten-5">
 
             <ul>
-                <div id="profil_window" class="#e1f5fe light-blue lighten-5 center-align">
+                <div id="profil_window" class="center-align">
                     <div>
                         <img id="avatar" :src="$store.state.userAvatarLink">
                     </div>
