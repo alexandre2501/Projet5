@@ -2,77 +2,20 @@ const Food = Vue.component('Food',{
     template: '<div class="row flex" id="myFood_block">\n' +
     '    <div class="#fafafa grey lighten-5 z-depth-2 col s12">\n' +
     '        <div class="col s12 pad-zero">\n' +
-    '            <button v-on:click="loadMyFood(\'myDish\')" class="waves-effect waves-light btn-large col s6 m6 l3">Mes plats</button>\n' +
-    '            <button v-on:click="loadMyFood(\'myFood\')" class="waves-effect waves-light btn-large col s6 m6 l3">Mes aliments</button>\n' +
-    '            <button v-on:click="loadMyFood(\'addDish\')" class="waves-effect waves-light btn-large col s12 m6 l3">Ajouter un plat</button>\n' +
-    '            <button v-on:click="loadMyFood(\'addFood\')" class="waves-effect waves-light btn-large col s12 m6 l3">Ajouter un aliment</button>\n' +
+    '            <router-link to="/food/MyDish"><button class="waves-effect waves-light btn-large col s6 m6 l3">Mes plats</button></router-link>\n' +
+    '            <router-link to="/food/MyFood"><button class="waves-effect waves-light btn-large col s6 m6 l3">Mes aliments</button></router-link>\n' +
+    '            <router-link to="/food/AddDish"><button class="waves-effect waves-light btn-large col s12 m6 l3">Ajouter un plat</button></router-link>\n' +
+    '            <router-link to="/food/AddFood"><button class="waves-effect waves-light btn-large col s12 m6 l3">Ajouter un aliment</button></router-link>\n' +
     '        </div>\n' +
-    '    <div v-if="myFood === \'myDish\'">\n' +
-    '        <div class="">\n' +
-    '            <div class="food-block col s6 m4 l4 xl3" v-for="(value,index) in $store.state.userDish">\n' +
-    '                <div class="food-content col s12 z-depth-2">\n' +
-    '                    <h5 class="#26a69a teal lighten-1 col s12 center-align">{{ value.name }}</h5>\n' +
-    '                    <div class="col s12 center-align">Calories : {{ value.cal }} </div>\n' +
-    '                    <div class="col s12 m12 l6 center-align">Quantité : {{ value.quant }} g</div>\n' +
-    '                    <div class="col s12 m12 l6 center-align">Protéines : {{ value.pro }} g</div>\n' +
-    '                    <div class="col s12 m12 l6 center-align">Lipides : {{ value.lip }} g</div>\n' +
-    '                    <div class="col s12 m12 l6 center-align">Glucides : {{ value.glu }} g</div>\n' +
-    '                    <div class="col s12"><button class="col s12 m12 l6 waves-effect waves-light btn-small" v-on:click="deleteDish(index)">Supprimer</button><button class="col s12 m12 l6 waves-effect waves-light btn-small" v-on:click="fillUpdateDish(index)">Modifier</button></div>\n' +
-    '                </div>\n' +
-    '            </div>\n' +
-    '        </div>\n' +
-    '    </div>\n' +
-    '    <div v-else-if="myFood === \'myFood\'">\n' +
-    '        <div class="">\n' +
-    '            <div class="food-block col s6 m4 l4 xl3" v-for="(value,index) in $store.state.userFood">\n' +
-    '                <div class="food-content col s12 z-depth-2">\n' +
-    '                    <h5 class="#26a69a teal lighten-1 col s12 center-align">{{ value.name }}</h5>\n' +
-    '                    <div class="col s12 center-align">Calories : {{ value.cal }} </div>\n' +
-    '                    <div class="col s12 m12 l6 center-align">Quantité : {{ value.quant }} g</div>\n' +
-    '                    <div class="col s12 m12 l6 center-align">Protéines : {{ value.pro }} g</div>\n' +
-    '                    <div class="col s12 m12 l6 center-align">Lipides : {{ value.lip }} g</div>\n' +
-    '                    <div class="col s12 m12 l6 center-align">Glucides : {{ value.glu }} g</div>\n' +
-    '                    <div class="col s12"><button class="col s12 m12 l6 waves-effect waves-light btn-small" v-on:click="deleteFood(index)">Supprimer</button><button class="col s12 m12 l6 waves-effect waves-light btn-small" v-on:click="fillUpdateFood(index)">Modifier</button></div>\n' +
-    '                </div>\n' +
-    '            </div>\n' +
-    '        </div>\n' +
-    '    </div>\n' +
-    '    <div v-else-if="myFood === \'addDish\'">\n' +
-    '        <form class="form-style" id="add-dish-form">\n' +
-    '            <label for="dish-name">Nom de l\'aliment<input v-model="dishToUpdate.name" id="dish-name" type="text" name="dishName"></label>\n' +
-    '            <span id="dishNameError">{{ $store.state.dishFormError.dishNameError }}</span>\n' +
-    '            <label for="dish-cal">Calories (kcal)<input v-model="dishToUpdate.cal" id="dish-cal" type="text" name="dishCal"></label>\n' +
-    '            <span id="dishCalError">{{ $store.state.dishFormError.dishCalError }}</span>\n' +
-    '            <label for="dish-quantity">Quantité (g)<input v-model="dishToUpdate.quant" id="dish-quantity" type="text" name="dishQuant"></label>\n' +
-    '            <span id="dishQuantError">{{ $store.state.dishFormError.dishQuantError }}</span>\n' +
-    '            <label for="dish-pro">Protéine (g)<input v-model="dishToUpdate.pro" id="dish-pro" type="text" name="dishPro"></label>\n' +
-    '            <span id="dishProError">{{ $store.state.dishFormError.dishProError }}</span>\n' +
-    '            <label for="dish-lip">Lipide (g)<input v-model="dishToUpdate.lip" id="dish-lip" type="text" name="dishLip"></label>\n' +
-    '            <span id="dishLipError">{{ $store.state.dishFormError.dishLipError }}</span>\n' +
-    '            <label for="dish-glu">Glucide (g)<input v-model="dishToUpdate.glu" id="dish-glu" type="text" name="dishGlu"></label>\n' +
-    '            <span id="dishGluError">{{ $store.state.dishFormError.dishGluError }}</span>\n' +
-    '            <button class="waves-effect waves-light btn-small" v-if="dishFormState === \'update\'" type="submit" id="update-dish-submit" v-on:click="updateDish">Modifier</button>\n' +
-    '            <button class="waves-effect waves-light btn-small" v-else type="submit" id="add-dish-submit" v-on:click="createDish">Ajouter</button>\n' +
-    '        </form>\n' +
-    '    </div>\n' +
-    '    <div v-else-if="myFood === \'addFood\'">\n' +
-    '        <form class="form-style" id="add-food-form">\n' +
-    '            <label for="food-name">Nom de l\'aliment<input v-model="foodToUpdate.name" id="food-name" type="text" name="foodName"></label>\n' +
-    '            <span id="foodNameError">{{ $store.state.foodFormError.foodNameError }}</span>\n' +
-    '            <label for="food-cal">Calories (kcal)<input v-model="foodToUpdate.cal" id="food-cal" type="text" name="foodCal"></label>\n' +
-    '            <span id="foodCalError">{{ $store.state.foodFormError.foodCalError }}</span>\n' +
-    '            <label for="food-quantity">Quantité (g)<input v-model="foodToUpdate.quant" id="food-quantity" type="text" name="foodQuant"></label>\n' +
-    '            <span id="foodQuantError">{{ $store.state.foodFormError.foodQuantError }}</span>\n' +
-    '            <label for="food-pro">Protéine (g)<input v-model="foodToUpdate.pro" id="food-pro" type="text" name="foodPro"></label>\n' +
-    '            <span id="foodProError">{{ $store.state.foodFormError.foodProError }}</span>\n' +
-    '            <label for="food-lip">Lipide (g)<input v-model="foodToUpdate.lip" id="food-lip" type="text" name="foodLip"></label>\n' +
-    '            <span id="foodLipError">{{ $store.state.foodFormError.foodLipError }}</span>\n' +
-    '            <label for="food-glu">Glucide (g)<input v-model="foodToUpdate.glu" id="food-glu" type="text" name="foodGlu"></label>\n' +
-    '            <span id="foodGluError">{{ $store.state.foodFormError.foodGluError }}</span>\n' +
-    '            <button class="waves-effect waves-light btn-small" v-if="foodFormState === \'update\'" type="submit" id="update-food-submit" v-on:click="updateFood">Modifier</button>\n' +
-    '            <button class="waves-effect waves-light btn-small" v-else type="submit" id="add-food-submit" v-on:click="createFood">Ajouter</button>\n' +
-    '        </form>\n' +
-    '    </div>\n' +
+    '<router-view v-on:deleteFood="deleteFood($event)"' +
+    '             v-on:fillUpdateFood="fillUpdateFood($event)" ' +
+    '             v-on:deleteDish="deleteDish($event)" ' +
+    '             v-on:fillUpdateDish="fillUpdateDish($event)" ' +
+    '             v-on:updateFood="updateFood" ' +
+    '             v-on:createFood="createFood" ' +
+    '             v-on:updateDish="updateDish" ' +
+    '             v-on:createDish="createDish" ' +
+    '             v-bind:foodToUpdate="foodToUpdate" v-bind:foodFormState="foodFormState" v-bind:dishFormState="dishFormState" v-bind:dishToUpdate="dishToUpdate"></router-view>' +
     '    </div>\n' +
     '</div>',
     mounted(){
@@ -116,16 +59,19 @@ const Food = Vue.component('Food',{
             }
         },
         fillUpdateFood(index){
+            this.$router.push('/food/AddFood')
             this.myFood = 'addFood';
             this.foodFormState ='update';
             this.foodToUpdate = this.$store.state.userFood[index];
         },
         fillUpdateDish(index){
+            this.$router.push('/food/AddDish')
             this.myFood = 'addDish';
             this.dishFormState ='update';
             this.dishToUpdate = this.$store.state.userDish[index];
         },
         deleteFood(index){
+            console.log(index);
             var self = this;
             var id = this.$store.state.userFood[index].id;
             axios.post('/delete-food',{
@@ -157,8 +103,7 @@ const Food = Vue.component('Food',{
                 })
             console.log(this.userDish)
         },
-        createFood(e){
-            e.preventDefault();
+        createFood(){
             var formElt = document.getElementById('add-food-form');
             var formData = new FormData(formElt);
             axios.post('/create-food',
@@ -169,7 +114,8 @@ const Food = Vue.component('Food',{
                     }
                 })
                 .then(function(response){
-                    this.loadMyFood('myFood');
+                    this.$router.push('/food/MyFood');
+                    this.$parent.getUserFood();
                 }.bind(this))
                 .catch(function(error){
                     this.cleanseErrorMsg('food');
@@ -179,8 +125,7 @@ const Food = Vue.component('Food',{
                     }
                 }.bind(this))
         },
-        createDish(e){
-            e.preventDefault();
+        createDish(){
             var formElt = document.getElementById('add-dish-form');
             var formData = new FormData(formElt);
             axios.post('/create-dish',
@@ -191,7 +136,8 @@ const Food = Vue.component('Food',{
                     }
                 })
                 .then(function(response){
-                    this.loadMyFood('myDish');
+                    this.$router.push('/food/MyDish');
+                    this.$parent.getUserDish();
                 }.bind(this))
                 .catch(function(error){
                     this.cleanseErrorMsg('dish');
@@ -200,8 +146,7 @@ const Food = Vue.component('Food',{
                     }
                 }.bind(this))
         },
-        updateFood(e){
-            e.preventDefault();
+        updateFood(){
             var self = this;
             axios.post('/update-food',
                 self.foodToUpdate
@@ -211,7 +156,8 @@ const Food = Vue.component('Food',{
                     }
                 })
                 .then((response)=>{
-                    this.loadMyFood('myFood');
+                    this.$router.push('/food/MyFood');
+                    this.$parent.getUserFood();
                     this.foodToUpdate = '';
                     this.foodFormState = '';
                 })
@@ -224,8 +170,7 @@ const Food = Vue.component('Food',{
                     }
                 })
         },
-        updateDish(e){
-            e.preventDefault();
+        updateDish(){
             var self = this;
             axios.post('/update-dish',
                 self.dishToUpdate
@@ -235,8 +180,8 @@ const Food = Vue.component('Food',{
                     }
                 })
                 .then(function(response){
-                    console.log(response.data);
-                    self.loadMyFood('myDish');
+                    this.$router.push('/food/MyDish');
+                    this.$parent.getUserDish();
                     self.dishToUpdate = '';
                     self.dishFormState = '';
                 })

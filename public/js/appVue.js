@@ -151,9 +151,28 @@ const store = new Vuex.Store({
 })
 
 const routes = [
-    { path: '/accueil'},
+    { path: '/accueil', component: Home},
     { path: '/profil', component: Profil},
-    { path: '/food', component: Food},
+    { path: '/food', component: Food,
+        children: [
+            {
+                path: 'MyFood',
+                component: MyFood,
+            },
+            {
+                path: 'MyDish',
+                component: MyDish,
+            },
+            {
+                path: 'AddFood',
+                component: AddFood,
+            },
+            {
+                path: 'AddDish',
+                component: AddDish,
+            },
+        ]
+    },
     { path: '/meal', component: Meal},
 ]
 
@@ -163,7 +182,7 @@ const router = new VueRouter({
 
 var app = new Vue({
     el: '#app',
-    components: {'Profil': Profil, 'Food': Food, 'Meal': Meal},
+    components: {'Home': Home, 'Profil': Profil, 'Food': Food, 'Meal': Meal},
     router,
     store,
     mounted(){

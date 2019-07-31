@@ -11,7 +11,7 @@
                         <img id="avatar" :src="$store.state.userAvatarLink">
                     </div>
                 </div>
-                <router-link to="/acceuil">
+                <router-link to="/accueil">
                     <li><a><i class="fas fa-home"></i>Accueil</a></li>
                 </router-link>
                 <router-link to="/profil">

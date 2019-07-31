@@ -18,6 +18,10 @@
 <script src="node_modules/axios/dist/axios.js"></script>
 <script src="js/components/Home.js"></script>
 <script src="js/components/Profil.js"></script>
+<script src="js/components/FoodMyFood.js"></script>
+<script src="js/components/FoodMyDish.js"></script>
+<script src="js/components/FoodAddFood.js"></script>
+<script src="js/components/FoodAddDish.js"></script>
 <script src="js/components/Food.js"></script>
 <script src="js/components/Meal.js"></script>
 <script src="js/appVue.js"></script>
