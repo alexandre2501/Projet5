@@ -36,26 +36,30 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="appVue.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="appVue.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/js/appVue.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="16">
-              <caret line="711" column="18" selection-start-line="711" selection-start-column="18" selection-end-line="711" selection-end-column="18" />
+            <state relative-caret-position="156">
+              <caret line="152" column="39" selection-start-line="152" selection-start-column="39" selection-end-line="152" selection-end-column="39" />
               <folding>
                 <element signature="e#21#159#0" />
                 <element signature="e#182#320#0" />
                 <element signature="e#346#430#0" />
                 <element signature="e#457#541#0" />
+                <element signature="e#573#4410#0" />
+                <element signature="e#4452#10184#0" />
+                <element signature="e#10220#24496#0" />
+                <element signature="e#24532#32791#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="appStyle.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="appStyle.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/css/appStyle.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="31" column="30" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="30" />
+            <state relative-caret-position="400">
+              <caret line="70" column="22" selection-start-line="70" selection-start-column="22" selection-end-line="70" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -226,9 +230,9 @@
         <option value="$PROJECT_DIR$/public/js/components/Profil.vue" />
         <option value="$PROJECT_DIR$/resources/views/includesApp/appProfil.blade.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/public/js/appVue.js" />
         <option value="$PROJECT_DIR$/resources/views/app.blade.php" />
         <option value="$PROJECT_DIR$/public/css/appStyle.css" />
+        <option value="$PROJECT_DIR$/public/js/appVue.js" />
       </list>
     </option>
   </component>
@@ -1322,7 +1326,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -1386,6 +1389,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1508,11 +1512,12 @@
       <workItem from="1564128127165" duration="2686000" />
       <workItem from="1564395578128" duration="9718000" />
       <workItem from="1564487681750" duration="1730000" />
+      <workItem from="1564568420433" duration="1086000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="425433000" />
+    <option name="totallyTimeSpent" value="426519000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1532,9 +1537,9 @@
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.3297062" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3297062" />
-      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.24700762" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.24700762" />
       <window_info anchor="right" id="Remote Host" order="3" weight="0.32995737" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.7096774" visible="true" weight="0.18123667" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.7096774" visible="true" weight="0.18283582" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="4" visible="true" weight="0.1913646" />
       <window_info id="Structure" order="1" sideWeight="0.29032257" side_tool="true" weight="0.16044776" />
@@ -1544,10 +1549,10 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Database Console" order="11" weight="0.32535365" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="File Transfer" order="13" weight="0.3297062" />
+      <window_info anchor="bottom" id="Database Console" order="11" weight="0.32535365" />
       <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
@@ -1855,19 +1860,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/appVue.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16">
-          <caret line="711" column="18" selection-start-line="711" selection-start-column="18" selection-end-line="711" selection-end-column="18" />
-          <folding>
-            <element signature="e#21#159#0" />
-            <element signature="e#182#320#0" />
-            <element signature="e#346#430#0" />
-            <element signature="e#457#541#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/includesApp/appAccueil.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -1891,8 +1883,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/css/appStyle.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="31" column="30" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="30" />
+        <state relative-caret-position="400">
+          <caret line="70" column="22" selection-start-line="70" selection-start-column="22" selection-end-line="70" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/appVue.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="152" column="39" selection-start-line="152" selection-start-column="39" selection-end-line="152" selection-end-column="39" />
+          <folding>
+            <element signature="e#21#159#0" />
+            <element signature="e#182#320#0" />
+            <element signature="e#346#430#0" />
+            <element signature="e#457#541#0" />
+            <element signature="e#573#4410#0" />
+            <element signature="e#4452#10184#0" />
+            <element signature="e#10220#24496#0" />
+            <element signature="e#24532#32791#0" />
+          </folding>
         </state>
       </provider>
     </entry>

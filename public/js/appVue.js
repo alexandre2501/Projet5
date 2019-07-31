@@ -189,7 +189,7 @@ const Profil = Vue.component('Profil', {
     '                <input v-model="confirmPass" v-on:keyup="comparePassword" id="confirm_pass_input" type="password" name="confirmPass">\n' +
     '                <label for="confirm_pass_input">Confirme le mot de passe :</label>\n' +
     '            </div>\n' +
-    '            <button type="submit" id="submit_password_change" v-on:click="submitPasswordChange" :disabled="passChangeBtn === 1 ? true : false">Modifier</button>\n' +
+    '            <button type="submit" class="btn" id="submit_password_change" v-on:click="submitPasswordChange" :disabled="passChangeBtn === 1 ? true : false">Modifier</button>\n' +
     '        </form>\n' +
     '        <span>{{passMsg}}</span>\n' +
     '        <div><p><strong>Tips :</strong> Votre mot de passe ne doit pas contenir d\'espace et doit faire 8 caractères minimum</p></div>\n' +

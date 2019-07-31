@@ -68,6 +68,10 @@ h3{
     padding-bottom: 5px;
 }
 
+.router-link-active li{
+    background-color: #b5e6fd;
+}
+
 /* GENERAL */
 
 #profil_block > div,
