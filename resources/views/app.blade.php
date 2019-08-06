@@ -4,7 +4,6 @@
 
     <div id="app" class="row">
         <div id="menu"class="sidenav col l2 sidenav-fixed #e1f5fe light-blue lighten-5">
-
             <ul>
                 <div id="profil_window" class="center-align">
                     <div>
@@ -23,6 +22,9 @@
                 <router-link to="/meal">
                     <li><a><i class="fas fa-utensils"></i>Mes Repas</a></li>
                 </router-link>
+                @if(Auth::user()->isAdmin())
+                    <li><a href="/admin"><i class="fas fa-utensils"></i>Admin Panel</a></li>
+                @endif
             </ul>
         </div>
         <div id="app_content" class="col s12 l10 offset-l2 #eeeeee grey lighten-3">
