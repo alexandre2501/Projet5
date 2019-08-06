@@ -9,6 +9,12 @@ use App\Http\Requests\AddNewsRequest;
 
 class NewsController extends Controller
 {
+    public function getNews(Request $request){
+        $news = News::all();
+
+        return view('/admin/news')->with('news', $news);
+    }
+
     public function addNews(AddNewsRequest $request){
         $news = new News;
         $news->title = $request->title;
@@ -17,6 +23,6 @@ class NewsController extends Controller
 
         $news->save();
 
-        return view('/admin/news');
+        return redirect('/admin/news');
     }
 }
