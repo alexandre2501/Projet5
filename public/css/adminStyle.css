@@ -1,0 +1,120 @@
+/* AJUSTEMENT MATERIALIZE */
+
+.row{
+    margin-bottom: 0;
+}
+
+h3{
+    margin-top: 0;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: #26a69a;
+    color: white;
+}
+
+.flex{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.space-evenly{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#app_content{
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.app-box{
+    min-height: 95vh;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+/* SIDEBAR */
+
+.sidenav ul{
+    margin-top: 0;
+}
+
+#profil_window{
+    background-color: #1d68a7;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#menu{
+    padding: 0;
+}
+
+#avatar{
+    max-width: 100px;
+    max-height: 100px;
+    min-width: 100px;
+    min-height: 100px;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+.sidenav{
+    width: 250px;
+}
+
+.sidenav a:hover{
+    cursor: pointer;
+}
+
+.pad-zero{
+    padding: 0 !important;
+}
+
+.color-cal{
+    background-color: #9575cd;
+    color: white;
+}
+
+.color-quant{
+    background-color: #dce775;
+    color: white;
+}
+
+.color-pro{
+    background-color: #aed581;
+    color: white;
+}
+
+.color-lip{
+    background-color: #a1887f;
+    color: white;
+}
+
+.color-glu{
+    background-color: #ff4081;
+    color: white;
+}
+
+.fa-plus-circle{
+    cursor: pointer;
+    color: #26a69a;
+}
+
+.fa-times-circle{
+    cursor: pointer;
+}
+
+.fa-chevron-circle-left,
+.fa-chevron-circle-right{
+    cursor: pointer;
+    color: white;
+}
+
+@media only screen and (min-width: 992px) {
+    #menu ul li a{
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+}
