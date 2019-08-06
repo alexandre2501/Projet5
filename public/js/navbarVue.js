@@ -34,7 +34,7 @@
 var navbarComp = {
     props: [],
     methods: {
-        login(){
+        login: function(){
             idPopup = 'clicked login'
             console.log(idPopup)
         },

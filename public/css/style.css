@@ -28,6 +28,7 @@ header {
 #header-content{
     position: absolute;
     width: 100%;
+    text-shadow: 0 0 5px #111111;
 }
 
 #header-content *{
@@ -83,10 +84,11 @@ h2{
     margin-top: -200px;
     margin-left: -200px;
     background-color: white;
-    border: #1d68a7 1px solid;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     border-radius: 10px;
+    padding: 5px;
+    box-shadow: 0 0 20px black;
 }
 
 #inputs-form{
