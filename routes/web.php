@@ -49,9 +49,7 @@ Route::middleware(['auth', 'checkAdmin'])->group(function(){
    Route::get('/admin/home', function(){
       return  view('admin/home');
    });
-    Route::get('/admin/news', function(){
-        return  view('admin/news');
-    });
+    Route::get('/admin/news', 'NewsController@getNews');
     Route::post('/admin/postNews', 'NewsController@addNews');
 });
 
