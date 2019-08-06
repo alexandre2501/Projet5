@@ -42,18 +42,16 @@ Route::get('/app', function(){
     }
 });
 
-Route::get('/admin', function(){
-    if(Auth::check()){
-        if(Auth::user()->isAdmin()){
-            return view('admin/home');
-        }
-        else{
-            return view('notFound');
-        }
-    }
-    else{
-        return redirect('/home')->with('accessDenied', 'Vous devez être enregistrer pour accéder à cette page');
-    }
+Route::middleware(['auth', 'checkAdmin'])->group(function(){
+   Route::get('/admin', function(){
+      return view('admin/home');
+   });
+   Route::get('/admin/home', function(){
+      return  view('admin/home');
+   });
+    Route::get('/admin/news', function(){
+        return  view('admin/news');
+    });
 });
 
 Route::post('/password/change', 'AjaxController@changePassword');
