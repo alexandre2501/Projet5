@@ -65,6 +65,8 @@ Route::get('/testAjax', function(){
 Route::get('/auth/data', 'AjaxController@getAuthData');
 Route::post('/upload/avatar', 'AjaxController@uploadAuthAvatar');
 
+Route::get('/get-news', 'NewsController@getHomeNews');
+
 Route::get('/get-user-dish', 'AjaxDishController@getUserDish');
 Route::post('/create-dish', 'AjaxDishController@createDish');
 Route::post('/delete-dish', 'AjaxDishController@deleteDish');

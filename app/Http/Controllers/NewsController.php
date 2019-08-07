@@ -18,7 +18,12 @@ class NewsController extends Controller
             $newsData = News::where('id', $id)->get()->first();
             return view('/admin/news')->with(['news' => $news, 'edit' => $newsData]);
         }
+    }
 
+    public function getHomeNews(){
+        $news = News::take(3)->orderBy('id', 'desc')->get();
+
+        return response()->json($news);
     }
 
     public function deleteNews($id){
