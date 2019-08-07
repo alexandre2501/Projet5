@@ -118,3 +118,13 @@ h3{
         padding-left: 15px;
     }
 }
+
+/* NEWS */
+
+.news-block{
+    border: 1px solid black;
+}
+
+.crud-btn a{
+    color: white;
+}
