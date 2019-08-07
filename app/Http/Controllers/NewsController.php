@@ -9,10 +9,32 @@ use App\Http\Requests\AddNewsRequest;
 
 class NewsController extends Controller
 {
-    public function getNews(Request $request){
+    public function getNews($id = null){
         $news = News::all();
+        if($id === null){
+            return view('/admin/news')->with('news', $news);
+        }
+        else{
+            $newsData = News::where('id', $id)->get()->first();
+            return view('/admin/news')->with(['news' => $news, 'edit' => $newsData]);
+        }
 
-        return view('/admin/news')->with('news', $news);
+    }
+
+    public function deleteNews($id){
+        News::where('id', $id)->delete();
+        return redirect('/admin/news');
+    }
+
+    public function editNews($id, Request $request){
+        $news = News::find($id);
+        $news->title = $request->title;
+        $news->content = $request->content;
+        $news->usr_upd = Auth::user()->id;
+
+        $news->save();
+
+        return redirect('/admin/news');
     }
 
     public function addNews(AddNewsRequest $request){

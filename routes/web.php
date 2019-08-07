@@ -51,6 +51,9 @@ Route::middleware(['auth', 'checkAdmin'])->group(function(){
    });
     Route::get('/admin/news', 'NewsController@getNews');
     Route::post('/admin/postNews', 'NewsController@addNews');
+    Route::get('/admin/deleteNews/{id}', 'NewsController@deleteNews');
+    Route::post('/admin/editNews/{id}', 'NewsController@editNews');
+    Route::get('/admin/news/{id}', 'NewsController@getNews');
 });
 
 Route::post('/password/change', 'AjaxController@changePassword');
