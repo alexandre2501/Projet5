@@ -17,6 +17,7 @@
 <script src="node_modules/vue-router/dist/vue-router.js"></script>
 <script src="node_modules/axios/dist/axios.js"></script>
 <script src="js/components/Home.js"></script>
+<script src="js/components/Article.js"></script>
 <script src="js/components/Profil.js"></script>
 <script src="js/components/FoodMyFood.js"></script>
 <script src="js/components/FoodMyDish.js"></script>
