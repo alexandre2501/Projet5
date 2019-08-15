@@ -19,7 +19,7 @@ const Home = Vue.component('Home',{
     '       <div class="col m12 s12">' +
     '           <div class="col l4 m6 s12" v-for="(value, index) in news">' +
     '               <div class="news-block">' +
-    '                   <h5 class="center-align">{{ value.title }}</h5><div v-html="value.content"></div>' +
+    '                   <h5 class="center-align"><router-link :to="{ name: \'article\', params: { id: value.id }}">{{ value.title }}</h5></router-link><div v-html="value.content"></div>' +
     '               </div>' +
     '           </div>' +
     '       </div>' +
