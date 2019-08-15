@@ -112,6 +112,19 @@ h3{
     color: white;
 }
 
+/* HOME */
+
+.news-block{
+    padding: 0 !important;
+    border: 2px solid black;
+}
+
+.news-block h5{
+    color: white;
+    margin: 0;
+    background-color: #26a69a;
+    padding: 5px;
+}
 
 /* PROFIL */
 
