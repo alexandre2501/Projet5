@@ -115,11 +115,42 @@ h3{
 /* HOME */
 
 .news-block{
-    padding: 0 !important;
-    border: 2px solid black;
+    margin-top: 15px;
+    padding-top: 15px !important;
+    padding-bottom: 15px !important;
 }
 
-.news-block h5{
+.news-blocks{
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
+    border: 1px solid #26a69a;
+    box-shadow: 0 0 10px grey;
+}
+
+.news-blocks h5{
+    color: white;
+    margin: 0;
+    background-color: #26a69a;
+    padding: 5px;
+}
+
+.news-blocks a{
+    color: white;
+}
+
+.news-content{
+    padding: 5px;
+}
+
+/* ARTICLE */
+
+.article-block{
+    padding: 0 !important;
+}
+
+.article-block h4{
     color: white;
     margin: 0;
     background-color: #26a69a;
