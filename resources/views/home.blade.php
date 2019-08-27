@@ -34,7 +34,7 @@
             <div id="banner-bg"></div>
             <div id="header-content" class="center-align">
                 <h1 id="main-title">Slimmy</h1>
-                <h5>Gardez le contrôle</h5>
+                <h5>Gardez le contrôle sur votre forme</h5>
             </div>
         </div>
         <div class="container-fluid #1e88e5 blue darken-1">
@@ -58,7 +58,7 @@
                 <div class="col m6">
                     <div>
                         <h4>100% Simple</h4>
-                        <p>Notre application est conçu afin que n'importe qui puisse l'utiliser grâce à une ergonomie étudiée pour une prise en maine rapide</p>
+                        <p>Notre application est conçue afin que n'importe qui puisse l'utiliser grâce à une ergonomie étudiée pour une prise en maine rapide</p>
                     </div>
                     <div>
                         <h4>100% Gratuit</h4>
@@ -76,7 +76,7 @@
             <div class="row center-align">
                 <div class="col m12"><h2>Plus rien ne vous retient maintenant !</h2></div>
                 <div class="col m12 flex-vertical">
-                    <p>L'insciption se fait en moins d'une minute. L'essayer c'est l'adopter</p>
+                    <p>L'inscription se fait en moins d'une minute. L'essayer c'est l'adopter</p>
                     @if(!Auth::check())
                         <a v-on:click="openRegister" class="waves-effect waves-light btn-large">Je m'inscris !</a>
                     @endif

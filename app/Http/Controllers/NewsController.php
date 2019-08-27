@@ -22,8 +22,33 @@ class NewsController extends Controller
 
     public function getHomeNews(){
         $news = News::take(3)->orderBy('id', 'desc')->get();
-
+        for($i = 0; $i < 3; $i++){
+            $news[$i]->content = $this->makeDesc(200, $news[$i]->content);
+        }
         return response()->json($news);
+    }
+
+    private function makeDesc($length, $content){
+        $totalLength = 0;
+        $desc = [];
+        $explode = strip_tags($content);
+        $array = explode(' ', $explode);
+        foreach($array as $key=>$value){
+            array_push($desc, $value);
+            $totalLength = $totalLength + strlen($value);
+            if($totalLength >= $length){
+                break;
+            }
+        }
+        array_push($desc, '...');
+        $desc = implode(' ', $desc);
+        return $desc;
+    }
+
+    public function getArticle(Request $request){
+        $article = News::where('id', $request->id)->get();
+
+        return response()->json($article);
     }
 
     public function deleteNews($id){
