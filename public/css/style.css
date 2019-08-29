@@ -61,12 +61,20 @@ h2{
     color: white;
 }
 
+.icons-block p{
+    font-size: 18px;
+}
+
 #mobile-img{
     max-height: 420px;
 }
 
 .log-buttons{
     background-color: aqua;
+}
+
+.button-link{
+    max-width: 50%;
 }
 
 #popup-title{

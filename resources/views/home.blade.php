@@ -42,13 +42,13 @@
         </div>
         <div class="container">
             <div class="row">
-                <div class="col m4 s12 valign-wrapper flex-vertical">
+                <div class="icons-block col m4 s12 valign-wrapper flex-vertical">
                     <i class="icons fas fa-5x fa-carrot"></i><p>Controlez votre alimentation</p>
                 </div>
-                <div class="col m4 s12 valign-wrapper flex-vertical">
+                <div class="icons-block col m4 s12 valign-wrapper flex-vertical">
                     <i class="icons fas fa-5x fa-weight"></i><p>Ajustez votre consommation calorique</p>
                 </div>
-                <div class="col m4 s12 valign-wrapper flex-vertical">
+                <div class="icons-block col m4 s12 valign-wrapper flex-vertical">
                     <i class="icons fas fa-5x fa-running"></i><p>Restez en pleine forme</p>
                 </div>
             </div>
@@ -78,10 +78,14 @@
                 <div class="col m12 flex-vertical">
                     <p>L'inscription se fait en moins d'une minute. L'essayer c'est l'adopter</p>
                     @if(!Auth::check())
-                        <a v-on:click="openRegister" class="waves-effect waves-light btn-large">Je m'inscris !</a>
+                        <div class="center-align">
+                            <a v-on:click="openRegister" class="waves-effect waves-light btn-large button-link">Je m'inscris !</a>
+                        </div>
                     @endif
                     @if(Auth::check())
-                        <a v-on:click="openApp" class="waves-effect waves-light btn-large">Accéder à l'application</a>
+                        <div class="center-align">
+                            <a v-on:click="openApp" class="waves-effect waves-light btn-large button-link">Accéder à l'application</a>
+                        </div>
                     @endif
                 </div>
             </div>
