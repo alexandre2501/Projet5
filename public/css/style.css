@@ -61,6 +61,10 @@ h2{
     color: white;
 }
 
+#mobile-img{
+    max-height: 420px;
+}
+
 .log-buttons{
     background-color: aqua;
 }

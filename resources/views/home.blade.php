@@ -55,7 +55,7 @@
         </div>
         <div class="container">
             <div class="row">
-                <div class="col m6">
+                <div class="col m6 s12">
                     <div>
                         <h4>100% Simple</h4>
                         <p>Notre application est conçue afin que n'importe qui puisse l'utiliser grâce à une ergonomie étudiée pour une prise en maine rapide</p>
@@ -69,7 +69,7 @@
                         <p>Notre gestion dynamique des repas ainsi que les statistiques présentes dans l'interfaces vous aideront à garder le cap</p>
                     </div>
                 </div>
-                <div class="col m6">IMAGE DE L'APPLI SOON</div>
+                <div class="col m6 s12 center-align"><img class="responsive-img" id="mobile-img" src="image/mobile.png" alt="Mobile"></div>
             </div>
         </div>
         <div class="container-fluid #bdbdbd grey lighten-1">
