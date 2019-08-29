@@ -48,7 +48,8 @@ class AjaxController extends Controller
     public function getAuthData(){
         $avatar = Auth::user()->avatar;
         $id = Auth::user()->id;
-        $data = array('avatar' => $avatar, 'id' => $id);
+        $login = Auth::user()->name;
+        $data = array('avatar' => $avatar, 'id' => $id, 'login' => $login);
 
         return response()->json($data);
     }

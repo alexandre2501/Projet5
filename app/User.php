@@ -29,4 +29,14 @@ class User extends Authenticatable
     ];
 
     protected $table = 'users';
+
+    public function isAdmin()
+    {
+        if($this->role === 'admin'){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
 }

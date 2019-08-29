@@ -30,6 +30,9 @@ Route::get('/login', function(){
     return redirect('/home');
 });
 
+Route::post('/login-ajax', 'Auth\LoginController@tryLogin');
+Route::post('/register-ajax', 'Auth\RegisterController@register');
+
 Route::get('/app', function(){
     if(Auth::check()){
         return view('app');
@@ -37,6 +40,20 @@ Route::get('/app', function(){
     else{
         return redirect('/home')->with('accessDenied', 'Vous devez être enregistrer pour accéder à cette page');
     }
+});
+
+Route::middleware(['auth', 'checkAdmin'])->group(function(){
+   Route::get('/admin', function(){
+      return view('admin/home');
+   });
+   Route::get('/admin/home', function(){
+      return  view('admin/home');
+   });
+    Route::get('/admin/news', 'NewsController@getNews');
+    Route::post('/admin/postNews', 'NewsController@addNews');
+    Route::get('/admin/deleteNews/{id}', 'NewsController@deleteNews');
+    Route::post('/admin/editNews/{id}', 'NewsController@editNews');
+    Route::get('/admin/news/{id}', 'NewsController@getNews');
 });
 
 Route::post('/password/change', 'AjaxController@changePassword');
@@ -47,6 +64,9 @@ Route::get('/testAjax', function(){
 
 Route::get('/auth/data', 'AjaxController@getAuthData');
 Route::post('/upload/avatar', 'AjaxController@uploadAuthAvatar');
+
+Route::get('/get-news', 'NewsController@getHomeNews');
+Route::post('/get-article', 'NewsController@getArticle');
 
 Route::get('/get-user-dish', 'AjaxDishController@getUserDish');
 Route::post('/create-dish', 'AjaxDishController@createDish');

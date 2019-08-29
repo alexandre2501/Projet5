@@ -1,3 +1,8 @@
+.container, .container-fluid{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
 nav{
     background-color: #1d68a7;
 }
@@ -5,6 +10,15 @@ nav{
 .navbar{
     padding-top: 0;
     padding-bottom: 0;
+}
+
+.nav-wrapper{
+    box-shadow: 0px 10px 25px black;
+}
+.brand-logo{
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    font-family: Livvic, sans-serif;
 }
 
 header {
@@ -16,15 +30,69 @@ header {
     width: 100%;
 }
 
+#header{
+    position: relative;
+}
+
+#header-content{
+    position: absolute;
+    width: 100%;
+    text-shadow: 0 0 5px #111111;
+}
+
+#header-content *{
+    color: white;
+}
+
+#banner-bg{
+    position: absolute;
+    width: 100%;
+    background-color: rgba(255,255,255,0.2);
+}
+
+h1{
+    margin: 0;
+}
+
+h2{
+    margin: 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: white;
+}
+
+.icons-block p{
+    font-size: 18px;
+}
+
+#mobile-img{
+    max-height: 420px;
+}
+
 .log-buttons{
     background-color: aqua;
 }
 
+.button-link{
+    max-width: 50%;
+}
+
+#popup-title{
+    margin: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: white;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
 .logPopupBackground{
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     z-index: 100;
+    top: 0;
     background-color: rgba(0, 0, 0, 0.2);
 }
 
@@ -34,9 +102,72 @@ header {
     top: 50%;
     left: 50%;
     width: 400px;
-    height: 400px;
     margin-top: -200px;
     margin-left: -200px;
     background-color: white;
-    border: #1d68a7 1px solid;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    padding: 5px;
+    box-shadow: 0 0 20px black;
+}
+
+#inputs-form{
+    margin: 5px;
+}
+
+#inputs-form *{
+    margin: 2.5px;
+}
+
+#buttons-form{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.full-width{
+    width: 100%;
+}
+
+.flex-vertical{
+    display: flex;
+    flex-direction: column;
+}
+
+.icons{
+    color: #00acc1;
+}
+
+.page-footer{
+    padding: 0;
+    background-color: #1d68a7;
+}
+
+
+/* Small screen */
+@media only screen and (max-width: 600px) {
+    /* For mobile phones: */
+    h1{
+        font-size: 2.2rem;
+    }
+    h2{
+        font-size: 2.56rem;
+    }
+    h4{
+        text-align: center;
+    }
+    #popupWindow{
+        position: relative;
+        z-index: 101;
+        top: 50%;
+        left: 50%;
+        width: 300px;
+        margin-top: -200px;
+        margin-left: -150px;
+        background-color: white;
+        border: #1d68a7 1px solid;
+    }
+    #popupWindow button{
+        margin-top: 5px;
+    }
 }

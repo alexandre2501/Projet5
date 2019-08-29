@@ -6,6 +6,8 @@
 
 h3{
     margin-top: 0;
+    padding-top: 5px;
+    padding-bottom: 5px;
     background-color: #26a69a;
     color: white;
 }
@@ -27,12 +29,12 @@ h3{
 }
 
 #profil_window{
+    background-color: #1d68a7;
     padding-top: 10px;
     padding-bottom: 10px;
 }
 
 #menu{
-    background-color: #1d68a7;
     padding: 0;
 }
 
@@ -59,10 +61,15 @@ h3{
 }
 
 .app-box{
+    min-height: 95vh;
     padding-left: 20px;
     padding-right: 20px;
     padding-top: 5px;
     padding-bottom: 5px;
+}
+
+.router-link-active li{
+    background-color: #b5e6fd;
 }
 
 /* GENERAL */
@@ -105,6 +112,50 @@ h3{
     color: white;
 }
 
+/* HOME */
+
+.news-block{
+    margin-top: 15px;
+    padding-top: 15px !important;
+    padding-bottom: 15px !important;
+}
+
+.news-blocks{
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
+    border: 1px solid #26a69a;
+    box-shadow: 0 0 10px grey;
+}
+
+.news-blocks h5{
+    color: white;
+    margin: 0;
+    background-color: #26a69a;
+    padding: 5px;
+}
+
+.news-blocks a{
+    color: white;
+}
+
+.news-content{
+    padding: 5px;
+}
+
+/* ARTICLE */
+
+.article-block{
+    padding: 0 !important;
+}
+
+.article-block h4{
+    color: white;
+    margin: 0;
+    background-color: #26a69a;
+    padding: 5px;
+}
 
 /* PROFIL */
 
@@ -158,6 +209,25 @@ h3{
 }
 
 /* REPAS */
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+/* Chrome */
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin:0;
+}
+
+/* Opéra*/
+input::-o-inner-spin-button,
+input::-o-outer-spin-button {
+    -o-appearance: none;
+    margin:0
+}
 
 .repas-block{
     margin-top: 5px;
@@ -260,4 +330,11 @@ h3{
 
 #nameDate{
     font-size: 25px;
+}
+
+@media only screen and (min-width: 992px) {
+    #menu ul li a{
+        padding-right: 15px;
+        padding-left: 15px;
+    }
 }

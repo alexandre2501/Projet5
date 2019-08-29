@@ -7,6 +7,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Auth\Events\Registered;
 
 class RegisterController extends Controller
 {
@@ -40,6 +43,19 @@ class RegisterController extends Controller
         $this->middleware('guest');
     }
 
+
+    public function register(Request $request)
+    {
+        $this->validator($request->all())->validate();
+
+        event(new Registered($user = $this->create($request->all())));
+
+        $this->guard()->login($user);
+
+        return $this->registered($request, $user)
+            ?: redirect($this->redirectPath());
+    }
+
     /**
      * Get a validator for an incoming registration request.
      *
@@ -49,10 +65,19 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
+            'name' => ['required', 'string', 'max:255', 'unique:users'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8'],
-        ]);
+        ],
+            [
+                'required' => 'Ce champ est vide',
+                'min' => 'Ce champ doit faire :min caractères',
+                'max' => 'Ce champ est trop long, max: :max caractères',
+                'email.unique' => 'Cet email est déjà utilisé',
+                'name.unique' => 'Ce pseudo est déjà utilisé',
+                'string' => 'Contient des caractères invalide',
+                'email' => 'Format incorrect',
+            ]);
     }
 
     /**
