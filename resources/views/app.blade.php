@@ -16,7 +16,7 @@
                 <router-link to="/profil">
                     <li><a><i class="fas fa-user"></i>Mon Profil</a></li>
                 </router-link>
-                <router-link to="/food">
+                <router-link to="/food/MyDish">
                     <li><a><i class="fas fa-apple-alt"></i>Ma Nourriture</a></li>
                 </router-link>
                 <router-link to="/meal">

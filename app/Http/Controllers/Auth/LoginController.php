@@ -86,7 +86,6 @@ class LoginController extends Controller
 
     private function attemptLogin(LoginRequest $request)
     {
-        var_dump('coucou');
         return $this->guard()->attempt(
             $this->credentials($request), $request->filled('remember')
         );
