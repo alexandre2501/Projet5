@@ -93,8 +93,8 @@
       <file leaf-file-name="web.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="624">
-              <caret line="48" column="17" selection-start-line="48" selection-start-column="17" selection-end-line="48" selection-end-column="17" />
+            <state relative-caret-position="320">
+              <caret line="29" column="29" lean-forward="true" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -1358,6 +1358,12 @@
               <item name="projet5" type="b2602c69:ProjectViewProjectNode" />
               <item name="projet5" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="avatars" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="projet5" type="b2602c69:ProjectViewProjectNode" />
+              <item name="projet5" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
               <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -1427,17 +1433,17 @@
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\wamp64\www\projet5\resources\lang" />
-      <recent name="C:\wamp64\www\projet5\public\image" />
-      <recent name="C:\wamp64\www\projet5\public\js" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\projet5\public\avatars" />
       <recent name="C:\wamp64\www\projet5\public\image" />
       <recent name="C:\wamp64\www\projet5\public\storage" />
       <recent name="C:\wamp64\www\projet5\storage\app\public" />
       <recent name="C:\wamp64\www\projet5\storage\app" />
-      <recent name="C:\wamp64\www\projet5\storage" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\projet5\resources\lang" />
+      <recent name="C:\wamp64\www\projet5\public\image" />
+      <recent name="C:\wamp64\www\projet5\public\js" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -1540,12 +1546,12 @@
       <workItem from="1567150937714" duration="8524000" />
       <workItem from="1567362990652" duration="853000" />
       <workItem from="1567441612970" duration="1538000" />
-      <workItem from="1567688056261" duration="4321000" />
+      <workItem from="1567688056261" duration="4417000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="478670000" />
+    <option name="totallyTimeSpent" value="478766000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1887,8 +1893,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="624">
-          <caret line="48" column="17" selection-start-line="48" selection-start-column="17" selection-end-line="48" selection-end-column="17" />
+        <state relative-caret-position="320">
+          <caret line="29" column="29" lean-forward="true" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="29" />
         </state>
       </provider>
     </entry>
