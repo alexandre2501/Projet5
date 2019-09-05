@@ -168,6 +168,10 @@ h3{
     padding: 5px;
 }
 
+#avatar_min{
+    max-width: 325px;
+}
+
 /* MY FOOD */
 
 #myFood_block > div{

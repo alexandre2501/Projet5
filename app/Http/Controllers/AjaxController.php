@@ -60,7 +60,9 @@ class AjaxController extends Controller
         $img->resize(200, 200);
         $path = 'avatars/' . Auth::user()->id . date('YmdHis') . '.png';
         $img->save(public_path($path));
-        File::delete($oldPath);
+        if(Auth::user()->avatar !== 'default.png'){
+            File::delete($oldPath);
+        }
         $user = User::where('name', Auth::user()->name);
         $user->update([
             'avatar' => Auth::user()->id . date('YmdHis') . '.png',

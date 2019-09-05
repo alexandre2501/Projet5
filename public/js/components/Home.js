@@ -6,10 +6,10 @@ const Home = Vue.component('Home',{
     '           <p>L\'application Slimmy est là pour t\'aider à gérer ton alimentation quel que soit ton objectif. ' +
     '           Pour améliorer ta navigation et ta prise en main de l\'outil, voici quelques conseils :</p>' +
     '           <ul class="collection">' +
-    '               <li class="collection-item">L\'onglet "Ma Nourriture" te permet d\ajouter des plats ou des aliments, à toi de choisir les spécificités(calories,nutriments...etc) de ta nourriture.</li>' +
+    '               <li class="collection-item">L\'onglet "Ma Nourriture" te permet d\ajouter des plats ou des aliments, à toi de choisir les spécificités (calories, nutriments...etc) de ta nourriture.</li>' +
     '               <li class="collection-item">Tu peux également gérer tes aliments à tout moment grace aux boutons "Supprimer" et "Modifier".</li>' +
-    '               <li class="collection-item">L\'onglet "Mes Repas" est la partie ou tu va pouvoir composer tes repas en ajoutant la nourriture que tu aura créer.</li>' +
-    '               <li class="collection-item">Chaques plats/aliments est directement modifiable lorsque tu les ajoute à une journée.</li>' +
+    '               <li class="collection-item">L\'onglet "Mes Repas" est la partie ou tu va pouvoir composer tes repas en ajoutant la nourriture que tu auras crée.</li>' +
+    '               <li class="collection-item">Chaques plats/aliments est directement modifiable lorsque tu les ajoutes à une journée.</li>' +
     '               <li class="collection-item">Une alimentation riche et variée est la clé d\'une bonne santé ! Nos articles seront là pour t\'épauler dans cette voie.</li>' +
     '           </ul>' +
     '           <p>Nous te souhaitons une bonne navigation !</p>' +

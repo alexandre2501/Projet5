@@ -16,7 +16,7 @@
                 <router-link to="/profil">
                     <li><a><i class="fas fa-user"></i>Mon Profil</a></li>
                 </router-link>
-                <router-link to="/food">
+                <router-link to="/food/MyDish">
                     <li><a><i class="fas fa-apple-alt"></i>Ma Nourriture</a></li>
                 </router-link>
                 <router-link to="/meal">
@@ -25,6 +25,7 @@
                 @if(Auth::user()->isAdmin())
                     <li><a href="/admin"><i class="fas fa-utensils"></i>Admin Panel</a></li>
                 @endif
+                <li><a href="/logout"><i class="fas fa-times"></i>Se déconnecter</a></li>
             </ul>
         </div>
         <div id="app_content" class="col s12 l10 offset-l2 #eeeeee grey lighten-3">

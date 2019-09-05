@@ -9,7 +9,7 @@ const Meal = Vue.component('Meal',{
     '        <div id="meal-block" class="col s12">\n' +
     '            <div id="meals-content" class="col s12 m12 l9">\n' +
     '                <div class="col s12">\n' +
-    '                    <h3 class="col s12 center-align">CONSO DU JOUR</h3>\n' +
+    '                    <h3 class="col s12 center-align">CONSOMMATION DU JOUR</h3>\n' +
     '                    <div class="col s3 center-align">Calories : {{ $store.state.mealTotal.cal }} cal</div>\n' +
     '                    <div class="col s3 center-align">Proteines : {{ $store.state.mealTotal.pro }} g</div>\n' +
     '                    <div class="col s3 center-align">Lipides : {{ $store.state.mealTotal.lip }} g</div>\n' +
@@ -25,7 +25,7 @@ const Meal = Vue.component('Meal',{
     '                </div>\n' +
     '            </div>\n' +
     '            <div id="foods-content" class="col s12 m12 l3">\n' +
-    '                <h3 class="col s12 center-align">Food</h3>\n' +
+    '                <h3 class="col s12 center-align">Aliment</h3>\n' +
     '                <div class="col s12 valign-wrapper" v-for="(value,index) in $store.state.userFood">\n' +
     '                    <div class="col s2"><i v-on:click="addFoodToMeal(index)" class="fas fa-2x fa-plus-circle"></i></div>\n' +
     '                    <div class="col s10 food-desc">\n' +
@@ -34,7 +34,7 @@ const Meal = Vue.component('Meal',{
     '                        <div class="col s6">Quantité : {{ value.quant }} g</div>\n' +
     '                    </div>\n' +
     '                </div>\n' +
-    '                <h3 class="col s12 center-align">Dish</h3>\n' +
+    '                <h3 class="col s12 center-align">Plat</h3>\n' +
     '                <div class="col s12 valign-wrapper" v-for="(value,index) in $store.state.userDish">\n' +
     '                    <div class="col s2"><i v-on:click="addDishToMeal(index)" class="fas fa-2x fa-plus-circle"></i></div>\n' +
     '                    <div class="col s10 food-desc">\n' +

@@ -8,7 +8,7 @@ const Profil = Vue.component('Profil', {
     '        <form id="upload_new_avatar">\n' +
     '            <div class="file-field input-field">\n' +
     '                <div class="btn">\n' +
-    '                    <span>File</span>\n' +
+    '                    <span>Fichier</span>\n' +
     '                    <input id="upload_avatar_input" type="file" name="avatar" accept="image/*">\n' +
     '                </div>\n' +
     '                <div class="file-path-wrapper">\n' +
@@ -40,7 +40,7 @@ const Profil = Vue.component('Profil', {
     '            <button type="submit" class="btn" id="submit_password_change" v-on:click="submitPasswordChange" :disabled="passChangeBtn === 1 ? true : false">Modifier</button>\n' +
     '        </form>\n' +
     '        <span>{{passMsg}}</span>\n' +
-    '        <div><p><strong>Tips :</strong> Votre mot de passe ne doit pas contenir d\'espace et doit faire 8 caractères minimum</p></div>\n' +
+    '        <div><p><strong>Astuce :</strong> Votre mot de passe ne doit pas contenir d\'espace et doit faire 8 caractères minimum</p></div>\n' +
     '        </div>\n' +
     '        </div>\n' +
     '    </div>\n' +

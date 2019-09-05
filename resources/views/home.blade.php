@@ -58,7 +58,7 @@
                 <div class="col m6 s12">
                     <div>
                         <h4>100% Simple</h4>
-                        <p>Notre application est conçue afin que n'importe qui puisse l'utiliser grâce à une ergonomie étudiée pour une prise en maine rapide</p>
+                        <p>Notre application est conçue afin que n'importe qui puisse l'utiliser grâce à une ergonomie étudiée pour une prise en main rapide</p>
                     </div>
                     <div>
                         <h4>100% Gratuit</h4>
