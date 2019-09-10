@@ -108,11 +108,11 @@ const store = new Vuex.Store({
         resetDishFormError(state){
             state.dishFormError = Object.assign({}, modelDishError);
         },
-        setFoodFormError(state, error, msg){
-            state.foodFormError[error] = msg;
+        setFoodFormError(state, error){
+            state.foodFormError[error.error] = error.msg;
         },
-        setDishFormError(state, error, msg){
-            state.dishFormError[error] = msg;
+        setDishFormError(state, error){
+            state.dishFormError[error.error] = error.msg;
         },
         getUserMeal(){
 
