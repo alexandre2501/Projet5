@@ -205,11 +205,17 @@ const Food = Vue.component('Food',{
         },
         showResponseError(form, key, msg){
             var error = key + 'Error';
+            var obj = {
+                error: error,
+                msg: msg,
+            }
             if(form === 'food'){
-                this.$state.commit('setFoodFormError', error, msg);
+                this.$store.commit('setFoodFormError', obj);
             }
             else if(form === 'dish'){
-                this.$state.commit('setDishFormError', error, msg);
+                console.log(error)
+                console.log(msg)
+                this.$store.commit('setDishFormError', obj);
             }
         },
     },
