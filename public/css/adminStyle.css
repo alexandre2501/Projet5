@@ -121,8 +121,8 @@ h3{
 
 /* NEWS */
 
-.news-block{
-    border: 1px solid black;
+.crud-btn{
+    margin: 5px;
 }
 
 .crud-btn a{
@@ -130,31 +130,32 @@ h3{
 }
 
 .news-block{
-    margin-top: 15px;
-    padding-top: 15px !important;
-    padding-bottom: 15px !important;
-}
-
-.news-blocks{
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-    margin-top: 5px !important;
+    margin-top: 15px !important;
     margin-bottom: 5px !important;
-    border: 1px solid #26a69a;
-    box-shadow: 0 0 10px grey;
+
 }
 
-.news-blocks h5{
+.news-block h6{
     color: white;
     margin: 0;
     background-color: #26a69a;
     padding: 5px;
 }
 
-.news-blocks a{
+.news-block a{
     color: white;
 }
 
+.news-block-content{
+    box-shadow: 0 0 10px grey;
+    background-color: white;
+    border: 1px solid #26a69a;
+}
+
 .news-content{
+    padding: 5px;
+}
+
+.news-desc{
     padding: 5px;
 }

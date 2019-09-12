@@ -42,11 +42,17 @@
                     <div>
                         @foreach ($news as $new)
                             <div class="col m4 s12 news-block">
-                                <h6>{{ $new->title }}</h6>
-                                <div>{!! $new->content !!}</div>
-                                <div>{{ $new->created_at }}</div>
-                                <button class="btn crud-btn"><a href="/admin/deleteNews/{{ $new->id }}">Supprimer</a></button>
-                                <button class="btn crud-btn"><a href="/admin/news/{{ $new->id }}">Modifier</a></button>
+                                <div class="news-block-content">
+                                    <h6>{{ $new->title }}</h6>
+                                    <div class="news-desc">
+                                        <div>{!! $new->content !!}</div>
+                                        <div>{{ $new->created_at }}</div>
+                                    </div>
+                                    <div class="center-align">
+                                        <button class="btn crud-btn"><a href="/admin/deleteNews/{{ $new->id }}">Supprimer</a></button>
+                                        <button class="btn crud-btn"><a href="/admin/news/{{ $new->id }}">Modifier</a></button>
+                                    </div>
+                                </div>
                             </div>
                         @endforeach
                     </div>

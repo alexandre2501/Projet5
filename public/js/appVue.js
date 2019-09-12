@@ -231,7 +231,7 @@ var app = new Vue({
                     this.$store.commit('setUserAvatarLink', link)//.userAvatarLink = 'http://' + this.env + '/avatars/' + this.userData.avatar;
                 }.bind(this))
                 .catch(function(error){
-                    console.log(error);
+                    //console.log(error);
                 })
         },
         setMealsDate(data){
@@ -274,7 +274,7 @@ var app = new Vue({
                     this.$store.commit('setUserDish', response.data);//userDish = response.data;
                 }.bind(this))
                 .catch(function(error){
-                    console.log(error)
+                    //console.log(error)
                 })
         },
         getUserFood(){
@@ -283,18 +283,18 @@ var app = new Vue({
                     this.$store.commit('setUserFood', response.data);//userFood = response.data;
                 }.bind(this))
                 .catch(function(error){
-                    console.log(error)
+                    //console.log(error)
                 })
         },
         getUserMeal(){
             axios.get('/get-user-meal')
                 .then(function(response){
-                    console.log('coucou')
+                    //console.log('coucou')
                     this.setMealsDate(response.data);
                     //this.calculateTotalMeal();
                 }.bind(this))
                 .catch(function(error){
-                    console.log(error);
+                    //console.log(error);
                 })
 
         },
