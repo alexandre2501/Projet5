@@ -11,6 +11,9 @@ class NewsController extends Controller
 {
     public function getNews($id = null){
         $news = News::all();
+        for($i = 0; $i < count($news); $i++){
+            $news[$i]->content = $this->makeDesc(200, $news[$i]->content);
+        }
         if($id === null){
             return view('/admin/news')->with('news', $news);
         }
