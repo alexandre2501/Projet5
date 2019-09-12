@@ -2,7 +2,7 @@
 /public/hot
 /public/storage
 /public/avatars
-.htacces
+/public/.htaccess
 /storage/*.key
 /vendor
 .env
