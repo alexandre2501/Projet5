@@ -146,6 +146,10 @@ h3{
 
 /* ARTICLE */
 
+#article-content{
+    padding: 5px;
+}
+
 .article-block{
     padding: 0 !important;
 }
