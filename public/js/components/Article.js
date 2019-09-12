@@ -21,11 +21,10 @@ const Article = Vue.component('Article',{
                 id: this.$route.params.id,
             })
                 .then(function(response){
-                    console.log(response.data);
                     this.article = response.data[0];
                 }.bind(this))
                 .catch(function(error){
-                    console.log(error);
+                    //console.log(error);
                 })
         },
     },

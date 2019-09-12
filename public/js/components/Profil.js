@@ -74,10 +74,10 @@ const Profil = Vue.component('Profil', {
                 })
                 .then(function(response){
                     this.$parent.setUserData();
-                    console.log(response.data);
+                    //console.log(response.data);
                 }.bind(this))
                 .catch(function(error){
-                    console.log(error);
+                    //console.log(error);
                 })
         },
         checkPassword(){
@@ -128,7 +128,7 @@ const Profil = Vue.component('Profil', {
                     }
                 }.bind(this))
                 .catch(function(error){
-                    console.log(error);
+                    //console.log(error);
                 })
         },
     },

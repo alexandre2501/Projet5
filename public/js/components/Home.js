@@ -38,11 +38,11 @@ const Home = Vue.component('Home',{
         getNews(){
             axios.get('/get-news')
                 .then(function(response){
-                    console.log(response.data);
+                    //console.log(response.data);
                     this.news = response.data;
                 }.bind(this))
                 .catch(function(error){
-                    console.log(error);
+                    //console.log(error);
                 })
         },
     },

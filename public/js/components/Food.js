@@ -71,7 +71,7 @@ const Food = Vue.component('Food',{
             this.dishToUpdate = this.$store.state.userDish[index];
         },
         deleteFood(index){
-            console.log(index);
+            //console.log(index);
             var self = this;
             var id = this.$store.state.userFood[index].id;
             axios.post('/delete-food',{
@@ -79,29 +79,29 @@ const Food = Vue.component('Food',{
                 userId: self.$store.state.userData.id,
             })
                 .then(function(response){
-                    console.log(response.data);
+                    //console.log(response.data);
                     self.$store.commit('deleteFood', index);
                 })
                 .catch(function(error){
-                    console.log(error);
+                    //console.log(error);
                 })
         },
         deleteDish(index){
             var self = this;
             var id = this.$store.state.userDish[index].id;
-            console.log(index);
+            //console.log(index);
             axios.post('/delete-dish',{
                 dishId: id,
                 userId: self.$store.state.userData.id,
             })
                 .then(function(response){
-                    console.log(response.data);
+                    //console.log(response.data);
                     self.$store.commit('deleteDish', index);
                 })
                 .catch(function(error){
-                    console.log(error);
+                    //console.log(error);
                 })
-            console.log(this.userDish)
+            //console.log(this.userDish)
         },
         createFood(){
             var formElt = document.getElementById('add-food-form');
@@ -119,7 +119,7 @@ const Food = Vue.component('Food',{
                 }.bind(this))
                 .catch(function(error){
                     this.cleanseErrorMsg('food');
-                    console.log(error.response.data.errors)
+                    //console.log(error.response.data.errors)
                     for(key in error.response.data.errors){
                         this.showResponseError('food', key, error.response.data.errors[key][0]);
                     }
@@ -187,7 +187,7 @@ const Food = Vue.component('Food',{
                 })
                 .catch(function(error){
                     self.cleanseErrorMsg('dish');
-                    console.log(error.response.data.errors)
+                    //console.log(error.response.data.errors)
                     for(key in error.response.data.errors){
                         var keyUpper = key.charAt(0).toUpperCase() + key.slice(1)
                         var adjustedKey = 'dish' + keyUpper;
@@ -213,8 +213,8 @@ const Food = Vue.component('Food',{
                 this.$store.commit('setFoodFormError', obj);
             }
             else if(form === 'dish'){
-                console.log(error)
-                console.log(msg)
+                //console.log(error)
+                //console.log(msg)
                 this.$store.commit('setDishFormError', obj);
             }
         },

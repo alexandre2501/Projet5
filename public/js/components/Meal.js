@@ -112,11 +112,11 @@ const Meal = Vue.component('Meal',{
                 day: self.$store.state.mealsData[self.$store.state.dateIndex].date.getDate(),
             })
                 .then(function(response){
-                    console.log(response.data);
+                    //console.log(response.data);
                     self.calculateTotalMeal();
                 })
                 .catch(function(error){
-                    console.log(error);
+                    //console.log(error);
                 })
         },
         deleteFoodFromMeal(index){
@@ -124,7 +124,7 @@ const Meal = Vue.component('Meal',{
             this.updateMeals();
         },
         checkNumeric(index, key){
-            console.log(key)
+            //console.log(key)
             if(this.$store.state.mealsData[this.$store.state.dateIndex].meals[index][key] === '' || this.$store.state.mealsData[this.$store.state.dateIndex].meals[index][key] === null){
                 this.$store.commit('setMealValue',index, key);
             }
